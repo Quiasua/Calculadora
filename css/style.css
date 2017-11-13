@@ -1,0 +1,17 @@
+body{
+    background-image: url(imagenes/20141130_070150.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    filter: brightness(0.4);
+}
+.img-fondo{
+    background-color: rgba(0, 50, 255, 0.9);
+    height: 700px;
+}
+.modulo{
+    width:50px;
+    height: 80px;
+    background-color: #fff;
+}
