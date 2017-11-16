@@ -1,17 +1,68 @@
+html{height: 100%;}
 body{
     background-image: url(imagenes/20141130_070150.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    filter: brightness(0.4);
+    height: 100%;
 }
 .img-fondo{
-    background-color: rgba(0, 50, 255, 0.9);
-    height: 700px;
+    background-color: rgba(54, 143, 207, 0.9);
+    height: 100%;
 }
-.modulo{
-    width:50px;
-    height: 80px;
+.menu-principal{
+    width: auto;
+    height: 235px;
+    margin-left: 5%;
+}
+.menu-principal .recuadros{
+    width: 180px;
     background-color: #fff;
+    height: 220px;
+    float: left;
+    margin: 300px 5px 0 5px;
 }
+.wrapper{
+    padding: 0;    
+    margin: 0;  
+    height: 235px;
+    width: 105%;
+    position: relative;
+    overflow: hidden8
+}
+.wrapper li{
+    display: none;
+}
+li.current{
+    display: block;
+}
+.wrapper li img{
+    position: absolute;
+    top: 0;
+    left: 0; 
+    height: 150px;
+    width: 150px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.cotizar{
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    left: 43.7%;
+}
+.zoom{
+    /* Aumentamos la anchura y altura durante 2 segundos */
+    transition: width 2s, height 2s, transform 2s;
+    -moz-transition: width 2s, height 2s, -moz-transform 2s;
+    -webkit-transition: width 1s, height 1s, -webkit-transform 1s;
+    -o-transition: width 2s, height 2s,-o-transform 2s;
+    }
+    .zoom:hover{
+    /* tranformamos el elemento al pasar el mouse por encima*/
+    transform : scale(1.3);
+    -moz-transform : scale(1.3);      /* Firefox */
+    -webkit-transform : scale(1.3);   /* Chrome - Safari */
+    -o-transform : scale(1.3);        /* Opera */
+    }
