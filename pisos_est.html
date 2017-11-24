@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/pisos_est.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <div class="social">
+    <!--<div class="social">
     <ul>
       <li>
         <a href=""class="icon-pisosEst">
@@ -49,49 +54,43 @@
         </a>
         </li>
       </ul>
-    </div>
+    </div>-->
 
-    <!--titulo modulo-->
-    <div>
-        <h1>Pisos Estampados</h1>
-        <p>
-            ingrese los metros cuadrados de su proyecto
-            <input type="text">
-        </p>
-    </div>
-    <!--main - content-->
-    <div>
-        <h1>moldes para estampar</h1>
-        <select>
-            <option>moldes tradicionales</option>
-        </select>
-        <br>
-        <select>
-            <option>molde cenefa</option>
-        </select>
-        <br>
-        <select>
-            <option>moldes loseta</option>
-        </select>
-    </div>
-    <!--color-->
-    <div>
-        <h1>moldes para estampar</h1>
-        <select>
-            <option>moldes tradicionales</option>
-        </select>
-        <br>
-        <select>
-            <option>moldes cenefa</option>
-        </select>
-        <br>
-        <select>
-            <option>moldes loseta</option>
-        </select>
-    </div>
-    <!--herramientas-->
-    <div>
+    <div class="container">
+        <div class="titulo"><!--titulo modulo, ingreso datos a calcular-->
+            <h2> PISOS <br><b>ESTAMPADOS</b></h2>           
+        </div>
+        
+        <div class="row"><!--Espacio para ingresar los metros-->
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
+                        <div class="col-sm-3">
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div><!--fin Espacio para ingresar los metros-->
 
+        <div class="moldes">
+            <h4>Moldes para estampar: </h4>
+            <div class="moldes_slider1" data-toggle="collapse" href="#collapse1">Moldes Tradicionales</div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">Panel Body</div>
+            </div>
+            <div class="moldes_slider2" data-toggle="collapse" href="#collapse2">Moldes Cenefa</div>
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">Panel Body</div>
+            </div>
+            <div class="moldes_slider3" data-toggle="collapse" href="#collapse3">Moldes Loseta</div>
+            <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">Panel Body</div>
+            </div>
+        </div>
     </div>
     <!--formulario-->
     <div>
