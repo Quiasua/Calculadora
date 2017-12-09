@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/colores.css">
+    <link rel="stylesheet" href="css/pisos_est.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/texto.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <title>Pisos estampados</title>
+</head>
+
+<body>
+    <!-- barra lateral -->
+    <div class="social">
+        <ul>
+            <li>
+                <a href="" class="icon">
+                    <img src="iconos/est.png" class="img-circle">
+                    <div class='textooculto'>Pisos estampados</div>
+                </a>
+            </li>
+            <li>
+                <a href="" class="icon1">
+                    <img src="iconos/ind.png" class="img-circle">
+                    <div class='textooculto1'>Pisos industriales</div>
+                </a>
+            </li>
+            <li>
+                <a href="" class="icon2">
+                    <img src="iconos/par.png" class="img-circle">
+                    <div class='textooculto2'>Estampados de Pared</div>
+
+                </a>
+            </li>
+            <li>
+                <a href="" class="icon3">
+                    <img src="iconos/col.png" class="img-circle">
+                    <div class='textooculto3'>Concretos de color</div>
+
+                </a>
+            </li>
+            <li>
+                <a href="" class="icon4">
+                    <img src="iconos/man.png" class="img-circle">
+                    <div class='textooculto4'>Mantenimiento</div>
+                </a>
+            </li>
+            <li>
+                <a href="" class="icon5">
+                    <img src="iconos/pre.png" class="img-circle">
+                    <div class='textooculto5'>Insumos prefabricadores</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="titulo">
+            <!--titulo modulo, ingreso datos a calcular-->
+            <h2>Pisos
+                <br>
+                <b>Estampados</b>
+                <br>
+                <br>
+                <br>
+                <br>
+            </h2>
+        </div>
+        <div class="row">
+            <!--Espacio para ingresar los metros-->
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
+                        <div class="col-sm-3">
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <!--fin Espacio para ingresar los metros-->
+
+        <div class="moldes">
+            <!--Apartado de moldes-->
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4>Moldes para estampar: </h4>
+                </div>
+                <div class="col-sm-9">
+                    Descargue aqui la modulación de su molde<br>
+                    <br> 
+                    <div class="moldes_slider1" data-toggle="collapse" href="#collapse1">Moldes Tradicionales&nbsp;&nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <!--inicio moldes tradicionales-->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-3 mt">
+                                    <label class="btn">
+                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-01-min.png" class="img-thumbnail img-check img-responsive">
+                                        <input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off">
+                                    </label>
+                                </div>
+                                <div class="col-sm-3 mt">
+                                    <label class="btn">
+                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-02-min.png" class="img-thumbnail img-check img-responsive">
+                                        <input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off">
+                                    </label>
+                                </div>
+                                <div class="col-sm-3 mt">
+                                    <label class="btn">
+                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-03-min.png" class="img-thumbnail img-check img-responsive">
+                                        <input type="checkbox" name="chk1" id="item4" value="val1" class="hidden" autocomplete="off">
+                                    </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ver más</button>
+                                    <!--Boton para abrir modal-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Moldes Tradicionales</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the modal.</p>
+                                        <div class="row">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-01-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <br> pisos
+                                                        <input type="checkbox" name="chk1" id="item1" value="val1" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-02-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk2" id="item2" value="val2" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-03-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk3" id="item3" value="val3" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-04-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk4" id="item4" value="val4" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-05-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk5" id="item5" value="val5" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-06-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk6" id="item6" value="val6" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-07-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk7" id="item7" value="val7" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-08-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk8" id="item8" value="val8" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-09-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk9" id="item9" value="val9" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-10-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk10" id="item10" value="val10" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-11-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk11" id="item11" value="val11" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-12-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk12" id="item12" value="val12" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-13-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk13" id="item13" value="val13" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-14-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk14" id="item14" value="val14" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-15-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk15" id="item15" value="val15" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-16-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk16" id="item16" value="val16" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-17-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk17" id="item17" value="val17" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-18-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk18" id="item18" value="val18" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-19-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk19" id="item19" value="val19" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-20-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk20" id="item20" value="val20" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-21-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk21" id="item21" value="val21" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-22-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk22" id="item22" value="val22" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-23-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk23" id="item23" value="val23" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-24-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk24" id="item24" value="val24" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-25-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk25" id="item25" value="val25" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-26-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk26" id="item26" value="val26" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-27-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk27" id="item27" value="val27" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-28-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk28" id="item28" value="val28" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-29-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk29" id="item29" value="val29" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-30-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk30" id="item30" value="val30" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-31-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk31" id="item31" value="val31" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-32-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk32" id="item32" value="val32" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-33-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk33" id="item33" value="val33" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-34-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk34" id="item34" value="val34" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-35-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk35" id="item35" value="val35" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-36-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk36" id="item36" value="val36" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-37-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk37" id="item37" value="val37" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-38-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk38" id="item38" value="val38" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-39-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk39" id="item39" value="val39" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-40-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk40" id="item40" value="val40" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-41-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk41" id="item41" value="val41" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-42-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk42" id="item42" value="val42" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-43-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk43" id="item43" value="val43" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-44-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk44" id="item44" value="val44" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-45-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk45" id="item45" value="val45" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-46-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk46" id="item46" value="val46" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-47-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk47" id="item47" value="val47" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-48-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk48" id="item48" value="val48" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-49-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk49" id="item49" value="val49" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-50-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk50" id="item50" value="val50" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-51-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk51" id="item51" value="val51" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-52-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk52" id="item52" value="val52" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-53-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk53" id="item53" value="val53" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="" class="btn">
+                                                        <img src="imagenes/MOLDES/MOLDES_MT/MT-54-min.png" alt="" class="img-thumbnail img-check img-responsive">
+                                                        <input type="checkbox" name="chk54" id="item54" value="val54" autocomplete="off" class="hidden">
+                                                        </img>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--fin moldes tradicionales-->
+                    <div class="moldes_slider2" data-toggle="collapse" href="#collapse2">Moldes Cenefa</div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">Panel Body</div>
+                    </div>
+                    <div class="moldes_slider3" data-toggle="collapse" href="#collapse3">Moldes Loseta</div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">Panel Body</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Final apartado moldes-->
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-sm-3">
+            Concrete Color Industrial
+          </div>
+    
+          <div class="col-sm-3">
+            <select id="colores" class="selectpicker">
+            </select>
+          </div>
+          <div class="col-sm-1">
+            <img src="iconos/flecha.png"></img>
+          </div>
+          <div class="col-sm-2">
+            Dosificación de
+            <br>
+            <div class="panel panel-default">
+              <div class="panel-body"></div>
+            </div>
+          </div>
+          <div class="col-sm-1">
+            <img src="iconos/flecha.png"></img>
+          </div>
+          <div class="col-sm-1">
+            Usted requiere
+            <br>
+          </div>
+          <div class="col-sm-1">
+            <img src="imagenes/concrete_color.png" width="75" height="105"></img>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-sm-3">
+            Desmol Concrete(Desmoldante en Polvo)
+          </div>
+    
+          <div class="col-sm-3">
+            <select id="colores" class="selectpicker">
+            </select>
+          </div>
+          <div class="col-sm-1">
+            <img src="iconos/flecha.png"></img>
+          </div>
+          <div class="col-sm-2">
+            Dosificación de
+            <br>
+            <div class="panel panel-default">
+              <div class="panel-body"></div>
+            </div>
+          </div>
+          <div class="col-sm-1">
+            <img src="iconos/flecha.png"></img>
+          </div>
+          <div class="col-sm-1">
+            Usted requiere
+            <br>
+          </div>
+          <div class="col-sm-1">
+            <img src="imagenes/barril_cunete.png" width="60" height="80"></img>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-sm-3">
+            Retar Concrete(Retardante)
+          </div>
+    
+          <div class="col-sm-1">
+            <img src="iconos/flecha.png"></img>
+          </div>
+          <div class="col-sm-2">
+            Dosificación de
+            <br>
+            <div class="panel panel-default">
+              <div class="panel-body"></div>
+            </div>
+          </div>
+          <div class="col-sm-1">
+            <img src="iconos/flecha.png"></img>
+          </div>
+          <div class="col-sm-1">
+            Usted requiere
+            <br>
+          </div>
+          <div class="col-sm-1">
+            <img src="imagenes/hidro.png" width="120" height="100"></img>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+                <div class="col-sm-2">
+                  Sella Concrete (Sellador)
+                </div>
+                <div class="col-sm-2">
+                  <div class="caja">mate</div>
+                  <div class="caja">Lustre</div>
+                  <div class="caja">Semilustre</div>
+                </div>
+                <div class="col-sm-1">
+                  <img src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2">
+                  Dosificación de
+                  <br>
+                  <div class="panel panel-default">
+                    <div class="panel-body"></div>
+                  </div>
+                </div>
+          
+                <div class="col-sm-1">
+                  <img src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2">
+                  Usted requiere
+                  <br>
+                </div>
+                <div class="col-sm-1">
+                  <img src="imagenes/barril_mant.png" width="50" height="80"></img>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                  <div class="col-sm-2">
+                   Fibra Concrete
+                  </div>
+                  <div class="col-sm-4">
+                    ¿Qué uso le va a dar a la fibra?
+                    <br>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio">
+                          <div class="panel panel-default">
+                            <div class="panel-body">Andenes,aceras, accesos a centros comerciales, parques, plazoletas, zonas comunes en urbanizaciones, terrazas, centros comerciales, almacenes, clubes, placas entre pisos, centros recreacionales, losas de viviendas de paredes livianas o de bloque.</div>
+                          </div>
+                        </label>
+                        <br>
+                        <label><input type="radio" name="optradio">
+                          <div class="panel panel-default">
+                              <div class="panel-body">Estacionamientos, elementos prefabricados. todo tipo de viabilidad con tráfico liviano a mopderado sin pendientes.</div>
+                          </div>
+                        </label>  
+                        <label><input type="radio" name="optradio">
+                          <div class="panel panel-default">
+                              <div class="panel-body">Concreto proyectado, pisos industriales.</div>
+                          </div>
+                        </label>  
+                    </div>  
+          
+                   </div>
+                  <div class="col-sm-1">
+                    <img src="iconos/flecha.png"></img>
+                  </div>
+                  <div class="col-sm-2">
+                    Espesor (Cm)
+                    <br>
+                    <div class="panel panel-default">
+                      <div class="panel-body"></div>
+                    </div>
+                  </div>
+            
+                  <div class="col-sm-1">
+                    <img src="iconos/flecha.png"></img>
+                  </div>
+                  <div class="col-sm-2">
+                    Usted requiere
+                    <br>
+                  </div>
+
+
+    </div>
+</body>
+<script>
+    $(document).ready(function (e) {
+        $(".img-check").click(function () {
+            $(this).toggleClass("check");
+        });
+
+        $(".textooculto").hide();
+        $(".textooculto1").hide();
+        $(".textooculto2").hide();
+        $(".textooculto3").hide();
+        $(".textooculto4").hide();
+        $(".textooculto5").hide();
+
+        $(".icon").hover(
+            function () {
+                $(".textooculto").show();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            },
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            }
+        )
+        $(".icon1").hover(
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").show();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            },
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            },
+        )
+        $(".icon2").hover(
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").show();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            },
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            },
+        )
+        $(".icon3").hover(
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").show();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            },
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            },
+        )
+        $(".icon4").hover(
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").show();
+                $(".textooculto5").hide();
+            },
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            },
+        )
+        $(".icon5").hover(
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").show();
+            },
+            function () {
+                $(".textooculto").hide();
+                $(".textooculto1").hide();
+                $(".textooculto2").hide();
+                $(".textooculto3").hide();
+                $(".textooculto4").hide();
+                $(".textooculto5").hide();
+            },
+        )
+        $(".icon").hover(
+            function () {
+                $(".textooculto").show();
+            },
+            function () {
+                $(".textooculto1").hide();
+            });
+
+        $(".icon1").hover(
+            function () {
+                $(".textooculto1").show();
+            },
+            function () {
+                $(".textooculto2").hide();
+            });
+
+        $(".icon2").hover(
+            function () {
+                $(".textooculto2").show();
+            },
+            function () {
+                $(".textooculto3").hide();
+            });
+        $(".icon3").hover(
+            function () {
+                $(".textooculto3").show();
+            },
+            function () {
+                $(".textooculto4").hide();
+            });
+        $(".icon4").hover(
+            function () {
+                $(".textooculto4").show();
+            },
+            function () {
+                $(".textooculto5").hide();
+            });
+        $(".icon5").hover(
+            function () {
+                $(".textooculto5").show();
+            },
+            function () {
+                $(".textooculto6").hide();
+            })
+
+    });
+
+</script>
+
+</html>

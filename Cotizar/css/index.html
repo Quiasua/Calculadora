@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/colores.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .red {
+        background-color: red
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <select id="colores" class="selectpicker" title="Seleccione un color">
+                                      
+                </select>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+    $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColores', function(data) {
+        var html = '';
+        var html2 = '';
+        var len = data.length;
+        for (var i = 0; i < len; i++) {
+            html += '<li data-original-index=' + [i] + '><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombreColor + '  ' + data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
+            html2 += '<option data-content="' + '"<span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombreColor + '  ' + data[i].especificacion + '</option>';
+        }
+        console.log(colores);
+
+        $('.dropdown-menu.inner').append(html);
+        $('#colores').append(html2);
+
+
+    });
+</script>
+
+</html>

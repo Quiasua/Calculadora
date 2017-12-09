@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="css/colores.css">
+  <link rel="stylesheet" href="css/pisos_est.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/texto.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <title>Concretos color</title>
+</head>
+<body>
+     <!-- barra lateral -->
+  <div class="social">
+    <ul>
+      <li>
+        <a href ="pisos_est.html" class="icon">
+          <img src="iconos/est.png" class="img-circle"> 
+          <div class='textooculto'>Pisos estampados</div>
+
+        </a>
+      </li>
+      <li>
+        <a href="pisos_ind.html" class="icon1">        
+          <img src="iconos/ind.png" class="img-circle"> 
+          <div class='textooculto1'>Pisos industriales</div>
+          
+          </a>
+       </li>
+      <li>
+        <a href="estam_par.html" class="icon2">
+          <img src="iconos/par.png" class="img-circle">
+          <div class='textooculto2'>Estampados de Pared</div>
+           
+          </a>
+       </li>
+      <li>
+        <a href="concre_col" class="icon3">
+          <img src="iconos/col.png" class="img-circle">
+          <div class='textooculto3'>Concretos de color</div> 
+          
+          </a>
+      </li>
+      <li>
+         <a href="mantenimiento.html" class="icon4">
+          <img src="iconos/man.png" class="img-circle"> 
+          <div class='textooculto4'>Mantenimiento</div>
+         </a>
+       </li>
+      <li>
+        <a href="insum_pref.html" class="icon5">
+        <img src="iconos/pre.png" class="img-circle">
+        <div class='textooculto5'>Insumos prefabricadores</div>
+        </a>
+        </li>
+      </ul>
+</div>
+<div class="container">
+  <div class="titulo2">
+    <!--titulo modulo, ingreso datos a calcular-->
+    <h2>Concretos<br>
+      <b>de Color</b>
+      <br>
+     <br>
+     <br>
+     <br>
+    </h2>
+  </div>
+
+  <div class="row">
+    <!--Espacio para ingresar los metros-->
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
+          <div class="col-sm-3">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  <!--fin Espacio para ingresar los metros-->
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+      <div class="col-sm-2">
+          Concrete Color Integral
+      </div>
+      
+      <div class="col-sm-2">
+        PSI(Resistencia del cemento)
+        <br>
+        <input class="form-control" type="text">
+        <br>
+        Debe ser a partir de 2500 PSI
+      </div>
+      <div class="col-sm-3">
+          <select id="colores" class="selectpicker" >       
+            </select>
+      </div>
+      <div class="col-sm-1">
+          <img src="iconos/flecha.png"></img>
+      </div> 
+      <div class="col-sm-1">
+        Porcentaje <br> 
+        <div class="panel panel-default">
+            <div class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-sm-1">
+          <img src="iconos/flecha.png"></img>
+      </div> 
+      <div class="col-sm-1">
+          Usted requiere <br> 
+      </div> 
+      <div class="col-sm-1">
+          <img src="imagenes/insumos.png" width="100" height="120"></img>
+      </div> 
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="row">
+  <div class="col-sm-2">
+    Sella Concrete (Sellador)
+</div>
+<div class="col-sm-2">
+  <div class="caja">mate</div>
+  <div class="caja">Lustre</div>
+</div>
+<div class="col-sm-1">
+    <img src="iconos/flecha.png"></img>
+</div> 
+<div class="col-sm-2">
+    Dosificación de <br> 
+    <div class="panel panel-default">
+        <div class="panel-body"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-1">
+      <img src="iconos/flecha.png"></img>
+  </div> 
+  <div class="col-sm-2">
+      Usted requiere <br> 
+  </div> 
+  <div class="col-sm-1">
+      <img src="imagenes/barril_mant.png" width="50" height="80"></img>
+  </div>  
+
+</div>
+<!-- fin container -->
+
+
+</body>
+
+<script>
+  $(document).ready(function(e) {
+      $(".img-check").click(function() {
+          $(this).toggleClass("check");
+      });
+
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+
+$(".icon").hover(
+function(){
+$(".textooculto").show();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+},
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+}       
+) 
+$(".icon1").hover(
+function(){
+$(".textooculto").hide();
+$(".textooculto1").show();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+},       
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+},         
+) 
+$(".icon2").hover(
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").show();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+},       
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+},          
+)
+$(".icon3").hover(
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").show();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+},       
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+},          
+) 
+$(".icon4").hover(
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").show();
+$(".textooculto5").hide();
+},       
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+},          
+)
+$(".icon5").hover(
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").show();
+},       
+function(){
+$(".textooculto").hide();
+$(".textooculto1").hide();
+$(".textooculto2").hide();
+$(".textooculto3").hide();
+$(".textooculto4").hide();
+$(".textooculto5").hide();
+},          
+)
+$(".icon").hover(
+function(){
+$(".textooculto").show();
+},
+function(){
+$(".textooculto1").hide();    
+});  
+
+$(".icon1").hover(
+function(){
+$(".textooculto1").show();
+},
+function(){
+$(".textooculto2").hide();    
+});
+
+$(".icon2").hover(
+function(){
+$(".textooculto2").show();
+},
+function(){
+$(".textooculto3").hide();    
+});  
+$(".icon3").hover(
+function(){
+$(".textooculto3").show();
+},
+function(){
+$(".textooculto4").hide();    
+}); 
+$(".icon4").hover(
+function(){
+$(".textooculto4").show();
+},
+function(){
+$(".textooculto5").hide();    
+});
+$(".icon5").hover(
+function(){
+$(".textooculto5").show();
+},
+function(){
+$(".textooculto6").hide();    
+})            
+
+});
+</script>
+<script>
+  $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColores', function(data) {
+      var html = '';
+      var html2 = '';
+      var len = data.length;
+      for (var i = 0; i < len; i++) {
+          html += '<li data-original-index=' + [i] + '><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombreColor + '  ' + data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
+          html2 += '<option data-content="' + '"<span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombreColor + '  ' + data[i].especificacion + '</option>';
+      }
+      console.log(colores);
+
+      $('.dropdown-menu.inner').append(html);
+      $('#colores').append(html2);
+
+
+  });
+</script>
+</html>
