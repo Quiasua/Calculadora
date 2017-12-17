@@ -19,51 +19,56 @@
 </head>
 
 <body>
-  <!-- barra lateral -->
-  <div class="social">
-    <ul>
-      <li>
-        <a href="pisos_est.html" class="icon">
-          <img src="iconos/est.png" class="img-circle">
-          <div class='textooculto'>Pisos estampados</div>
+     <div id="header-est">
+        <!-- inicio /div de menu desplegable  -->
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> 
+                <img src="iconos/icon-menu.png"> 
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="pisos_est.html" class="icon">
+                        <img src="iconos/est.png" class="img-circle">
+                        <div class='textooculto'>  Pisos estampados </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="pisos_ind.html" class="icon1">
+                        <img src="iconos/ind.png" class="img-circle">
+                        <div class='textooculto1'> Pisos industriales</div>
+                    </a>
+                </li>
 
-        </a>
-      </li>
-      <li>
-        <a href="pisos_ind.html" class="icon1">
-          <img src="iconos/ind.png" class="img-circle">
-          <div class='textooculto1'>Pisos industriales</div>
+                <li>
+                    <a href="estam_par.html" class="icon2">
+                        <img src="iconos/par.png" class="img-circle">
+                        <div class='textooculto2'> Estampados de Pared</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="concre_col" class="icon3">
+                        <img src="iconos/col.png" class="img-circle">
+                        <div class='textooculto3'> Concretos de color</div>
 
-        </a>
-      </li>
-      <li>
-        <a href="estam_par.html" class="icon2">
-          <img src="iconos/par.png" class="img-circle">
-          <div class='textooculto2'>Estampados de Pared</div>
-
-        </a>
-      </li>
-      <li>
-        <a href="concre_col" class="icon3">
-          <img src="iconos/col.png" class="img-circle">
-          <div class='textooculto3'>Concretos de color</div>
-
-        </a>
-      </li>
-      <li>
-        <a href="mantenimiento.html" class="icon4">
-          <img src="iconos/man.png" class="img-circle">
-          <div class='textooculto4'>Mantenimiento</div>
-        </a>
-      </li>
-      <li>
-        <a href="insum_pref.html" class="icon5">
-          <img src="iconos/pre.png" class="img-circle">
-          <div class='textooculto5'>Insumos prefabricadores</div>
-        </a>
-      </li>
-    </ul>
-  </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="mantenimiento.html" class="icon4">
+                        <img src="iconos/man.png" class="img-circle">
+                        <div class='textooculto4'> Mantenimiento</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="insum_pref.html" class="icon5">
+                        <img src="iconos/pre.png" class="img-circle">
+                        <div class='textooculto5'> Insumos prefabricados
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- fin /div de menu desplegable  -->
   <div class="container">
     <div class="titulo3">
       <!--titulo modulo, ingreso datos a calcular-->
@@ -95,7 +100,7 @@
     <!--fin Espacio para ingresar los metros-->
     <br>
     <br>
-    
+
 
     <div class="moldes">
       <!--Apartado de moldes-->
@@ -577,77 +582,111 @@
       </div>
     </div>
     <!--Final apartado moldes-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-2">
+          Molde para estapar
+        </div>
+        
+        <div class="col-sm-2">
+          <div class="panel panel-default">
+            <div class="panel-body"></div>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <img src="iconos/flecha.png"></img>
+        </div>
+        <div class="col-sm-4">
+          Cantidad de moldes a cotizar
+          <input type="text">
+          <br>
+          <br>
+          Se recomienda que minimo utilice 2 moldes para estampar
+        </div>
+        <div class="col-sm-1">
+            <img src="iconos/flecha.png"></img>
+          </div>
+        <div class="col-sm-2">
+          Desea 
+          <br>
+          <input type='radio'>Alquilar los moldes<br>
+          <input type='radio'>Comprar los moldes<br>
+        </div>
   
-  <br>
-  <br>
-  <br>
-  <div class="row">
-    <div class="col-sm-2">
-      Concrete Revestimiento
-    </div>
-
-    <div class="col-sm-3">
-      <select id="colores" class="selectpicker">
-      </select>
-    </div>
-    <div class="col-sm-1">
-      <img src="iconos/flecha.png"></img>
-    </div>
-    <div class="col-sm-2">
-      Dosificación de
-      <br>
-      <div class="panel panel-default">
-        <div class="panel-body"></div>
       </div>
-    </div>
-    <div class="col-sm-1">
-      <img src="iconos/flecha.png"></img>
-    </div>
-    <div class="col-sm-1">
-      Usted requiere
-      <br>
-    </div>
-    <div class="col-sm-1">
-      <img src="imagenes/revestimiento.png" width="120" height="100"></img>
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="row">
-    <div class="col-sm-2">
-      Desmol Concrete-Liquido 
-    </div>
-    <div class="col-sm-1">
-      <img src="iconos/flecha.png"></img>
-    </div>
-    <div class="col-sm-2">
-      Dosificación de
-      <br>
-      <div class="panel panel-default">
-        <div class="panel-body"></div>
-      </div>
-    </div>
-    <div class="col-sm-1">
-      <img src="iconos/flecha.png"></img>
-    </div>
-    <div class="col-sm-2">
-      Usted requiere
-      <br>
-    </div>
-    <div class="col-sm-1">
-      <img src="imagenes/desmol.png" width="150" height="80"></img>
-    </div>
-
-  </div>
-  <br>
-  <br>
-  <br>
-
-  <div class="row">
+    <br>
+    <br>
+    <br>
+    <div class="row">
       <div class="col-sm-2">
-        Hidro Concrete (Hidrófugo) 
+        Concrete Revestimiento
+      </div>
+
+      <div class="col-sm-3">
+        <select id="colores" class="selectpicker">
+        </select>
+      </div>
+      <div class="col-sm-1">
+        <img src="iconos/flecha.png"></img>
+      </div>
+      <div class="col-sm-2">
+        Dosificación de
+        <br>
+        <div class="panel panel-default">
+          <div class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <img src="iconos/flecha.png"></img>
+      </div>
+      <div class="col-sm-1">
+        Usted requiere
+        <br>
+      </div>
+      <div class="col-sm-1">
+        <img src="imagenes/revestimiento.png" width="120" height="100"></img>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-sm-2">
+        Desmol Concrete-Liquido
+      </div>
+      <div class="col-sm-1">
+        <img src="iconos/flecha.png"></img>
+      </div>
+      <div class="col-sm-2">
+        Dosificación de
+        <br>
+        <div class="panel panel-default">
+          <div class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <img src="iconos/flecha.png"></img>
+      </div>
+      <div class="col-sm-2">
+        Usted requiere
+        <br>
+      </div>
+      <div class="col-sm-1">
+        <img src="imagenes/desmol.png" width="150" height="80"></img>
+      </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-sm-2">
+        Hidro Concrete (Hidrófugo)
       </div>
       <div class="col-sm-1">
         <img src="iconos/flecha.png"></img>
@@ -669,181 +708,113 @@
       <div class="col-sm-1">
         <img src="imagenes/hidro.png" width="150" height="80"></img>
       </div>
-  
+
     </div>
-  <!-- fin container -->
-</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-sm-2">
+        Herramientas
+      </div>
+      <div class="col-sm-5">
+        <table>
+          <tr>
+            <td>
+              Herramienta
+            </td>
+            <td>
+              Cantidad
+            </td>
+          </tr>
+          <tr>
+
+            <td class="caja">
+              Llana Metálica
+            </td>
+            <td>
+              <input type="text">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <br>
+    <br>
+    <!--formulario-->
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+
+        <form class="form-horizontal" method="post">
+          <fieldset>
+            <h1 align='center' style='color: rgb(50, 132, 255)'>Contactenos</h1>
+            <br>
+            <br>
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2 text-center">
+                <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255); font-size: 25px'></span>
+              </span>
+              <div class="col-md-8">
+                <input id="fname" name="name" type="text" placeholder="Nombres" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2 text-center">
+                <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+              </span>
+              <div class="col-md-8">
+                <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2 text-center">
+                <span class="glyphicon glyphicon-envelope" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+              </span>
+              <div class="col-md-8">
+                <input id="email" name="email" type="text" placeholder="Correo electronico" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2 text-center">
+                <span class="glyphicon glyphicon-earphone" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+              </span>
+              <div class="col-md-8">
+                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2 text-center">
+
+                <span class="glyphicon glyphicon-map-marker" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+              </span>
+              <div class="col-md-8">
+                <input id="phone" name="phone" type="text" placeholder="Ciudad" class="form-control">
+              </div>
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+              <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </div>
 
 </body>
 
-<script>
-  $(document).ready(function (e) {
-    $(".img-check").click(function () {
-      $(this).toggleClass("check");
-    });
 
-    $(".textooculto").hide();
-    $(".textooculto1").hide();
-    $(".textooculto2").hide();
-    $(".textooculto3").hide();
-    $(".textooculto4").hide();
-    $(".textooculto5").hide();
-
-    $(".icon").hover(
-      function () {
-        $(".textooculto").show();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      },
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      }
-    )
-    $(".icon1").hover(
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").show();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      },
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      },
-    )
-    $(".icon2").hover(
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").show();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      },
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      },
-    )
-    $(".icon3").hover(
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").show();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      },
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      },
-    )
-    $(".icon4").hover(
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").show();
-        $(".textooculto5").hide();
-      },
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      },
-    )
-    $(".icon5").hover(
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").show();
-      },
-      function () {
-        $(".textooculto").hide();
-        $(".textooculto1").hide();
-        $(".textooculto2").hide();
-        $(".textooculto3").hide();
-        $(".textooculto4").hide();
-        $(".textooculto5").hide();
-      },
-    )
-    $(".icon").hover(
-      function () {
-        $(".textooculto").show();
-      },
-      function () {
-        $(".textooculto1").hide();
-      });
-
-    $(".icon1").hover(
-      function () {
-        $(".textooculto1").show();
-      },
-      function () {
-        $(".textooculto2").hide();
-      });
-
-    $(".icon2").hover(
-      function () {
-        $(".textooculto2").show();
-      },
-      function () {
-        $(".textooculto3").hide();
-      });
-    $(".icon3").hover(
-      function () {
-        $(".textooculto3").show();
-      },
-      function () {
-        $(".textooculto4").hide();
-      });
-    $(".icon4").hover(
-      function () {
-        $(".textooculto4").show();
-      },
-      function () {
-        $(".textooculto5").hide();
-      });
-    $(".icon5").hover(
-      function () {
-        $(".textooculto5").show();
-      },
-      function () {
-        $(".textooculto6").hide();
-      })
-
-  });
-</script>
 <script>
   $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColores', function (data) {
     var html = '';

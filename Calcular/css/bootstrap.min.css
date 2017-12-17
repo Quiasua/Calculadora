@@ -377,6 +377,7 @@ th {
 }
 
 .glyphicon-user:before {
+    height: 500px;
     content: "\e008"
 }
 

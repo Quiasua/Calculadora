@@ -1,3 +1,49 @@
+
+/* Acá empieza el menú principal de la página */ 
+#header-est{
+    width: 100%;
+    background:  blue;
+}
+
+#btn-menu{
+  display: none;
+}
+
+
+#header-est  label {
+    
+    display: none;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-right:1px solid #fff;
+
+}
+#header-est label:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3);
+} 
+.menu ul {
+    margin:0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+.menu li{
+    
+    background: blue;
+    
+}
+
+.menu li a{
+    display: block;
+    padding: 15px;
+    color: #fff ;
+    text-decoration:none;
+}
+ /* fin menú principal de la página */ 
+
+
 .titulo>h2 {
     color: blue;
     text-align: center;

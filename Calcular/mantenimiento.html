@@ -19,51 +19,56 @@
 </head>
 
 <body>
-  <!-- barra lateral -->
-  <div class="social">
-      <ul>
-        <li>
-          <a href ="pisos_est.html" class="icon">
-            <img src="iconos/est.png" class="img-circle"> 
-            <div class='textooculto'>Pisos estampados</div>
-  
-          </a>
-        </li>
-        <li>
-          <a href="pisos_ind.html" class="icon1">        
-            <img src="iconos/ind.png" class="img-circle"> 
-            <div class='textooculto1'>Pisos industriales</div>
-            
-            </a>
-         </li>
-        <li>
-          <a href="estam_par.html" class="icon2">
-            <img src="iconos/par.png" class="img-circle">
-            <div class='textooculto2'>Estampados de Pared</div>
-             
-            </a>
-         </li>
-        <li>
-          <a href="concre_col" class="icon3">
-            <img src="iconos/col.png" class="img-circle">
-            <div class='textooculto3'>Concretos de color</div> 
-            
-            </a>
-        </li>
-        <li>
-           <a href="mantenimiento.html" class="icon4">
-            <img src="iconos/man.png" class="img-circle"> 
-            <div class='textooculto4'>Mantenimiento</div>
-           </a>
-         </li>
-        <li>
-          <a href="insum_pref.html" class="icon5">
-          <img src="iconos/pre.png" class="img-circle">
-          <div class='textooculto5'>Insumos prefabricadores</div>
-          </a>
-          </li>
-        </ul>
-  </div>
+   <div id="header-est">
+        <!-- inicio /div de menu desplegable  -->
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> 
+                <img src="iconos/icon-menu.png"> 
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="pisos_est.html" class="icon">
+                        <img src="iconos/est.png" class="img-circle">
+                        <div class='textooculto'>  Pisos estampados </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="pisos_ind.html" class="icon1">
+                        <img src="iconos/ind.png" class="img-circle">
+                        <div class='textooculto1'> Pisos industriales</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="estam_par.html" class="icon2">
+                        <img src="iconos/par.png" class="img-circle">
+                        <div class='textooculto2'> Estampados de Pared</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="concre_col" class="icon3">
+                        <img src="iconos/col.png" class="img-circle">
+                        <div class='textooculto3'> Concretos de color</div>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="mantenimiento.html" class="icon4">
+                        <img src="iconos/man.png" class="img-circle">
+                        <div class='textooculto4'> Mantenimiento</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="insum_pref.html" class="icon5">
+                        <img src="iconos/pre.png" class="img-circle">
+                        <div class='textooculto5'> Insumos prefabricados
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- fin /div de menu desplegable  -->
   <div class="container">
     <div class="titulo1">
       <!--titulo modulo, ingreso datos a calcular-->
@@ -135,174 +140,6 @@
 
 </body>
 
-<script>
-    $(document).ready(function(e) {
-        $(".img-check").click(function() {
-            $(this).toggleClass("check");
-        });
-
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-
-$(".icon").hover(
-function(){
-$(".textooculto").show();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-},
-function(){
-  $(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-}       
-) 
-$(".icon1").hover(
-function(){
-$(".textooculto").hide();
-$(".textooculto1").show();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-},       
-function(){
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-},         
-) 
-$(".icon2").hover(
-function(){
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").show();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-},       
-function(){
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-},          
-)
-$(".icon3").hover(
-function(){
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").show();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-},       
-function(){
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-},          
-) 
-$(".icon4").hover(
-function(){
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").show();
-$(".textooculto5").hide();
-},       
-function(){
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-},          
-)
-$(".icon5").hover(
-function(){
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").show();
-},       
-function(){
-$(".textooculto").hide();
-$(".textooculto1").hide();
-$(".textooculto2").hide();
-$(".textooculto3").hide();
-$(".textooculto4").hide();
-$(".textooculto5").hide();
-},          
-)
-$(".icon").hover(
-function(){
-$(".textooculto").show();
-},
-function(){
-$(".textooculto1").hide();    
-});  
-
-$(".icon1").hover(
-function(){
-$(".textooculto1").show();
-},
-function(){
-$(".textooculto2").hide();    
-});
-
-$(".icon2").hover(
-function(){
-$(".textooculto2").show();
-},
-function(){
-$(".textooculto3").hide();    
-});  
-$(".icon3").hover(
-function(){
-$(".textooculto3").show();
-},
-function(){
-$(".textooculto4").hide();    
-}); 
-$(".icon4").hover(
-function(){
-$(".textooculto4").show();
-},
-function(){
-$(".textooculto5").hide();    
-});
-$(".icon5").hover(
-function(){
-$(".textooculto5").show();
-},
-function(){
-$(".textooculto6").hide();    
-})            
-
-});
-</script>
 <script>
     $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColores', function(data) {
         var html = '';
