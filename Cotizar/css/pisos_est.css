@@ -74,7 +74,8 @@
 .moldes {
     width: 80%;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 5%; 
+    margin-bottom: 25px;
 }
 
 .molde1 {
@@ -212,4 +213,7 @@
 }
 .image-checkbox-checked .fa {
   display: block !important;
+}
+.nombreMoldes{
+    font-size: 10px;
 }
