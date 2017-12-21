@@ -1,3 +1,49 @@
+
+/* Acá empieza el menú principal de la página */ 
+#header-est{
+    width: 100%;
+    background:  blue;
+}
+
+#btn-menu{
+  display: none;
+}
+
+
+#header-est  label {
+    
+    display: none;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-right:1px solid #fff;
+
+}
+#header-est label:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3);
+} 
+.menu ul {
+    margin:0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+.menu li{
+    
+    background: blue;
+    
+}
+
+.menu li a{
+    display: block;
+    padding: 15px;
+    color: #fff ;
+    text-decoration:none;
+}
+ /* fin menú principal de la página */ 
+
+
 .titulo>h2 {
     color: blue;
     text-align: center;
@@ -28,10 +74,11 @@
 .moldes {
     width: 80%;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 5%; 
+    margin-bottom: 25px;
 }
 
-.moldes_slider1 {
+.molde1 {
     background: rgb(54, 143, 207);
     color: white;
     font-size: 1.25em;
@@ -44,7 +91,7 @@
     margin-bottom: 3%;
 }
 
-.moldes_slider1:Hover {
+.molde1:Hover {
     cursor: pointer;
     -webkit-transition: all 1.5s ease;
     -moz-transition: all 1.5s ease;
@@ -55,32 +102,7 @@
     color: white;
 }
 
-.moldes_slider2 {
-    background: rgb(54, 143, 207);
-    color: white;
-    font-size: 1.25em;
-    padding: 4px 8px;
-    width: 200px;
-    font-family: 'lillyregular';
-    border: 0;
-    float: left;
-    margin-right: 90%;
-    margin-top: 1%;
-    margin-bottom: 3%;
-}
-
-.moldes_slider2:Hover {
-    cursor: pointer;
-    -webkit-transition: all 1.5s ease;
-    -moz-transition: all 1.5s ease;
-    -ms-transition: all 1.5s ease;
-    -o-transition: all 1.5s ease;
-    transition: all 1.5s ease;
-    background-color: #012adf;
-    color: white;
-}
-
-.moldes_slider3 {
+.molde2 {
     background: rgb(54, 143, 207);
     color: white;
     font-size: 1.25em;
@@ -94,7 +116,7 @@
     margin-bottom: 3%;
 }
 
-.moldes_slider3:Hover {
+.molde2:Hover {
     cursor: pointer;
     -webkit-transition: all 1.5s ease;
     -moz-transition: all 1.5s ease;
@@ -105,11 +127,30 @@
     color: white;
 }
 
-.check {
-    opacity: 0.5;
-    color: #996;
+.molde3 {
+    background: rgb(54, 143, 207);
+    color: white;
+    font-size: 1.25em;
+    padding: 4px 8px;
+    width: 200px;
+    font-family: 'lillyregular';
+    border: 0;
+    float: left;
+    margin-right: 90%;
+    margin-top: 1%;
+    margin-bottom: 3%;
 }
 
+.molde3:Hover {
+    cursor: pointer;
+    -webkit-transition: all 1.5s ease;
+    -moz-transition: all 1.5s ease;
+    -ms-transition: all 1.5s ease;
+    -o-transition: all 1.5s ease;
+    transition: all 1.5s ease;
+    background-color: #012adf;
+    color: white;
+}
 /* clases creadas */
 .header {
     color: #36A0FF;
@@ -145,4 +186,42 @@
   padding: 200px;
   
   }
-  
+  /*image gallery*/
+.image-checkbox {
+	cursor: pointer;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 4px solid transparent;
+	margin-bottom: 0;
+	outline: 0;
+}
+.image-checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.image-checkbox-checked {
+	border-color: #4783B0;
+}
+.image-checkbox .fa {
+  position: absolute;
+  color: #4A79A3;
+  background-color: #fff;
+  padding: 10px;
+  top: 0;
+  right: 0;
+}
+.image-checkbox-checked .fa {
+  display: block !important;
+}
+.nombreMoldes{
+    font-size: 10px;
+}
+@media only screen and (max-width: 500px) {
+    .concrete {
+        margin-top: 15px;
+    }
+    .flecha{
+        margin-bottom: 10px;
+    }
+}

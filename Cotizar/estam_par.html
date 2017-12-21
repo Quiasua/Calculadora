@@ -18,76 +18,81 @@
   <title>Estampados pared</title>
 </head>
 <script>
-  $(document).ready(function(){
+  $(document).ready(function () {
     $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColores', function (data) {
-    var html = '';
-    var html2 = '';
-    var len = data.length;
-    for (var i = 0; i < len; i++) {
-      html += '<li data-original-index=' + [i] + '><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombreColor + '  ' + data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
-      html2 += '<option data-content="' + '"<span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombreColor + '  ' + data[i].especificacion + '</option>';
-    }
-    console.log(colores);
+      var html = '';
+      var html2 = '';
+      var len = data.length;
+      for (var i = 0; i < len; i++) {
+        html += '<li data-original-index=' + [i] +
+          '><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' +
+          data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombreColor + '  ' +
+          data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
+        html2 += '<option data-content="' + '"<span class="label ' + data[i].especificacion +
+          '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombreColor + '  ' + data[i].especificacion +
+          '</option>';
+      }
+      console.log(colores);
 
-    $('.dropdown-menu.inner').append(html);
-    $('#colores').append(html2);
+      $('.dropdown-menu.inner').append(html);
+      $('#colores').append(html2);
 
 
     });
   });
-  
 </script>
+
 <body>
-     <div id="header-est">
-        <!-- inicio /div de menu desplegable  -->
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> 
-                <img src="iconos/icon-menu.png"> 
-            </button>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="pisos_est.html" class="icon">
-                        <img src="iconos/est.png" class="img-circle">
-                        <div class='textooculto'>  Pisos estampados </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="pisos_ind.html" class="icon1">
-                        <img src="iconos/ind.png" class="img-circle">
-                        <div class='textooculto1'> Pisos industriales</div>
-                    </a>
-                </li>
+  <div id="header-est">
+    <!-- inicio /div de menu desplegable  -->
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        <img src="iconos/icon-menu.png">
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="pisos_est.html" class="icon">
+            <img src="iconos/est.png" class="img-circle">
+            <div class='textooculto'> Pisos estampados </div>
+          </a>
+        </li>
+        <li>
+          <a href="pisos_ind.html" class="icon1">
+            <img src="iconos/ind.png" class="img-circle">
+            <div class='textooculto1'> Pisos industriales</div>
+          </a>
+        </li>
 
-                <li>
-                    <a href="estam_par.html" class="icon2">
-                        <img src="iconos/par.png" class="img-circle">
-                        <div class='textooculto2'> Estampados de Pared</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="concre_col.html" class="icon3">
-                        <img src="iconos/col.png" class="img-circle">
-                        <div class='textooculto3'> Concretos de color</div>
+        <li>
+          <a href="estam_par.html" class="icon2">
+            <img src="iconos/par.png" class="img-circle">
+            <div class='textooculto2'> Estampados de Pared</div>
+          </a>
+        </li>
+        <li>
+          <a href="concre_col.html" class="icon3">
+            <img src="iconos/col.png" class="img-circle">
+            <div class='textooculto3'> Concretos de color</div>
 
-                    </a>
-                </li>
-                <li>
-                    <a href="mantenimiento.html" class="icon4">
-                        <img src="iconos/man.png" class="img-circle">
-                        <div class='textooculto4'> Mantenimiento</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="insum_pref.html" class="icon5">
-                        <img src="iconos/pre.png" class="img-circle">
-                        <div class='textooculto5'> Insumos prefabricados
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
+          </a>
+        </li>
+        <li>
+          <a href="mantenimiento.html" class="icon4">
+            <img src="iconos/man.png" class="img-circle">
+            <div class='textooculto4'> Mantenimiento</div>
+          </a>
+        </li>
+        <li>
+          <a href="insum_pref.html" class="icon5">
+            <img src="iconos/pre.png" class="img-circle">
+            <div class='textooculto5'> Insumos prefabricados
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
-    <!-- fin /div de menu desplegable  -->
+  </div>
+  <!-- fin /div de menu desplegable  -->
   <div class="container">
     <div class="titulo3">
       <!--titulo modulo, ingreso datos a calcular-->
@@ -118,54 +123,58 @@
     </div>
     <!--fin Espacio para ingresar los metros-->
     <div class="moldes">
-        <!--Apartado de moldes-->
-        <div class="row">
-            <div class="col-sm-3">
-                <h4>Moldes para estampar: </h4>
-            </div>
-            <div class="col-sm-9">
-                Descargue aqui la modulación de su molde
-                <br>
-                <br>
-                <button type="button" class="btn molde1" data-toggle="modal" data-target="#myModal">Moldes Pared</button>
-                <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title"><b>Moldes Pared</b></h4>
-                            </div>
-                            <div class="modal-body">
-                              <div class="row">
-                                  <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-01.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE MP-01 PARED ESCOCIA 54,1CM X 38,1CM</p></label></div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-02.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE MP-02 PARED ESCOCIA 54,1CM X 38,1CM</p></label></div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-03.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE MP-03 PARED ESCOCIA 74CM X 29,8CM</p></label></div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-04.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE MP-04 PARED PIRINEO 36,3CM X 34,8CM</p></label></div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-05.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE MP-05 PARED BAMBÚ 66,1CM X 40CM</p></label></div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-06.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE MP-06 TABLON ORDINARIO 40CM X 40CM</p></label></div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-06_M.png" class="img-responsive"><input type="checkbox"><br><p class=""></p></label></div>
-                                  <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-07.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE MP-07 VOLCÁN TUNGURAHUA 64,3CM X 39,9CM</p></label></div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--fin moldes tradicionales-->
-            </div>
+      <!--Apartado de moldes-->
+      <div class="row">
+        <div class="col-sm-3">
+          <h4>Moldes para estampar: </h4>
         </div>
+        <div class="col-sm-9">
+          Descargue aqui la modulación de su molde
+          <br>
+          <br>
+          <button type="button" class="btn molde1" data-toggle="modal" data-target="#myModal">Moldes Pared</button>
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">
+                    <b>Moldes Pared</b>
+                  </h4>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-01.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-01 PARED ESCOCIA 54,1CM X 38,1CM"><br><p class="">MOLDE MP-01 PARED ESCOCIA 54,1CM X 38,1CM</p></label></div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-02.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-02 PARED ESCOCIA 54,1CM X 38,1CM"><br><p class="">MOLDE MP-02 PARED ESCOCIA 54,1CM X 38,1CM</p></label></div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-03.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-03 PARED ESCOCIA 74CM X 29,8CM"><br><p class="">MOLDE MP-03 PARED ESCOCIA 74CM X 29,8CM</p></label></div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-04.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-04 PARED PIRINEO 36,3CM X 34,8CM"><br><p class="">MOLDE MP-04 PARED PIRINEO 36,3CM X 34,8CM</p></label></div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-05.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-05 PARED BAMBÚ 66,1CM X 40CM"><br><p class="">MOLDE MP-05 PARED BAMBÚ 66,1CM X 40CM</p></label></div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-06.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-06 TABLON ORDINARIO 40CM X 40CM"><br><p class="">MOLDE MP-06 TABLON ORDINARIO 40CM X 40CM</p></label></div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-06_M.png" class="img-responsive"><input type="checkbox" value=""><br><p class=""></p></label></div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-07.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-07 VOLCÁN TUNGURAHUA 64,3CM X 39,9CM"><br><p class="">MOLDE MP-07 VOLCÁN TUNGURAHUA 64,3CM X 39,9CM</p></label></div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--fin moldes tradicionales-->
+        </div>
+      </div>
     </div>
-    
+
     <!--Final apartado moldes-->
     <div class="Respuesta" style="margin-bottom:100px;">
     </div>
     <div class="row" style="margin-bottom:100px;">
       <div class="col-sm-2" style="margin-top:-1%;">
-        <h4><b>Concrete Revestimiento</b></h4> 
+        <h4>
+          <b>Concrete Revestimiento</b>
+        </h4>
       </div>
 
       <div class="col-sm-3">
@@ -195,7 +204,9 @@
     </div>
     <div class="row" style="margin-bottom:100px;">
       <div class="col-sm-2">
-        <h4><b>Desmol Concrete-Liquido</b></h4> 
+        <h4>
+          <b>Desmol Concrete-Liquido</b>
+        </h4>
       </div>
       <div class="col-sm-1">
         <img class="flecha" src="iconos/flecha.png"></img>
@@ -221,7 +232,9 @@
 
     <div class="row" style="margin-bottom:100px;">
       <div class="col-sm-2">
-        <h4><b>Hidro Concrete (Hidrófugo)</b></h4> 
+        <h4>
+          <b>Hidro Concrete (Hidrófugo)</b>
+        </h4>
       </div>
       <div class="col-sm-1">
         <img class="flecha" src="iconos/flecha.png"></img>
@@ -247,7 +260,9 @@
     </div>
     <div class="row" style="margin-bottom:100px;">
       <div class="col-sm-2">
-        <h4><b>Herramientas</b></h4> 
+        <h4>
+          <b>Herramientas</b>
+        </h4>
       </div>
       <div class="col-sm-5">
         <table>
@@ -343,84 +358,84 @@
 
 <script>
   $(".image-checkbox").each(function () {
-        if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
-            $(this).addClass('image-checkbox-checked');
-        } else {
-            $(this).removeClass('image-checkbox-checked');
-        }
+    if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+      $(this).addClass('image-checkbox-checked');
+    } else {
+      $(this).removeClass('image-checkbox-checked');
+    }
+  });
+
+  // sync the state to the input
+  $(".image-checkbox").on("click", function (e) {
+    $(this).toggleClass('image-checkbox-checked');
+    var $checkbox = $(this).find('input[type="checkbox"]');
+    $checkbox.prop("checked", !$checkbox.prop("checked"))
+    var elemento = this;
+    var contador = 0;
+    // Recorremos todos los checkbox para contar los que estan seleccionados
+    $("input[type=checkbox]").each(function () {
+      if ($(this).is(":checked"))
+        contador++;
     });
 
-    // sync the state to the input
-    $(".image-checkbox").on("click", function (e) {
-        $(this).toggleClass('image-checkbox-checked');
-        var $checkbox = $(this).find('input[type="checkbox"]');
-        $checkbox.prop("checked", !$checkbox.prop("checked"))
-        var elemento = this;
-        var contador = 0;
-        // Recorremos todos los checkbox para contar los que estan seleccionados
-        $("input[type=checkbox]").each(function () {
-            if ($(this).is(":checked"))
-                contador++;
-        });
+    var cantidadMaxima = 6;
 
-        var cantidadMaxima = 6;
+    // Comprovamos si supera la cantidad máxima indicada
+    if (contador > cantidadMaxima) {
+      alert("No puedes seleccionar mas moldes");
 
-        // Comprovamos si supera la cantidad máxima indicada
-        if (contador > cantidadMaxima) {
-            alert("No puedes seleccionar mas moldes");
+      // Desmarcamos el ultimo elemento
+      $(elemento).prop('checked', false);
+      $(this).attr(disabled);
+      contador--;
+    }
+    e.preventDefault();
 
-            // Desmarcamos el ultimo elemento
-            $(elemento).prop('checked', false);
-            $(this).attr(disabled);
-            contador--;
-        }
-        e.preventDefault();
-
-        var moldesSeleccionados = new Array();
-        var html = '';
-        var html2 = '';
-        $('input[type=checkbox]:checked').each(function () {
-            moldesSeleccionados.push($(this).val());
-        });
-        for (i = 0; i < moldesSeleccionados.length; i++) {
-            console.log(moldesSeleccionados[i])
-            html += '<div class="moss row" style="margin-bottom:30px;">' +
-            '<div class="col-sm-2">Moldes para estampar</div>' +
-            '<div class="col-sm-3" style="margin-bottom:20px;">' +
-            '<div class="well well-sm" style="font-size:10px">' + moldesSeleccionados[i] + '</div>' +
-            '</div>' +
-            '<div class="col-sm-1">' +
-            '<img class="flecha" src="iconos/flecha.png"></img>' +
-            '</div>' +
-            '<div class="col-sm-2">' +
-            '<input class="form-control" type="number" min="4" max="10" placeholder="Cantidad de moldes a cotizar">' +
-            '<a href="#" data-toggle="tooltip" data-placement="bottom" title="Se recomienda que minimo utilice 4 moldes para estampar" style="float: right">' +
-            '<span class="glyphicon glyphicon-info-sign"></span>' +
-            '</a>' +
-            '</div>' +
-            '<div class="col-sm-1" style="margin-bottom:30px;">' +
-            '<img class="flecha" src="iconos/flecha.png"></img>' +
-            '</div>' +
-            '<div class="col-sm-2" style="margin:-25px 0 0 25px;"> Desea' +
-            '<div class="radio">' +
-            '<input type="radio" name="optRadio">Alquilar los moldes' +
-            '</div>' +
-            '<div class="radio">' +
-            '<input type="radio" name="optRadio">Comprar los moldes' +
-            '</div>' +
-            '<br>' +
-            '</div>' +
-            '</div>'
-            if ($('input[type=checkbox]:checked')) {
-                $(".Respuesta").html(html);
-            } else {
-                $(".Respuesta").css('display', 'none');
-            }
-        }
+    var moldesSeleccionados = new Array();
+    var html = '';
+    var html2 = '';
+    $('input[type=checkbox]:checked').each(function () {
+      moldesSeleccionados.push($(this).val());
     });
-    $(document).ready(function(){
+    for (i = 0; i < moldesSeleccionados.length; i++) {
+      console.log(moldesSeleccionados[i])
+      html += '<div class="moss row" style="margin-bottom:30px;">' +
+        '<div class="col-sm-2">Moldes para estampar</div>' +
+        '<div class="col-sm-3" style="margin-bottom:20px;">' +
+        '<div class="well well-sm" style="font-size:10px">' + moldesSeleccionados[i] + '</div>' +
+        '</div>' +
+        '<div class="col-sm-1">' +
+        '<img class="flecha" src="iconos/flecha.png"></img>' +
+        '</div>' +
+        '<div class="col-sm-2">' +
+        '<input class="form-control" type="number" min="4" max="10" placeholder="Cantidad de moldes a cotizar">' +
+        '<a href="#" data-toggle="tooltip" data-placement="bottom" title="Se recomienda que minimo utilice 4 moldes para estampar" style="float: right">' +
+        '<span class="glyphicon glyphicon-info-sign"></span>' +
+        '</a>' +
+        '</div>' +
+        '<div class="col-sm-1" style="margin-bottom:30px;">' +
+        '<img class="flecha" src="iconos/flecha.png"></img>' +
+        '</div>' +
+        '<div class="col-sm-2" style="margin:-25px 0 0 25px;"> Desea' +
+        '<div class="radio">' +
+        '<input type="radio" name="optRadio">Alquilar los moldes' +
+        '</div>' +
+        '<div class="radio">' +
+        '<input type="radio" name="optRadio">Comprar los moldes' +
+        '</div>' +
+        '<br>' +
+        '</div>' +
+        '</div>'
+      if ($('input[type=checkbox]:checked')) {
+        $(".Respuesta").html(html);
+      } else {
+        $(".Respuesta").css('display', 'none');
+      }
+    }
+  });
+  $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
-});
+  });
 </script>
 
 </html>
