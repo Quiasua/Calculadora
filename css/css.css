@@ -1,0 +1,75 @@
+* {
+    margin:0;
+    padding:0;
+    color:#fff;
+    font-family:Arial;
+  }
+  
+  div#imagen {
+    width: 300px;
+    height: 200px;
+    background-size: cover;/*sólo para ejemplo*/
+    background-image: url("Screenshot_1.png");
+    margin: 30px auto;
+  }
+  
+  div#info {
+    position:absolute;
+    overflow:hidden;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(31, 31, 31, 0.9);
+    opacity:0;
+    transition: opacity 0.3s;
+  }
+  
+  div#imagen:hover div#info {
+    opacity:1;
+  }
+  
+  p#headline {
+    position: absolute;
+    font-size: 1.5rem;
+    margin-left: -75px;
+    margin-top: 15px;
+    transition: margin-left 0.3s;
+  }
+  
+  div#imagen:hover p#headline {
+    margin-left: 115px;
+  }
+  
+  p#descripcion {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 200px;
+    transition: margin-top 0.4s;
+  }
+  
+  div#imagen:hover p#descripcion {
+    margin-top: 75px;
+  }
+  div#imagen2 {
+    width: 300px;
+    height: 200px;
+    background-size: cover;/*sólo para ejemplo*/
+    background-image: url("Screenshot_2.png");
+    margin: 30px auto;
+  }
+  
+  div#info {
+    position:absolute;
+    overflow:hidden;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(31, 31, 31, 0.9);
+    opacity:0;
+    transition: opacity 0.3s;
+  }
+  
+  div#imagen2:hover div#info {
+    opacity:1;
+  }
+  div#imagen2:hover p#descripcion {
+    margin-top: 75px;
+  }
