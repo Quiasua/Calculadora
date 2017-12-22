@@ -64,6 +64,13 @@ li.current {
     top: 25%;
     left: 43.7%;
 }
+.bienvenido {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 17%;
+    left: 20.7%;
+}
 
 .zoom {
     /* Aumentamos la anchura y altura durante 2 segundos */
@@ -110,5 +117,6 @@ li.current {
     .cotizar{
         top:5%;
         left: 30%;
+        al
     }
 }

@@ -29,7 +29,7 @@
   
   p#headline {
     position: absolute;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-left: -75px;
     margin-top: 15px;
     transition: margin-left 0.3s;
