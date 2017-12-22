@@ -92,10 +92,14 @@ li.current {
     /* Opera */
 }
 .menu1{
-    margin-top: 25%;
+    margin-top: 20%;
 }
 .menup{
-    margin-top: 35%;
+    margin-top: 30%;
+}
+.btn-volver img{
+    margin-top: 5%;
+    margin-left: -6%;     
 }
 @media only screen and (max-width: 992px) {
     .cotizar{

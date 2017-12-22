@@ -64,6 +64,14 @@ li.current {
     top: 25%;
     left: 43.7%;
 }
+.bienvenido {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 17%;
+    left: 15%;
+    font-size: 3em;
+}
 
 .zoom {
     /* Aumentamos la anchura y altura durante 2 segundos */
@@ -84,11 +92,22 @@ li.current {
     /* Opera */
 }
 .menu1{
-    margin-top: 25%;
+    margin-top: 20%;
+}
+.menup{
+    margin-top: 30%;
+}
+.btn-volver img{
+    margin-top: 5%;
+    margin-left: -6%;     
 }
 @media only screen and (max-width: 992px) {
     .cotizar{
         top:15%;
+    }
+    .bienvenido{
+        top: 5%;
+        left: 2%;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -99,16 +118,37 @@ li.current {
     .abajo{
         margin-top: 10%;
     }
+    .bienvenido{
+        top:5%;
+        left: 1%;
+    }
+}
+@media only screen and (max-width: 656px){
+    .bienvenido{
+        top:2.5%;
+        left: 5%;
+        font-size: 2em;
+    }
 }
 @media only screen and (max-width: 490px) {
     .cotizar{
         top:7%;
         left: 35%;
     }
+    .bienvenido{
+        top:2.5%;
+        left: 1%;
+        font-size: 1.5em;
+    }
 }
 @media only screen and (max-width: 360px) {
     .cotizar{
         top:5%;
         left: 30%;
+    }
+    .bienvenido{
+        top:2.5%;
+        left: 1%;
+        font-size: 1.5em;
     }
 }

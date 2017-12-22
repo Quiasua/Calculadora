@@ -1,7 +1,7 @@
 
 /* Acá empieza el menú principal de la página */ 
 #header-est{
-    width: 100%;
+    width: auto;
     background:  blue;
 }
 
