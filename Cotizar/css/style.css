@@ -69,7 +69,8 @@ li.current {
     color: #fff;
     position: absolute;
     top: 17%;
-    left: 20.7%;
+    left: 15%;
+    font-size: 3em;
 }
 
 .zoom {
@@ -106,17 +107,29 @@ li.current {
     .abajo{
         margin-top: 10%;
     }
+    .bienvenido{
+        top:5%;
+        left: 30%;
+    }
 }
 @media only screen and (max-width: 490px) {
     .cotizar{
         top:7%;
         left: 35%;
     }
+    .bienvenido{
+        top:5%;
+        left: 30%;
+    }
 }
 @media only screen and (max-width: 360px) {
     .cotizar{
         top:5%;
         left: 30%;
-        al
+    }
+    .bienvenido{
+        top:2.5%;
+        left: 1%;
+        font-size: 2em;
     }
 }
