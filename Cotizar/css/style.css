@@ -94,9 +94,16 @@ li.current {
 .menu1{
     margin-top: 25%;
 }
+.menu1{
+    margin-top: 35%;
+}
 @media only screen and (max-width: 992px) {
     .cotizar{
         top:15%;
+    }
+    .bienvenido{
+        top: 5%;
+        left: 2%;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -109,7 +116,14 @@ li.current {
     }
     .bienvenido{
         top:5%;
-        left: 30%;
+        left: 1%;
+    }
+}
+@media only screen and (max-width: 656px){
+    .bienvenido{
+        top:2.5%;
+        left: 5%;
+        font-size: 2em;
     }
 }
 @media only screen and (max-width: 490px) {
@@ -118,8 +132,9 @@ li.current {
         left: 35%;
     }
     .bienvenido{
-        top:5%;
-        left: 30%;
+        top:2.5%;
+        left: 1%;
+        font-size: 1.5em;
     }
 }
 @media only screen and (max-width: 360px) {
@@ -130,6 +145,6 @@ li.current {
     .bienvenido{
         top:2.5%;
         left: 1%;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 }
