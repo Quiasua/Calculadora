@@ -83,3 +83,32 @@ li.current {
     -o-transform: scale(1.3);
     /* Opera */
 }
+.menu1{
+    margin-top: 25%;
+}
+@media only screen and (max-width: 992px) {
+    .cotizar{
+        top:15%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .cotizar{
+        top:10%;
+        left: 38%;
+    }
+    .abajo{
+        margin-top: 10%;
+    }
+}
+@media only screen and (max-width: 490px) {
+    .cotizar{
+        top:7%;
+        left: 35%;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .cotizar{
+        top:5%;
+        left: 30%;
+    }
+}
