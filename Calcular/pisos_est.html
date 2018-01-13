@@ -14,7 +14,10 @@
     <script src="js/texto.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/operaciones.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="jqueryNumeric/jquery.numeric.js"></script>
     <title>Pisos estampados</title>
 </head>
 
@@ -90,7 +93,7 @@
                     <div class="form-group">
                         <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
                         <div class="col-sm-3">
-                            <input class="form-control" type="text">
+                            <input class="form-control decimal-2-places" type="text" id="metros"  maxlength="8" >
                         </div>
                     </div>
                 </form>
@@ -253,11 +256,11 @@
             </div>
             <div class="row" style="margin-bottom:100px;">
                 <div class="col-sm-3">
+                <!-- concrete color -->
                     <h4><b>Concrete Color Industrial</b></h4>
                 </div>
-    
                 <div class="col-sm-3">
-                    <select id="colores" class="selectpicker">
+                    <select id="colores" class="selectpicker" data-size="15" data-width="90%">
                     </select>
                 </div>
                 <div class="col-sm-1">
@@ -267,15 +270,18 @@
                     Dosificación de
                     <br>
                     <div class="panel panel-default">
-                        <div class="panel-body"></div>
+                        <div class="panel-body" id="resultado"></div>
                     </div>
                 </div>
                 <div class="col-sm-1">
                     <img class="flecha" src="iconos/flecha.png"></img>
                 </div>
-                <div class="col-sm-1" style="margin-top:-1.5%;">
+                <div class="col-sm-1" style="margin-top:-3%;">
                     Usted requiere
                     <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultado2"></div>
+                    </div>
                 </div>
                 <div class="col-sm-1" style="margin-top:-3%;">
                     <img class="concrete" src="imagenes/concrete_color.png" width="75" height="105"></img>
@@ -283,11 +289,12 @@
             </div>
             <div class="row" style="margin-bottom:100px;"> 
                 <div class="col-sm-3">
+                    <!-- desmol color -->
                     <h5><b>Desmol Concrete(Desmoldante en Polvo)</b></h5>
                 </div>
     
                 <div class="col-sm-3">
-                    <select id="colores2" class="selectpicker">
+                    <select id="coloresdosificacion" class="selectpicker" data-size="15" data-width="90%">
                     </select>
                 </div>
                 <div class="col-sm-1">
@@ -297,15 +304,21 @@
                     Dosificación de
                     <br>
                     <div class="panel panel-default">
-                        <div class="panel-body"></div>
+                        <div class="panel-body" id="resultadodesmol"></div>
                     </div>
                 </div>
                 <div class="col-sm-1">
                     <img class="flecha" src="iconos/flecha.png"></img>
                 </div>
-                <div class="col-sm-1" style="margin-top:-1.5%;">
+                <div class="col-sm-1" style="margin-top:-3%;">
                     Usted requiere
                     <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoDesmolResultado"></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoDesmolResultadototal"></div>
+                    </div>
                 </div>
                 <div class="col-sm-1" style="margin-top:-1.5%;">
                     <img class="concrete" src="imagenes/barril_cunete.png" width="60" height="80"></img>
@@ -313,6 +326,7 @@
             </div>
             <div class="row" style="margin-bottom:120px;">
                 <div class="col-sm-3">
+                    <!-- retar concrete -->
                     <h5><b>Retar Concrete(Retardante)</b></h5> 
                 </div>
     
@@ -323,7 +337,7 @@
                     Dosificación de
                     <br>
                     <div class="panel panel-default">
-                        <div class="panel-body"></div>
+                        <div class="panel-body" id="resultadoretardante"></div>
                     </div>
                 </div>
                 <div class="col-sm-1">
@@ -332,6 +346,9 @@
                 <div class="col-sm-2" style="margin-top:-1.5%;">
                     Usted requiere
                     <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoRetardantetotal"></div>
+                    </div>
                 </div>
                 <div class="col-sm-1" style="margin-top:-3%;">
                     <img class="concrete" src="imagenes/hidro.png" width="120" height="100"></img>
@@ -339,12 +356,15 @@
             </div>
             <div class="row" style="margin-bottom:100px;">
                 <div class="col-sm-2"style="margin-top:-0.5%;">
+                   <!-- sella concrete -->
                     <h4><b>Sella Concrete (Sellador)</b></h4> 
                 </div>
                 <div class="col-sm-2" style="margin-top:-3%;">
-                    <div class="caja">mate</div>
-                    <div class="caja">Lustre</div>
-                    <div class="caja">Semilustre</div>
+                    <div class="btn-group-vertical" id="datossellador" >
+                        <button type="button" class="btn btn-primary" id="valorSellamate" name="sellador1" value="0.25">Mate</button>
+                           <button type="button" class="btn btn-primary" id="valorSellalustre" name="sellador2" value="0.25">Lustre</button>
+                        <button type="button" class="btn btn-primary" id="valorSellasemilustre" name="sellador3" value="0.25">Semilustre</button>
+                    </div>
                 </div>
                 <div class="col-sm-1">
                     <img class="flecha" src="iconos/flecha.png"></img>
@@ -353,7 +373,7 @@
                     Dosificación de
                     <br>
                     <div class="panel panel-default">
-                        <div class="panel-body"></div>
+                        <div class="panel-body" id="resultadoSella"></div>
                     </div>
                 </div>
     
@@ -363,6 +383,12 @@
                 <div class="col-sm-2 col-xs-12" style="margin-top:-1.5%;">
                     Usted requiere
                     <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoSellacontre"></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoSellatotal"></div>
+                    </div>
                 </div>
                 <div class="col-sm-1" style="margin-top:-2%;">
                     <img class="concrete" src="imagenes/barril_mant.png" width="50" height="80"></img>
@@ -377,7 +403,7 @@
                     <br>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="optradio">
+                            <input type="radio" name="optradio"  id="valor1" value="3.5">
                             <div class="panel panel-default">
                                 <div class="panel-body">Andenes,aceras, accesos a centros comerciales, parques, plazoletas, zonas comunes en urbanizaciones,
                                     terrazas, centros comerciales, almacenes, clubes, placas entre pisos, centros recreacionales,
@@ -386,14 +412,14 @@
                         </label>
                         <br>
                         <label>
-                            <input type="radio" name="optradio">
+                            <input type="radio" name="optradio" id="valor2" value="4.5">
                             <div class="panel panel-default">
                                 <div class="panel-body">Estacionamientos, elementos prefabricados. todo tipo de viabilidad con tráfico liviano a
                                 mopderado sin pendientes.</div>
                             </div>
                         </label>
                         <label>
-                            <input type="radio" name="optradio">
+                            <input type="radio" name="optradio" id="valor3" value="5.6">
                             <div class="panel panel-default">
                                 <div class="panel-body">Concreto proyectado, pisos industriales.</div>
                             </div>
@@ -408,7 +434,7 @@
                     Espesor (Cm)
                     <br>
                     <div class="panel panel-default">
-                        <div class="panel-body"></div>
+                        <input type="text" id="centimetros" class="form-control decimal-2-places" maxlength="4">
                     </div>
                 </div>
     
@@ -418,10 +444,14 @@
                 <div class="col-sm-2" style="margin-top:-2%;">
                     Usted requiere
                     <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoFibracontre"></div>
+                    </div>
                 </div>
             </div>
     </div>
 </body>
+
 <script>
         $(".image-checkbox").each(function () {
           if ($(this).find('input[type="checkbox"]').first().attr("checked")) {

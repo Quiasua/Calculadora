@@ -15,6 +15,9 @@
   <script src="js/jquery-ui.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+  <script src="js/operaciones.js"></script>
+ <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="jqueryNumeric/jquery.numeric.js"></script>
   <title>Mantenimiento</title>
 </head>
 
@@ -65,6 +68,13 @@
                         </div>
                     </a>
                 </li>
+                <li >
+                        <a href="../index.html" class="icon6">
+                         <img src="iconos/casa.png" class="img-circle"> 
+                         <div class='textooculto6'> Regresar    
+                         </div> 
+                         </a>                   
+                </li> 
             </ul>
         </div>
     </div>
@@ -88,7 +98,7 @@
           <div class="form-group">
             <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
             <div class="col-sm-3">
-              <input class="form-control" type="text">
+            <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8" >
             </div>
           </div>
         </form>
@@ -98,38 +108,48 @@
     <!--fin Espacio para ingresar los metros-->
     <br>
     <br>
-    <br>
-    <br>
     <div class="row" style="margin-bottom:100px;">
-        <div class="col-sm-2">
-            <h4><b>Sella concrete de color</b></h4> 
-        </div>
-        <div class="col-sm-3">
-            <select id="colores" class="selectpicker" >       
-              </select>
-        </div>
-        <div class="col-sm-1">
-            <img class="flecha" src="iconos/flecha.png"></img>
-        </div> 
-        <div class="col-sm-2" style="margin-top:-1.5%;">
-          Dosificación de <br> 
-          <div class="panel panel-default">
-              <div class="panel-body"></div>
-          </div>
-        </div>
-        <div class="col-sm-1">
-            <img class="flecha" src="iconos/flecha.png"></img>
-        </div> 
-        <div class="col-sm-2" style="margin-top:-1.5%;">
-            Usted requiere <br> 
-        </div> 
-        <div class="col-sm-1" style="margin-top:-1.5%;">
-            <img src="imagenes/barril_mant.png" width="50" height="80"></img>
-        </div>  
-       
+            <div class="col-sm-2">
+                <h4>
+                    <b>Sella concrete de color</b>
+                </h4>
+            </div>
+            <div class="col-sm-3">
+                <select id="coloresdosificacion" class="selectpicker"  data-size="15" data-width="90%">
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <img class="flecha" src="iconos/flecha.png"></img>
+            </div>
+            <div class="col-sm-2" style="margin-top:-1.5%;">
+                Dosificación de
+                <br>
+                <div class="panel panel-default">
+                        <div class="panel-body" id="resultadodesmol"></div>
+                    </div>
+            </div>
+            <div class="col-sm-1">
+                <img class="flecha" src="iconos/flecha.png"></img>
+            </div>
+            <div class="col-sm-2" style="margin-top:-1.5%;">
+                Usted requiere
+                <br>
+                <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoDesmolResultado"></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoDesmolResultadototal"></div>
+                    </div>
+            </div>
+            <div class="col-sm-1" style="margin-top:-1.5%;">
+                <img src="imagenes/barril_mant.png" width="50" height="80"></img>
+            </div>
+
     </div>
 
-    <h4 style="margin-bottom:100px;"><b>Limpiador final</b></h4> 
+        <h4 style="margin-bottom:100px;">
+            <b>Limpiador final</b>
+        </h4>
 
     <div class="row" style="margin-bottom:100px;">
         <div class="col-sm-2">
@@ -139,10 +159,10 @@
             <table>
                 <tr>
                     <td>
-                        Herramienta
+                        <p>Herramienta</p>
                     </td>
                     <td>
-                        Cantidad
+                        <p>Cantidad</p>
                     </td>
                 </tr>
                 <tr>
@@ -150,7 +170,7 @@
                         Rastrillo para extender concreto
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -158,7 +178,7 @@
                         Rastrillo texturizador de concreto
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -166,7 +186,7 @@
                         Llana Metálica
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -174,7 +194,7 @@
                         Llana de Magnesio
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -182,7 +202,7 @@
                         Llana Redondeada
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -190,7 +210,7 @@
                         Orillador
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -198,7 +218,7 @@
                         Pines
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -206,7 +226,7 @@
                         Cabezote
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -214,7 +234,7 @@
                         Tubo de Flota Madona o BIG-BLUE
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -222,7 +242,7 @@
                         Baja Grava
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -230,7 +250,7 @@
                         Pison para Estampar
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
                 <tr>
@@ -238,7 +258,7 @@
                         Flota Madona o BIG-BLUE
                     </td>
                     <td>
-                        <input type="text">
+                        <input class="form-control positive-integer" type="text" maxlength="3">
                     </td>
                 </tr>
             </table>
@@ -284,7 +304,7 @@
                             <span class="glyphicon glyphicon-earphone" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
                         </span>
                         <div class="col-md-8">
-                            <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control">
+                            <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control positive-integer" maxlength="11">
                         </div>
                     </div>
                     <div class="form-group">
@@ -314,21 +334,4 @@
 
 </body>
 
-<script>
-    $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColores', function(data) {
-        var html = '';
-        var html2 = '';
-        var len = data.length;
-        for (var i = 0; i < len; i++) {
-            html += '<li data-original-index=' + [i] + '><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombreColor + '  ' + data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
-            html2 += '<option data-content="' + '"<span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombreColor + '  ' + data[i].especificacion + '</option>';
-        }
-        console.log(colores);
-
-        $('.dropdown-menu.inner').append(html);
-        $('#colores').append(html2);
-
-
-    });
-</script>
 </html>

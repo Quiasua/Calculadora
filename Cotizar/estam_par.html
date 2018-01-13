@@ -14,34 +14,12 @@
   <script src="js/texto.js"></script>
   <script src="js/jquery-ui.js"></script>
   <script src="js/bootstrap.min.js"></script>
+   <script src="js/operaciones.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+    <script src="jqueryNumeric/jquery.numeric.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
   <title>Estampados pared</title>
 </head>
-<script>
-  $(document).ready(function () {
-    $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColores', function (data) {
-      var html = '';
-      var html2 = '';
-      var len = data.length;
-      for (var i = 0; i < len; i++) {
-        html += '<li data-original-index=' + [i] +
-          '><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' +
-          data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombreColor + '  ' +
-          data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
-        html2 += '<option data-content="' + '"<span class="label ' + data[i].especificacion +
-          '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombreColor + '  ' + data[i].especificacion +
-          '</option>';
-      }
-      console.log(colores);
-
-      $('.dropdown-menu.inner').append(html);
-      $('#colores').append(html2);
-
-
-    });
-  });
-</script>
-
 <body>
   <div id="header-est">
     <!-- inicio /div de menu desplegable  -->
@@ -89,6 +67,13 @@
             </div>
           </a>
         </li>
+        <li >
+            <a href="../index.html" class="icon6">
+             <img src="iconos/casa.png" class="img-circle"> 
+             <div class='textooculto6'> Regresar    
+             </div> 
+             </a>                   
+          </li> 
       </ul>
     </div>
   </div>
@@ -114,7 +99,7 @@
           <div class="form-group">
             <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
             <div class="col-sm-3">
-              <input class="form-control" type="text">
+              <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8" >
             </div>
           </div>
         </form>
@@ -170,6 +155,7 @@
     <!--Final apartado moldes-->
     <div class="Respuesta" style="margin-bottom:100px;">
     </div>
+    
     <div class="row" style="margin-bottom:100px;">
       <div class="col-sm-2" style="margin-top:-1%;">
         <h4>
@@ -178,7 +164,7 @@
       </div>
 
       <div class="col-sm-3">
-        <select id="colores" class="selectpicker">
+        <select id="colores" class="selectpicker" data-size="15" data-width="90%">
         </select>
       </div>
       <div class="col-sm-1">
@@ -188,7 +174,7 @@
         Dosificación de
         <br>
         <div class="panel panel-default">
-          <div class="panel-body"></div>
+            <div class="panel-body" id="resultado"></div>
         </div>
       </div>
       <div class="col-sm-1">
@@ -197,6 +183,9 @@
       <div class="col-sm-1" style="margin-top:-1.5%;">
         Usted requiere
         <br>
+        <div class="panel panel-default">
+            <div class="panel-body" id="resultado2"></div>
+        </div>
       </div>
       <div class="col-sm-1" style="margin-top:-1.5%;">
         <img class="concrete" src="imagenes/revestimiento.png" width="120" height="100"></img>
@@ -215,7 +204,7 @@
         Dosificación de
         <br>
         <div class="panel panel-default">
-          <div class="panel-body"></div>
+            <div class="panel-body" id="resultadoretardante"></div>
         </div>
       </div>
       <div class="col-sm-1">
@@ -224,6 +213,9 @@
       <div class="col-sm-2" style="margin-top:-1.5%;">
         Usted requiere
         <br>
+        <div class="panel panel-default">
+            <div class="panel-body" id="resultadoRetardantetotal"></div>
+        </div>
       </div>
       <div class="col-sm-1" style="margin-top:-1.5%;">
         <img class="concrete" src="imagenes/desmol.png" width="150" height="80"></img>
@@ -243,7 +235,7 @@
         Dosificación de
         <br>
         <div class="panel panel-default">
-          <div class="panel-body"></div>
+            <div class="panel-body" id="resultadoretardante"></div>
         </div>
       </div>
       <div class="col-sm-1">
@@ -252,14 +244,17 @@
       <div class="col-sm-2" style="margin-top:-1.5%;">
         Usted requiere
         <br>
+        <div class="panel panel-default">
+            <div class="panel-body" id="resultadoRetardantetotal"></div>
+        </div>
       </div>
       <div class="col-sm-1">
         <img class="concrete" src="imagenes/hidro.png" width="150" height="80"></img>
       </div>
-
-    </div>
+    </div>  
     <div class="row" style="margin-bottom:100px;">
       <div class="col-sm-2">
+         
         <h4>
           <b>Herramientas</b>
         </h4>
@@ -280,7 +275,7 @@
               Llana Metálica
             </td>
             <td>
-              <input type="text">
+              <input class="form-control positive-integer" type="text" maxlength="3">
             </td>
           </tr>
         </table>
@@ -326,7 +321,7 @@
                 <span class="glyphicon glyphicon-earphone" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
               </span>
               <div class="col-md-8">
-                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control">
+                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control positive-integer" maxlength="11">
               </div>
             </div>
             <div class="form-group">

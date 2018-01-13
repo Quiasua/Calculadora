@@ -14,39 +14,13 @@
     <script src="js/texto.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/operaciones.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="jqueryNumeric/jquery.numeric.js"></script>
     <title>Pisos estampados</title>
 </head>
-<script async="async">
-        $(document).ready(function(){
-            $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColores', function (data) {
-                var html = '';
-                var html2 = '';
-                var len = data.length;
-                for (var i = 0; i < len; i++) {
-                    html += '<li data-original-index=' + [i] + '><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombreColor + '  ' + data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
-                    html2 += '<option data-content="' + '"<span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombreColor + '  ' + data[i].especificacion + '</option>';
-                }
-                console.log(colores);
-            
-                $('.dropdown-menu.inner').append(html);
-                $('#colores').append(html2);      
-            });
-            $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColores', function(data) {
-                var html = '';
-                var html2 = '';
-                var len = data.length;
-                for (var i = 0; i < len; i++) {
-                    html += '<li data-original-index=' + [i] + '><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombreColor + '  ' + data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
-                    html2 += '<option data-content="' + '"<span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombreColor + '  ' + data[i].especificacion + '</option>';
-                }
 
-                $('.dropdown-menu.inner').append(html);
-                $('#colores2').append(html2);
-            });
-        });
-        
-      </script>
 <body>
     <div class="loader"></div>
     <div id="header-est">
@@ -95,6 +69,13 @@
                         </div>
                     </a>
                 </li>
+                <li >
+                        <a href="../index.html" class="icon6">
+                         <img src="iconos/casa.png" class="img-circle"> 
+                         <div class='textooculto6'> Regresar    
+                         </div> 
+                         </a>                   
+                </li> 
             </ul>
         </div>
     </div>
@@ -120,7 +101,7 @@
                     <div class="form-group">
                         <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
                         <div class="col-sm-3">
-                            <input class="form-control" type="text">
+                    <input class="form-control decimal-2-places" type="text" id="metros"  maxlength="8" >
                         </div>
                     </div>
                 </form>
@@ -283,174 +264,313 @@
             
         </div>
         <div class="row" style="margin-bottom:100px;">
-            <div class="col-sm-3">
-                <h4><b>Concrete Color Industrial</b></h4>
-            </div>
-
-            <div class="col-sm-3">
-                <select id="colores" class="selectpicker">
-                </select>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Dosificación de
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body"></div>
+                <div class="col-sm-3">
+                <!-- concrete color -->
+                    <h4><b>Concrete Color Industrial</b></h4>
                 </div>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-1" style="margin-top:-1.5%;">
-                Usted requiere
-                <br>
-            </div>
-            <div class="col-sm-1" style="margin-top:-3%;">
-                <img class="concrete" src="imagenes/concrete_color.png" width="75" height="105"></img>
-            </div>
+                <div class="col-sm-3">
+                    <select id="colores" class="selectpicker" data-size="15" data-width="90%">
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Dosificación de
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultado"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-1" style="margin-top:-3%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultado2"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top:-3%;">
+                    <img class="concrete" src="imagenes/concrete_color.png" width="75" height="105"></img>
+                </div>
         </div>
         <div class="row" style="margin-bottom:100px;"> 
-            <div class="col-sm-3">
-                <h5><b>Desmol Concrete(Desmoldante en Polvo)</b></h5>
-            </div>
-
-            <div class="col-sm-3">
-                <select id="colores2" class="selectpicker">
-                </select>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Dosificación de
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body"></div>
+                <div class="col-sm-3">
+                    <!-- desmol color -->
+                    <h5><b>Desmol Concrete(Desmoldante en Polvo)</b></h5>
                 </div>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-1" style="margin-top:-1.5%;">
-                Usted requiere
-                <br>
-            </div>
-            <div class="col-sm-1" style="margin-top:-1.5%;">
-                <img class="concrete" src="imagenes/barril_cunete.png" width="60" height="80"></img>
-            </div>
+    
+                <div class="col-sm-3">
+                    <select id="coloresdosificacion" class="selectpicker" data-size="15" data-width="90%">
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Dosificación de
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadodesmol"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-1" style="margin-top:-3%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoDesmolResultado"></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoDesmolResultadototal"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top:-1.5%;">
+                    <img class="concrete" src="imagenes/barril_cunete.png" width="60" height="80"></img>
+                </div>
         </div>
         <div class="row" style="margin-bottom:120px;">
-            <div class="col-sm-3">
-                <h5><b>Retar Concrete(Retardante)</b></h5> 
-            </div>
-
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Dosificación de
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body"></div>
+                <div class="col-sm-3">
+                    <!-- retar concrete -->
+                    <h5><b>Retar Concrete(Retardante)</b></h5> 
                 </div>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Usted requiere
-                <br>
-            </div>
-            <div class="col-sm-1" style="margin-top:-3%;">
-                <img class="concrete" src="imagenes/hidro.png" width="120" height="100"></img>
-            </div>
-        </div>
-        <div class="row" style="margin-bottom:100px;">
-            <div class="col-sm-2"style="margin-top:-0.5%;">
-                <h4><b>Sella Concrete (Sellador)</b></h4> 
-            </div>
-            <div class="col-sm-2" style="margin-top:-3%;">
-                <div class="caja">mate</div>
-                <div class="caja">Lustre</div>
-                <div class="caja">Semilustre</div>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Dosificación de
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body"></div>
+    
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
                 </div>
-            </div>
-
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2 col-xs-12" style="margin-top:-1.5%;">
-                Usted requiere
-                <br>
-            </div>
-            <div class="col-sm-1" style="margin-top:-2%;">
-                <img class="concrete" src="imagenes/barril_mant.png" width="50" height="80"></img>
-            </div>
-        </div>
-        <div class="row" style="margin-bottom:100px;">
-            <div class="col-sm-2">
-                <h4><b>Fibra Concrete</b></h4> 
-            </div>
-            <div class="col-sm-4">
-                ¿Qué uso le va a dar a la fibra?
-                <br>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optradio">
-                        <div class="panel panel-default">
-                            <div class="panel-body">Andenes,aceras, accesos a centros comerciales, parques, plazoletas, zonas comunes en urbanizaciones,
-                                terrazas, centros comerciales, almacenes, clubes, placas entre pisos, centros recreacionales,
-                            losas de viviendas de paredes livianas o de bloque.</div>
-                        </div>
-                    </label>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Dosificación de
                     <br>
-                    <label>
-                        <input type="radio" name="optradio">
-                        <div class="panel panel-default">
-                            <div class="panel-body">Estacionamientos, elementos prefabricados. todo tipo de viabilidad con tráfico liviano a
-                            mopderado sin pendientes.</div>
-                        </div>
-                    </label>
-                    <label>
-                        <input type="radio" name="optradio">
-                        <div class="panel panel-default">
-                            <div class="panel-body">Concreto proyectado, pisos industriales.</div>
-                        </div>
-                    </label>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoretardante"></div>
+                    </div>
                 </div>
-
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Espesor (Cm)
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body"></div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoRetardantetotal"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top:-3%;">
+                    <img class="concrete" src="imagenes/hidro.png" width="120" height="100"></img>
                 </div>
             </div>
-
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-2%;">
-                Usted requiere
-                <br>
-            </div>
+            <div class="row" style="margin-bottom:100px;">
+                <div class="col-sm-2"style="margin-top:-0.5%;">
+                   <!-- sella concrete -->
+                    <h4><b>Sella Concrete (Sellador)</b></h4> 
+                </div>
+                <div class="col-sm-2" style="margin-top:-3%;">
+                    <div class="btn-group-vertical" id="datossellador" >
+                        <button type="button" class="btn btn-primary" id="valorSellamate" name="sellador1" value="0.25">Mate</button>
+                           <button type="button" class="btn btn-primary" id="valorSellalustre" name="sellador2" value="0.25">Lustre</button>
+                        <button type="button" class="btn btn-primary" id="valorSellasemilustre" name="sellador3" value="0.25">Semilustre</button>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Dosificación de
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoSella"></div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2 col-xs-12" style="margin-top:-1.5%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoSellacontre"></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoSellatotal"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top:-2%;">
+                    <img class="concrete" src="imagenes/barril_mant.png" width="50" height="80"></img>
+                </div>
         </div>
+        <div class="row" style="margin-bottom:50px;">
+                <div class="col-sm-2">
+                    <h4><b>Fibra Concrete</b></h4> 
+                </div>
+                <div class="col-sm-4">
+                    ¿Qué uso le va a dar a la fibra?
+                    <br>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optradio"  id="valor1" value="3.5">
+                            <div class="panel panel-default">
+                                <div class="panel-body">Andenes,aceras, accesos a centros comerciales, parques, plazoletas, zonas comunes en urbanizaciones,
+                                    terrazas, centros comerciales, almacenes, clubes, placas entre pisos, centros recreacionales,
+                                losas de viviendas de paredes livianas o de bloque.</div>
+                            </div>
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="optradio" id="valor2" value="4.5">
+                            <div class="panel panel-default">
+                                <div class="panel-body">Estacionamientos, elementos prefabricados. todo tipo de viabilidad con tráfico liviano a
+                                mopderado sin pendientes.</div>
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="optradio" id="valor3" value="5.6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">Concreto proyectado, pisos industriales.</div>
+                            </div>
+                        </label>
+                    </div>
+    
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Espesor (Cm)
+                    <br>
+                    <div class="panel panel-default">
+                        <input type="text" id="centimetros" class="form-control decimal-2-places" maxlength="4">
+                    </div>
+                </div>
+    
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-2%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoFibracontre"></div>
+                    </div>
+                </div>
+        </div>
+       <div class="row" style="margin-bottom:100px;">
+        <div class="col-sm-2">
+            <h4><b>Herramientas</b></h4> 
+        </div>
+        <div class="col-sm-5">
+            <table>
+                <tr>
+                    <td>
+                        <p>Herramienta</p>
+                    </td>
+                    <td>
+                        <p>Cantidad</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Rastrillo para extender concreto
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Rastrillo texturizador de concreto
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Llana Metálica
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Llana de Magnesio
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Llana Redondeada
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Orillador
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Pines
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Cabezote
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Tubo de Flota Madona o BIG-BLUE
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Baja Grava
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Pison para Estampar
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="caja">
+                        Flota Madona o BIG-BLUE
+                    </td>
+                    <td>
+                        <input class="form-control positive-integer" type="text" maxlength="3">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
         <div class="row" style="margin-bottom:50px;">
             <div class="col-md-12">
                 <form class="form-horizontal" method="post">
@@ -489,7 +609,7 @@
                           <span class="glyphicon glyphicon-earphone" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
                         </span>
                         <div class="col-md-8">
-                          <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control">
+                          <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control positive-integer" maxlength="11">
                         </div>
                       </div>
                       <div class="form-group">

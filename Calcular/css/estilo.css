@@ -34,6 +34,7 @@
   .social ul li .icon3{background:#265ef8 }
   .social ul li .icon4{background:#265ef8 }
   .social ul li .icon5{background:#265ef8 }
+  .social ul li .icon6{background:#265ef8 }
 
   .social ul li a:hover{
     background:#183891;
@@ -60,5 +61,8 @@
   .textooculto5{
     float: right;
     margin-left: 15px;
+  }
+  .textooculto6{
+    float: right;    
   }
     
