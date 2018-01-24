@@ -99,9 +99,12 @@
             <div class="col-sm-6">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
+                        <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
                         <div class="col-sm-3">
-                            <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8">
+                            <input class="form-control decimal-2-places" type="text" id="metros">
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-info" id="demo">Calcular</button>
                         </div>
                     </div>
                 </form>
@@ -109,595 +112,1299 @@
             <div class="col-sm-3"></div>
         </div>
         <!--fin Espacio para ingresar los metros-->
+        <!--alerta inicial-->
+        <div id="alerta" style="display:none;">
+            <div class="alert alert-danger">
+                <strong>El campo esta vacío</strong>
+            </div>
+        </div>
+        <div id="ventana" style="display:none;">
+            <div class="moldes">
+                <!--Apartado de moldes-->
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h4>Moldes para estampar: </h4>
+                    </div>
+                    <div class="col-sm-9">
+                        Descargue aqui la modulación de su molde
+                        <br>
+                        <br>
+                        <button type="button" class="btn molde1" data-toggle="modal" data-target="#myModal">Moldes Tradicionales</button>
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
 
-        <div class="moldes">
-            <!--Apartado de moldes-->
-            <div class="row">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">
+                                            <b>Moldes Tradicionales</b>
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-01-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-01 LAJA REGULAR ACOMODADA 60,5CM X 60,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-01 LAJA
+                                                        <br> REGULAR ACOMODADA
+                                                        <br> 60,5CM X 60,5CM</p>
+                                                    </img>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-02-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-02 PIEDRA COMBINADA 90,5CM X 90,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-02
+                                                        <br>PIEDRA COMBINADA
+                                                        <br>90,5CM X 90,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-03-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-03 LAJA ROMAN 60,5CM X 60,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-03
+                                                        <br>LAJA ROMAN
+                                                        <br> 60,5CM X 60,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-04-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-04 LAJA PASEO 90,2CM X 45,2CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-04
+                                                        <br>LAJA PASEO
+                                                        <br> 90,2CM X 45,2CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-05-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-05 CANTERA RESAQUE 58,7CM X 58,7CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-05
+                                                        <br>CANTERA RESAQUE
+                                                        <br>58,7CM X 58,7CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-06-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-06 PIZARRA BASALTO 60,5CM X 60,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-06
+                                                        <br>PIZARRA BASALTO
+                                                        <br>60,5CM X 60,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-07-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-07 ABANICO EUROPEO 109,3CM X 61,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-07
+                                                        <br>ABANICO EUROPEO
+                                                        <br>109,3CM X 61,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-08-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-08 ADOQUIN CANASTILLA 83CM X 41,6CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-08
+                                                        <br>ADOQUIN CANASTILLA
+                                                        <br>83CM X 41,6CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-09-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-09 ADOQUIN CORRIDO CON TEXTURA 91CM X 43,2CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-09
+                                                        <br>ADOQUIN CORRIDO
+                                                        <br> CON TEXTURA
+                                                        <br> 91CM X 43,2CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-10-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="ADOQUIN ESPINA DE PESCADO 90CM X 66,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-10
+                                                        <br>ADOQUIN ESPINA
+                                                        <br> DE PESCADO
+                                                        <br> 90CM X 66,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-11-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="ADOQUIN RUSTICO 73,2CM X 59,6CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-11
+                                                        <br>ADOQUIN RUSTICO
+                                                        <br>73,2CM X 59,6CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-12-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-12 ADOQUIN CARTAGENA 73,7CM X 29CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-12
+                                                        <br>ADOQUIN CARTAGENA
+                                                        <br>73,7CM X 29CM </p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-13-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-13 PIEDRA PEGADA JUNTA GRUESA 74,8CM X 74,8CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-13
+                                                        <br>PIEDRA PEGADA
+                                                        <br> JUNTA GRUESA
+                                                        <br> 74,8CM X 74,8CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-14-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-14 PIEDRA PEGADA JUNTA DELGADA 74,4CM X 74,4CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-14
+                                                        <br>PIEDRA PEGADA
+                                                        <br> JUNTA DELGADA
+                                                        <br> 74,4CM X 74,4CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-15-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-15 PIEDRA BARICHARA (15CM X 15CM) 71,7CM X 63,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-15
+                                                        <br>PIEDRA BARICHARA
+                                                        <br> (15CM X 15CM)
+                                                        <br> 71,7CM X 63,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-16-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-16 IEDRA SUIZA 90CM X 69,7CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-16
+                                                        <br>PIEDRA SUIZA
+                                                        <br> 90CM X 69,7CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-17-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="PIEDRA DE RIO 79,4CM X 79,4CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-17
+                                                        <br>PIEDRA DE RIO
+                                                        <br> 79,4CM X 79,4CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-18-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-18 MADERA LARGA 195,7CM X 31,1CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-18
+                                                        <br>MADERA LARGA
+                                                        <br> 195,7CM X 31,1CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-19-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-19 MADERA RISOME 79,5CM X 59,4CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-19
+                                                        <br>MADERA RISOME
+                                                        <br> 79,5CM X 59,4CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-20-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-20 HOJA EN PIEDRA LAJA 74,5CM X 74,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-20
+                                                        <br>HOJA EN PIEDRA
+                                                        <br> LAJA 74,5CM X 74,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-21-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-21 LAJA NATURAL 4P 60,6CM X 60,6CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-21
+                                                        <br>LAJA NATURAL 4P
+                                                        <br> 60,6CM X 60,6CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-22-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-22 LAJA NATURAL 3P 60,6CM X 60,6CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-22
+                                                        <br>LAJA NATURAL 3P
+                                                        <br>60,6CM X 60,6CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-23-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-23 PIEDRA PEGADA TIPO LAJA 74,5CM X 74,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-23
+                                                        <br>PIEDRA PEGADA
+                                                        <br> TIPO LAJA
+                                                        <br> 74,5CM X 74,5CM </p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-24-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-24 ADOQUIN CORRIDO (20CM X 20CM) 89,4CM X 79,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-24
+                                                        <br>ADOQUIN CORRIDO
+                                                        <br> (20CM X 20CM)
+                                                        <br> 89,4CM X 79,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-25-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-25 ADOQUIN CORRIDO CANDELARIA (10X10) 68,4CM X 62,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-25
+                                                        <br>ADOQUIN CORRIDO
+                                                        <br> CANDELARIA (10X10)
+                                                        <br> 68,4CM X 62,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-26-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-26 ADOQUIN ESPECIAL CANDELARIA (26CMX26CM) 92,3CM X 38,8CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-26
+                                                        <br>ADOQUIN ESPECIAL
+                                                        <br> CANDELARIA (26CMX26CM)
+                                                        <br> 92,3CM X 38,8CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-27-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-27 ADOQUIN PIEDRA 75,6CM X 43CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-27
+                                                        <br>ADOQUIN PIEDRA
+                                                        <br> 75,6CM X 43CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-28-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-28 TIERRA SECA 90,5CM X 90,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-28
+                                                        <br>TIERRA SECA
+                                                        <br> 90,5CM X 90,5CM </p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-29-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-29 ARENA DEL DESIERTO 90,1CM X 90CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-29
+                                                        <br>ARENA DEL DESIERTO
+                                                        <br> 90,1CM X 90CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-30-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-30 PIEDRA MUÑECA 93CM X 93CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-30
+                                                        <br>PIEDRA MUÑECA
+                                                        <br> 93CM X 93CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-31-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-31 PIEDRA PEGADA TIPO ASPERON 91CM X 91CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-31
+                                                        <br>PIEDRA PEGADA
+                                                        <br>TIPO ASPERON
+                                                        <br> 91CM X 91CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-32-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-32 PIEDRA PEGADA TIPO SANTA FE 106CM X 106CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-32
+                                                        <br>PIEDRA PEGADA
+                                                        <br>TIPO SANTA FE
+                                                        <br> 106CM X 106CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-33-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-33 MANTA TIPO LAJA 93CM X 93CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-33
+                                                        <br>MANTA TIPO LAJA
+                                                        <br> 93CM X 93CM </p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-34-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-34 MANTA TIPO PIZARRA 93CM X 93CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-34
+                                                        <br>MANTA TIPO PIZARRA
+                                                        <br> 93CM X 93CM </p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-35-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-35 ADOQUIN CUADRADO (20CMX20CM) 80,2CM X 80,2CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-35
+                                                        <br>ADOQUIN CUADRADO
+                                                        <br> (20CMX20CM)
+                                                        <br> 80,2CM X 80,2CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-36-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-36 ADOQUIN CUADRADO (20CMX20CM) CON ENCAJE 100CM X 80,2CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-36
+                                                        <br>ADOQUIN CUADRADO
+                                                        <br>(20CMX20CM)
+                                                        <br> CON ENCAJE
+                                                        <br> 100CM X 80,2CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-37-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-37 ADOQUIN CORRIDO ESPECIAL 42,8CM X 86,1CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-37
+                                                        <br>ADOQUIN CORRIDO ESPECIAL
+                                                        <br> 42,8CM X 86,1CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-38-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-38 LAJA NATURAL 5P 60,1CM X 60,1CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-38
+                                                        <br>LAJA NATURAL 5P
+                                                        <br> 60,1CM X 60,1CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-39-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-39 ROMPECABEZAS 80CM X 80CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-39
+                                                        <br>ROMPECABEZAS
+                                                        <br> 80CM X 80CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-40-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-40 ADOQUIN (40CMX20CM) SIN TRABA 120,3CM X 80,1CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-40
+                                                        <br>ADOQUIN (40CMX20CM)
+                                                        <br> SIN TRABA
+                                                        <br> 120,3CM X 80,1CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-41-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-41 BALDOSA (45CMX45CM) 90CM X 45CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-41
+                                                        <br>BALDOSA (45CMX45CM)
+                                                        <br> 90CM X 45CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-42-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-42 MADERA DECK 90.1CM X 30.1CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-42
+                                                        <br>MADERA DECK
+                                                        <br> 90.1CM X 30.1CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-43-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-43 MADERA DECK 179.6CM X 30.2CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-43
+                                                        <br>MADERA DECK
+                                                        <br> 179.6CM X 30.2CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-44-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-44 PIEDRA COMBINADA HISPANIA 130CM X 75CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-44
+                                                        <br>PIEDRA COMBINADA
+                                                        <br> HISPANIA
+                                                        <br> 130CM X 75CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-45-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-45 >ROSETA (20CM X 20CM) 104CM X 62,4CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-45
+                                                        <br>ROSETA (20CM X 20CM)
+                                                        <br> 104CM X 62,4CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-46-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-46 ABANICO CIRCUNFERENCIA 59,5CM X 59,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-46
+                                                        <br>ABANICO CIRCUNFERENCIA
+                                                        <br> 59,5CM X 59,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-47-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-47 ADOQUIN CORRIDO 3,1MTS X 1,07MTS">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-47
+                                                        <br>ADOQUIN CORRIDO
+                                                        <br> 3,1MTS X 1,07MTS</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-48-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-48 CUATRO P (30,1X30,1) 90,2CM X 90,2CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-48
+                                                        <br>CUATRO P (30,1X30,1)
+                                                        <br> 90,2CM X 90,2CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-49-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="val49">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes"></p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-50-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-50 ADOQUÍN CORRIDO (40CM X 20CM) 102,6CM X 8,.3CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-50
+                                                        <br>ADOQUÍN CORRIDO
+                                                        <br> (40CM X 20CM) 102,6CM X 8,.3CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-51-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-51 ABANICO EUROPEO OLD CITY 119CM X 66,5CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-51
+                                                        <br>ABANICO EUROPEO
+                                                        <br> OLD CITY
+                                                        <br> 119CM X 66,5CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-52-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-52 ADOQUÍN CORRIDO LISO 91CM X 43,2CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-52
+                                                        <br>ADOQUÍN CORRIDO
+                                                        <br> LISO
+                                                        <br> 91CM X 43,2CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-53-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-53 LAJA NATURAL 6P 61,7CM X 61,7CM">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-53
+                                                        <br>LAJA NATURAL 6P
+                                                        <br> 61,7CM X 61,7CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-5 col-md-4 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MT/MT-54-min.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MT-54 ADOQUÍN ESPINA DE PESCADO 3MTS X 1MT APROX">
+                                                    </img>
+                                                    <br>
+                                                    <p class="nombreMoldes">MOLDE MT-54
+                                                        <br>ADOQUÍN ESPINA
+                                                        <br> DE PESCADO
+                                                        <br> 3MTS X 1MT APROX</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--fin moldes tradicionales-->
+                        <button type="button" class="btn molde2" data-toggle="modal" data-target="#myModal2">Moldes Cenefa</button>
+                        <div class="modal fade" id="myModal2">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">
+                                            <b>Moldes Cenefa</b>
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MC/MC-01.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MC-01 CENEFA ADOQUIN LISO (9,7X20) 21,2CM X 114,7CM">
+                                                    <br>
+                                                    <p class="">MOLDE MC-01 CENEFA ADOQUIN LISO (9,7X20) 21,2CM X 114,7CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MC/MC-02.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MC-02 CENEFA PIEDRA CAMEL 19,7CM X 103,3CM">
+                                                    <br>
+                                                    <p class="">MOLDE MC-02 CENEFA PIEDRA CAMEL 19,7CM X 103,3CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MC/MC-03.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MC-03 CENEGA GRANO DE CAFÉ 100,2CM X 10,3CM">
+                                                    <br>
+                                                    <p class="">MOLDE MC-03 CENEGA GRANO DE CAFÉ 100,2CM X 10,3CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MC/MC-04.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MC-04 CENEFA LINEA TEXTURIZADO 90,9CM X 43,9CM">
+                                                    <br>
+                                                    <p class="">MOLDE MC-04 CENEFA LINEA TEXTURIZADO 90,9CM X 43,9CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MC/MC-05.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MC-05 CENEFA MAYA 108,8CM X 26,3CM">
+                                                    <br>
+                                                    <p class="">MOLDE MC-05 CENEFA MAYA 108,8CM X 26,3CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_MC/MC-06.png" class="img-responsive">
+                                                    <input type="checkbox" value="MOLDE MC-06 CENEFA ADOQUIN CANDELARIA (10X10) 114,7CM X 20,8CM">
+                                                    <br>
+                                                    <p class="">MOLDE MC-06 CENEFA ADOQUIN CANDELARIA (10X10) 114,7CM X 20,8CM</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--fin moldes cenefa-->
+                        <button type="button" class="btn molde3" data-toggle="modal" data-target="#myModal3">Moldes Loseta</button>
+                        <div class="modal fade" id="myModal3">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">
+                                            <b>Moldes Loseta</b>
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class=""></p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-01.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-01 LOSETA TACTIL GUIA CURVA 80CM X 40CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-02.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-02 LOSETA TACTIL ALERTA 64P. 80CM X 40CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-02_2.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class=""></p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-03.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-03 LOSETA TACTIL ALERTA 60P. 74,6CM X 19,7CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-03_2.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class=""></p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-04.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-04 LOSETA CUADROS (20X20) 120CM X 60CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-05.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-05 LOSETA TACTIL ALERTA 36P. 80CM X 40CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-06.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-06 LOSETA TACTIL GUIA NORMAL 6R. 80CM X 40CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-06_2.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class=""></p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-07.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-07 LOSETA CENEFA TACTIL GUIA 3 LINEAS 20,1CM X 100,6CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-08.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-08 MOLDE TOPEROL (20X20) 100,3CM X 19,8CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-08-2.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class=""></p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-09.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-09 LOSETA CUADRADA 9C (13,1CM X 13,2CM) 80CM X 40CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-10.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-10 LOSETA TÁCTIL GUÍA A.56 80CM X 40CM</p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-11.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-11 LOSETA LISA 121,6CM X 62,8CM </p>
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                <label class="image-checkbox">
+                                                    <img src="imagenes/MOLDES/MOLDES_ML/ML-12.png" class="img-responsive">
+                                                    <input type="checkbox">
+                                                    <br>
+                                                    <p class="">MOLDE ML-12 DOS LOSETA 80CM X 40CM</p>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--fin moldes loseta-->
+                    </div>
+                </div>
+            </div>
+            <!--Final apartado moldes-->
+            <div class="Respuesta" style="margin-bottom:100px;">
+
+            </div>
+            <div class="row" style="margin-bottom:100px;">
                 <div class="col-sm-3">
-                    <h4>Moldes para estampar: </h4>
+                    <!-- concrete color -->
+                    <h4>
+                        <b>Concrete Color Industrial</b>
+                    </h4>
                 </div>
-                <div class="col-sm-9">
-                    Descargue aqui la modulación de su molde
-                    <br>
-                    <br>
-                    <button type="button" class="btn molde1" data-toggle="modal" data-target="#myModal">Moldes Tradicionales</button>
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title"><b>Moldes Tradicionales</b></h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-01-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-01 LAJA REGULAR ACOMODADA 60,5CM X 60,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-01 LAJA<br> REGULAR ACOMODADA<br> 60,5CM X 60,5CM</p></img></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-02-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-02 PIEDRA COMBINADA 90,5CM X 90,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-02 <br>PIEDRA COMBINADA <br>90,5CM X 90,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-03-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-03 LAJA ROMAN 60,5CM X 60,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-03<br>LAJA ROMAN<br> 60,5CM X 60,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-04-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-04 LAJA PASEO 90,2CM X 45,2CM" ></img><br><p class="nombreMoldes">MOLDE MT-04<br>LAJA PASEO<br> 90,2CM X 45,2CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-05-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-05 CANTERA RESAQUE 58,7CM X 58,7CM" ></img><br><p class="nombreMoldes">MOLDE MT-05 <br>CANTERA RESAQUE <br>58,7CM X 58,7CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-06-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-06 PIZARRA BASALTO 60,5CM X 60,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-06<br>PIZARRA BASALTO <br>60,5CM X 60,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-07-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-07 ABANICO EUROPEO 109,3CM X 61,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-07<br>ABANICO EUROPEO <br>109,3CM X 61,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-08-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-08 ADOQUIN CANASTILLA 83CM X 41,6CM" ></img><br><p class="nombreMoldes">MOLDE MT-08<br>ADOQUIN CANASTILLA <br>83CM X 41,6CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-09-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-09 ADOQUIN CORRIDO CON TEXTURA 91CM X 43,2CM" ></img><br><p class="nombreMoldes">MOLDE MT-09<br>ADOQUIN CORRIDO<br> CON TEXTURA<br> 91CM X 43,2CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-10-min.png" class="img-responsive"><input type="checkbox" value="ADOQUIN ESPINA DE PESCADO 90CM X 66,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-10<br>ADOQUIN ESPINA<br> DE PESCADO<br> 90CM X 66,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-11-min.png" class="img-responsive"><input type="checkbox" value="ADOQUIN RUSTICO 73,2CM X 59,6CM" ></img><br><p class="nombreMoldes">MOLDE MT-11<br>ADOQUIN RUSTICO <br>73,2CM X 59,6CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-12-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-12 ADOQUIN CARTAGENA 73,7CM X 29CM" ></img><br><p class="nombreMoldes">MOLDE MT-12<br>ADOQUIN CARTAGENA <br>73,7CM X 29CM </p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-13-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-13 PIEDRA PEGADA JUNTA GRUESA 74,8CM X 74,8CM" ></img><br><p class="nombreMoldes">MOLDE MT-13<br>PIEDRA PEGADA<br> JUNTA GRUESA<br> 74,8CM X 74,8CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-14-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-14 PIEDRA PEGADA JUNTA DELGADA 74,4CM X 74,4CM" ></img><br><p class="nombreMoldes">MOLDE MT-14<br>PIEDRA PEGADA<br> JUNTA DELGADA<br> 74,4CM X 74,4CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-15-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-15 PIEDRA BARICHARA (15CM X 15CM) 71,7CM X 63,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-15<br>PIEDRA BARICHARA<br> (15CM X 15CM)<br> 71,7CM X 63,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-16-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-16 IEDRA SUIZA 90CM X 69,7CM" ></img><br><p class="nombreMoldes">MOLDE MT-16<br>PIEDRA SUIZA<br> 90CM X 69,7CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-17-min.png" class="img-responsive"><input type="checkbox" value="PIEDRA DE RIO 79,4CM X 79,4CM" ></img><br><p class="nombreMoldes">MOLDE MT-17<br>PIEDRA DE RIO<br> 79,4CM X 79,4CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-18-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-18 MADERA LARGA 195,7CM X 31,1CM" ></img><br><p class="nombreMoldes">MOLDE MT-18<br>MADERA LARGA<br> 195,7CM X 31,1CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-19-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-19 MADERA RISOME 79,5CM X 59,4CM" ></img><br><p class="nombreMoldes">MOLDE MT-19<br>MADERA RISOME<br> 79,5CM X 59,4CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-20-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-20 HOJA EN PIEDRA LAJA 74,5CM X 74,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-20<br>HOJA EN PIEDRA<br> LAJA 74,5CM X 74,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-21-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-21 LAJA NATURAL 4P 60,6CM X 60,6CM" ></img><br><p class="nombreMoldes">MOLDE MT-21<br>LAJA NATURAL 4P<br> 60,6CM X 60,6CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-22-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-22 LAJA NATURAL 3P 60,6CM X 60,6CM" ></img><br><p class="nombreMoldes">MOLDE MT-22<br>LAJA NATURAL 3P <br>60,6CM X 60,6CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-23-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-23 PIEDRA PEGADA TIPO LAJA 74,5CM X 74,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-23<br>PIEDRA PEGADA<br> TIPO LAJA<br> 74,5CM X 74,5CM  </p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-24-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-24 ADOQUIN CORRIDO (20CM X 20CM) 89,4CM X 79,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-24<br>ADOQUIN CORRIDO<br> (20CM X 20CM)<br> 89,4CM X 79,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-25-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-25 ADOQUIN CORRIDO CANDELARIA (10X10) 68,4CM X 62,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-25<br>ADOQUIN CORRIDO<br> CANDELARIA (10X10)<br> 68,4CM X 62,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-26-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-26 ADOQUIN ESPECIAL CANDELARIA (26CMX26CM) 92,3CM X 38,8CM" ></img><br><p class="nombreMoldes">MOLDE MT-26<br>ADOQUIN ESPECIAL<br> CANDELARIA (26CMX26CM)<br> 92,3CM X 38,8CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-27-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-27 ADOQUIN PIEDRA 75,6CM X 43CM" ></img><br><p class="nombreMoldes">MOLDE MT-27<br>ADOQUIN PIEDRA<br> 75,6CM X 43CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-28-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-28 TIERRA SECA 90,5CM X 90,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-28<br>TIERRA SECA<br> 90,5CM X 90,5CM </p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-29-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-29 ARENA DEL DESIERTO 90,1CM X 90CM" ></img><br><p class="nombreMoldes">MOLDE MT-29 <br>ARENA DEL DESIERTO<br> 90,1CM X 90CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-30-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-30 PIEDRA MUÑECA 93CM X 93CM" ></img><br><p class="nombreMoldes">MOLDE MT-30<br>PIEDRA MUÑECA<br> 93CM X 93CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-31-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-31 PIEDRA PEGADA TIPO ASPERON 91CM X 91CM" ></img><br><p class="nombreMoldes">MOLDE MT-31<br>PIEDRA PEGADA <br>TIPO ASPERON<br> 91CM X 91CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-32-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-32 PIEDRA PEGADA TIPO SANTA FE 106CM X 106CM" ></img><br><p class="nombreMoldes">MOLDE MT-32<br>PIEDRA PEGADA <br>TIPO SANTA FE<br> 106CM X 106CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-33-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-33 MANTA TIPO LAJA 93CM X 93CM"></img><br><p class="nombreMoldes">MOLDE MT-33<br>MANTA TIPO LAJA<br> 93CM X 93CM </p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-34-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-34 MANTA TIPO PIZARRA 93CM X 93CM" ></img><br><p class="nombreMoldes">MOLDE MT-34<br>MANTA TIPO PIZARRA<br> 93CM X 93CM </p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-35-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-35 ADOQUIN CUADRADO (20CMX20CM) 80,2CM X 80,2CM" ></img><br><p class="nombreMoldes">MOLDE MT-35<br>ADOQUIN CUADRADO<br> (20CMX20CM)<br> 80,2CM X 80,2CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-36-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-36 ADOQUIN CUADRADO (20CMX20CM) CON ENCAJE 100CM X 80,2CM" ></img><br><p class="nombreMoldes">MOLDE MT-36<br>ADOQUIN CUADRADO <br>(20CMX20CM)<br> CON ENCAJE<br> 100CM X 80,2CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-37-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-37 ADOQUIN CORRIDO ESPECIAL 42,8CM X 86,1CM" ></img><br><p class="nombreMoldes">MOLDE MT-37<br>ADOQUIN CORRIDO ESPECIAL<br> 42,8CM X 86,1CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-38-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-38 LAJA NATURAL 5P 60,1CM X 60,1CM" ></img><br><p class="nombreMoldes">MOLDE MT-38<br>LAJA NATURAL 5P<br> 60,1CM X 60,1CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-39-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-39 ROMPECABEZAS 80CM X 80CM" ></img><br><p class="nombreMoldes">MOLDE MT-39<br>ROMPECABEZAS<br> 80CM X 80CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-40-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-40 ADOQUIN (40CMX20CM) SIN TRABA 120,3CM X 80,1CM" ></img><br><p class="nombreMoldes">MOLDE MT-40<br>ADOQUIN (40CMX20CM)<br> SIN TRABA<br> 120,3CM X 80,1CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-41-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-41 BALDOSA (45CMX45CM) 90CM X 45CM" ></img><br><p class="nombreMoldes">MOLDE MT-41<br>BALDOSA (45CMX45CM)<br> 90CM X 45CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-42-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-42 MADERA DECK 90.1CM X 30.1CM" ></img><br><p class="nombreMoldes">MOLDE MT-42<br>MADERA DECK<br> 90.1CM X 30.1CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-43-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-43 MADERA DECK 179.6CM X 30.2CM" ></img><br><p class="nombreMoldes">MOLDE MT-43<br>MADERA DECK<br> 179.6CM X 30.2CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-44-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-44 PIEDRA COMBINADA HISPANIA 130CM X 75CM" ></img><br><p class="nombreMoldes">MOLDE MT-44<br>PIEDRA COMBINADA<br> HISPANIA<br> 130CM X 75CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-45-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-45 >ROSETA (20CM X 20CM) 104CM X 62,4CM" ></img><br><p class="nombreMoldes">MOLDE MT-45<br>ROSETA (20CM X 20CM)<br> 104CM X 62,4CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-46-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-46 ABANICO CIRCUNFERENCIA 59,5CM X 59,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-46<br>ABANICO CIRCUNFERENCIA<br> 59,5CM X 59,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-47-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-47 ADOQUIN CORRIDO 3,1MTS X 1,07MTS" ></img><br><p class="nombreMoldes">MOLDE MT-47<br>ADOQUIN CORRIDO<br> 3,1MTS X 1,07MTS</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-48-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-48 CUATRO P (30,1X30,1) 90,2CM X 90,2CM" ></img><br><p class="nombreMoldes">MOLDE MT-48<br>CUATRO P (30,1X30,1)<br> 90,2CM X 90,2CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-49-min.png" class="img-responsive"><input type="checkbox" value="val49" ></img><br><p class="nombreMoldes"></p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-50-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-50 ADOQUÍN CORRIDO (40CM X 20CM) 102,6CM X 8,.3CM" ></img><br><p class="nombreMoldes">MOLDE MT-50<br>ADOQUÍN CORRIDO<br> (40CM X 20CM) 102,6CM X 8,.3CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-51-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-51 ABANICO EUROPEO OLD CITY 119CM X 66,5CM" ></img><br><p class="nombreMoldes">MOLDE MT-51<br>ABANICO EUROPEO<br> OLD CITY<br> 119CM X 66,5CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-52-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-52 ADOQUÍN CORRIDO LISO 91CM X 43,2CM" ></img><br><p class="nombreMoldes">MOLDE MT-52<br>ADOQUÍN CORRIDO<br> LISO<br> 91CM X 43,2CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-53-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-53 LAJA NATURAL 6P 61,7CM X 61,7CM" ></img><br><p class="nombreMoldes">MOLDE MT-53<br>LAJA NATURAL 6P<br> 61,7CM X 61,7CM</p></label></div>
-                                        <div class="col-xs-6 col-sm-5 col-md-4 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MT/MT-54-min.png" class="img-responsive"><input type="checkbox" value="MOLDE MT-54 ADOQUÍN ESPINA DE PESCADO 3MTS X 1MT APROX" ></img><br><p class="nombreMoldes">MOLDE MT-54<br>ADOQUÍN ESPINA<br> DE PESCADO<br> 3MTS X 1MT APROX</p></label></div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--fin moldes tradicionales-->
-                    <button type="button" class="btn molde2" data-toggle="modal" data-target="#myModal2">Moldes Cenefa</button>
-                    <div class="modal fade" id="myModal2">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title"><b>Moldes Cenefa</b></h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MC/MC-01.png" class="img-responsive"><input type="checkbox" value="MOLDE MC-01 CENEFA ADOQUIN LISO (9,7X20) 21,2CM X 114,7CM"><br><p class="">MOLDE MC-01 CENEFA ADOQUIN LISO (9,7X20) 21,2CM X 114,7CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MC/MC-02.png" class="img-responsive"><input type="checkbox" value="MOLDE MC-02 CENEFA PIEDRA CAMEL 19,7CM X 103,3CM"><br><p class="">MOLDE MC-02 CENEFA PIEDRA CAMEL 19,7CM X 103,3CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MC/MC-03.png" class="img-responsive"><input type="checkbox" value="MOLDE MC-03 CENEGA GRANO DE CAFÉ 100,2CM X 10,3CM"><br><p class="">MOLDE MC-03 CENEGA GRANO DE CAFÉ 100,2CM X 10,3CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MC/MC-04.png" class="img-responsive"><input type="checkbox" value="MOLDE MC-04 CENEFA LINEA TEXTURIZADO 90,9CM X 43,9CM"><br><p class="">MOLDE MC-04 CENEFA LINEA TEXTURIZADO 90,9CM X 43,9CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MC/MC-05.png" class="img-responsive"><input type="checkbox" value="MOLDE MC-05 CENEFA MAYA 108,8CM X 26,3CM"><br><p class="">MOLDE MC-05 CENEFA MAYA 108,8CM X 26,3CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MC/MC-06.png" class="img-responsive"><input type="checkbox" value="MOLDE MC-06 CENEFA ADOQUIN CANDELARIA (10X10) 114,7CM X 20,8CM"><br><p class="">MOLDE MC-06 CENEFA ADOQUIN CANDELARIA (10X10) 114,7CM X 20,8CM</p></label></div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--fin moldes cenefa-->
-                    <button type="button" class="btn molde3" data-toggle="modal" data-target="#myModal3">Moldes Loseta</button>
-                    <div class="modal fade" id="myModal3">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title"><b>Moldes Loseta</b></h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML.png" class="img-responsive"><input type="checkbox"><br><p class=""></p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-01.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-01 LOSETA TACTIL GUIA CURVA 80CM X 40CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-02.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-02 LOSETA TACTIL ALERTA 64P. 80CM X 40CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-02_2.png" class="img-responsive"><input type="checkbox"><br><p class=""></p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-03.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-03 LOSETA TACTIL ALERTA 60P. 74,6CM X 19,7CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-03_2.png" class="img-responsive"><input type="checkbox"><br><p class=""></p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-04.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-04 LOSETA CUADROS (20X20) 120CM X 60CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-05.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-05 LOSETA TACTIL ALERTA 36P. 80CM X 40CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-06.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-06 LOSETA TACTIL GUIA NORMAL 6R. 80CM X 40CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-06_2.png" class="img-responsive"><input type="checkbox"><br><p class=""></p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-07.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-07 LOSETA CENEFA TACTIL GUIA 3 LINEAS 20,1CM X 100,6CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-08.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-08 MOLDE TOPEROL (20X20) 100,3CM X 19,8CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-08-2.png" class="img-responsive"><input type="checkbox"><br><p class=""></p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-09.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-09 LOSETA CUADRADA 9C (13,1CM X 13,2CM) 80CM X 40CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-10.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-10 LOSETA TÁCTIL GUÍA A.56 80CM X 40CM</p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-11.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-11 LOSETA LISA 121,6CM X 62,8CM  </p></label></div>
-                                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_ML/ML-12.png" class="img-responsive"><input type="checkbox"><br><p class="">MOLDE ML-12 DOS LOSETA 80CM X 40CM</p></label></div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--fin moldes loseta-->
-                </div>
-            </div>
-        </div>
-        <!--Final apartado moldes-->
-        <div class="Respuesta" style="margin-bottom:100px;">
-
-        </div>
-        <div class="row" style="margin-bottom:100px;">
-            <div class="col-sm-3">
-                <!-- concrete color -->
-                <h4><b>Concrete Color Industrial</b></h4>
-            </div>
-            <div class="col-sm-3">
-                <select id="colores" class="selectpicker" data-size="15" data-width="90%">
+                <div class="col-sm-3">
+                    <select id="colores" class="selectpicker" data-size="15" data-width="90%">
                     </select>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Dosificación de
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultado"></div>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Dosificación de
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultado"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-1" style="margin-top:-3%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultado2"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top:-3%;">
+                    <img class="concrete" src="imagenes/concrete_color.png" width="75" height="105"></img>
                 </div>
             </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-1" style="margin-top:-3%;">
-                Usted requiere
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultado2"></div>
+            <div class="row" style="margin-bottom:100px;">
+                <div class="col-sm-3">
+                    <!-- desmol color -->
+                    <h5>
+                        <b>Desmol Concrete(Desmoldante en Polvo)</b>
+                    </h5>
                 </div>
-            </div>
-            <div class="col-sm-1" style="margin-top:-3%;">
-                <img class="concrete" src="imagenes/concrete_color.png" width="75" height="105"></img>
-            </div>
-        </div>
-        <div class="row" style="margin-bottom:100px;">
-            <div class="col-sm-3">
-                <!-- desmol color -->
-                <h5><b>Desmol Concrete(Desmoldante en Polvo)</b></h5>
-            </div>
 
-            <div class="col-sm-3">
-                <select id="coloresdosificacion" class="selectpicker" data-size="15" data-width="90%">
+                <div class="col-sm-3">
+                    <select id="coloresdosificacion" class="selectpicker" data-size="15" data-width="90%">
                     </select>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Dosificación de
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultadodesmol"></div>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Dosificación de
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadodesmol"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-1" style="margin-top:-3%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoDesmolResultado"></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoDesmolResultadototal"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top:-1.5%;">
+                    <img class="concrete" src="imagenes/barril_cunete.png" width="60" height="80"></img>
                 </div>
             </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-1" style="margin-top:-3%;">
-                Usted requiere
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultadoDesmolResultado"></div>
+            <div class="row" style="margin-bottom:120px;">
+                <div class="col-sm-3">
+                    <!-- retar concrete -->
+                    <h5>
+                        <b>Retar Concrete(Retardante)</b>
+                    </h5>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultadoDesmolResultadototal"></div>
-                </div>
-            </div>
-            <div class="col-sm-1" style="margin-top:-1.5%;">
-                <img class="concrete" src="imagenes/barril_cunete.png" width="60" height="80"></img>
-            </div>
-        </div>
-        <div class="row" style="margin-bottom:120px;">
-            <div class="col-sm-3">
-                <!-- retar concrete -->
-                <h5><b>Retar Concrete(Retardante)</b></h5>
-            </div>
 
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Dosificación de
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultadoretardante"></div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Dosificación de
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoretardante"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoRetardantetotal"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top:-3%;">
+                    <img class="concrete" src="imagenes/hidro.png" width="120" height="100"></img>
                 </div>
             </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Usted requiere
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultadoRetardantetotal"></div>
+            <div class="row" style="margin-bottom:100px;">
+                <div class="col-sm-2" style="margin-top:-0.5%;">
+                    <!-- sella concrete -->
+                    <h4>
+                        <b>Sella Concrete (Sellador)</b>
+                    </h4>
                 </div>
-            </div>
-            <div class="col-sm-1" style="margin-top:-3%;">
-                <img class="concrete" src="imagenes/hidro.png" width="120" height="100"></img>
-            </div>
-        </div>
-        <div class="row" style="margin-bottom:100px;">
-            <div class="col-sm-2" style="margin-top:-0.5%;">
-                <!-- sella concrete -->
-                <h4><b>Sella Concrete (Sellador)</b></h4>
-            </div>
-            <div class="col-sm-2" style="margin-top:-3%;">
-                <div class="btn-group-vertical" id="datossellador">
-                    <button type="button" class="btn btn-primary" id="valorSellamate" name="sellador1" value="0.25">Mate</button>
-                    <button type="button" class="btn btn-primary" id="valorSellalustre" name="sellador2" value="0.25">Lustre</button>
-                    <button type="button" class="btn btn-primary" id="valorSellasemilustre" name="sellador3" value="0.25">Semilustre</button>
+                <div class="col-sm-2" style="margin-top:-3%;">
+                    <div class="btn-group-vertical" id="datossellador">
+                        <button type="button" class="btn btn-primary" id="valorSellamate" name="sellador1" value="0.25">Mate</button>
+                        <button type="button" class="btn btn-primary" id="valorSellalustre" name="sellador2" value="0.25">Lustre</button>
+                        <button type="button" class="btn btn-primary" id="valorSellasemilustre" name="sellador3" value="0.25">Semilustre</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Dosificación de
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultadoSella"></div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
                 </div>
-            </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Dosificación de
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoSella"></div>
+                    </div>
+                </div>
 
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2 col-xs-12" style="margin-top:-1.5%;">
-                Usted requiere
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultadoSellacontre"></div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultadoSellatotal"></div>
+                <div class="col-sm-2 col-xs-12" style="margin-top:-1.5%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoSellacontre"></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoSellatotal"></div>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top:-2%;">
+                    <img class="concrete" src="imagenes/barril_mant.png" width="50" height="80"></img>
                 </div>
             </div>
-            <div class="col-sm-1" style="margin-top:-2%;">
-                <img class="concrete" src="imagenes/barril_mant.png" width="50" height="80"></img>
-            </div>
-        </div>
-        <div class="row" style="margin-bottom:50px;">
-            <div class="col-sm-2">
-                <h4><b>Fibra Concrete</b></h4>
-            </div>
-            <div class="col-sm-4">
-                ¿Qué uso le va a dar a la fibra?
-                <br>
-                <div class="radio">
-                    <label>
-                            <input type="radio" name="optradio"  id="valor1" value="3.5">
+            <div class="row" style="margin-bottom:50px;">
+                <div class="col-sm-2">
+                    <h4>
+                        <b>Fibra Concrete</b>
+                    </h4>
+                </div>
+                <div class="col-sm-4">
+                    ¿Qué uso le va a dar a la fibra?
+                    <br>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optradio" id="valor1" value="3.5">
                             <div class="panel panel-default">
                                 <div class="panel-body">Andenes,aceras, accesos a centros comerciales, parques, plazoletas, zonas comunes en urbanizaciones,
                                     terrazas, centros comerciales, almacenes, clubes, placas entre pisos, centros recreacionales,
-                                losas de viviendas de paredes livianas o de bloque.</div>
+                                    losas de viviendas de paredes livianas o de bloque.</div>
                             </div>
                         </label>
-                    <br>
-                    <label>
+                        <br>
+                        <label>
                             <input type="radio" name="optradio" id="valor2" value="4.5">
                             <div class="panel panel-default">
                                 <div class="panel-body">Estacionamientos, elementos prefabricados. todo tipo de viabilidad con tráfico liviano a
-                                mopderado sin pendientes.</div>
+                                    mopderado sin pendientes.</div>
                             </div>
                         </label>
-                    <label>
+                        <label>
                             <input type="radio" name="optradio" id="valor3" value="5.6">
                             <div class="panel panel-default">
                                 <div class="panel-body">Concreto proyectado, pisos industriales.</div>
                             </div>
                         </label>
+                    </div>
+
+                </div>
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-1.5%;">
+                    Espesor (Cm)
+                    <br>
+                    <div class="panel panel-default">
+                        <input type="text" id="centimetros" class="form-control decimal-2-places" maxlength="4">
+                    </div>
                 </div>
 
+                <div class="col-sm-1">
+                    <img class="flecha" src="iconos/flecha.png"></img>
+                </div>
+                <div class="col-sm-2" style="margin-top:-2%;">
+                    Usted requiere
+                    <br>
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="resultadoFibracontre"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
+            <div class="row" style="margin-bottom:100px;">
+                <div class="col-sm-2">
+                    <h4>
+                        <b>Herramientas</b>
+                    </h4>
+                </div>
+                <div class="col-sm-5">
+                    <table>
+                        <tr>
+                            <td>
+                                <p>Herramienta</p>
+                            </td>
+                            <td>
+                                <p>Cantidad</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Rastrillo para extender concreto
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Rastrillo texturizador de concreto
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Llana Metálica
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Llana de Magnesio
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Llana Redondeada
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Orillador
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Pines
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Cabezote
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Tubo de Flota Madona o BIG-BLUE
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Baja Grava
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Pison para Estampar
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="caja">
+                                Flota Madona o BIG-BLUE
+                            </td>
+                            <td>
+                                <input class="form-control positive-integer" type="text" maxlength="3">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-            <div class="col-sm-2" style="margin-top:-1.5%;">
-                Espesor (Cm)
-                <br>
-                <div class="panel panel-default">
-                    <input type="text" id="centimetros" class="form-control decimal-2-places" maxlength="4">
+            <p align="center">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal">finalizar</button>
+            </p>
+        </div>
+        <!-- inicio formulario -->
+        <div class="modal fade" id="modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="formulario">
+                            <div class="row" style="margin-bottom:50px;">
+                                <div class="col-md-12">
+                                    <form class="form-horizontal" method="post">
+                                        <fieldset>
+                                            <h1 align='center' style='color: rgb(50, 132, 255)'>Contactenos</h1>
+                                            <br>
+                                            <br>
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+                                                    <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255); font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="fname" name="name" type="text" placeholder="Nombres" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+                                                    <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+                                                    <span class="glyphicon glyphicon-envelope" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="email" name="email" type="text" placeholder="Correo electronico" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+                                                    <span class="glyphicon glyphicon-earphone" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control positive-integer" maxlength="11">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+
+                                                    <span class="glyphicon glyphicon-map-marker" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="phone" name="phone" type="text" placeholder="Ciudad" class="form-control">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <br>
+                                            <div class="form-group">
+                                                <div class="col-md-12 text-center">
+                                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-2" style="margin-top:-2%;">
-                Usted requiere
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body" id="resultadoFibracontre"></div>
-                </div>
-            </div>
         </div>
-        <div class="row" style="margin-bottom:100px;">
-            <div class="col-sm-2">
-                <h4><b>Herramientas</b></h4>
-            </div>
-            <div class="col-sm-5">
-                <table>
-                    <tr>
-                        <td>
-                            <p>Herramienta</p>
-                        </td>
-                        <td>
-                            <p>Cantidad</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Rastrillo para extender concreto
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Rastrillo texturizador de concreto
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Llana Metálica
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Llana de Magnesio
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Llana Redondeada
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Orillador
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Pines
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Cabezote
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Tubo de Flota Madona o BIG-BLUE
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Baja Grava
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Pison para Estampar
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="caja">
-                            Flota Madona o BIG-BLUE
-                        </td>
-                        <td>
-                            <input class="form-control positive-integer" type="text" maxlength="3">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="row" style="margin-bottom:50px;">
-            <div class="col-md-12">
-                <form class="form-horizontal">
-                    <fieldset>
-                        <h1 align='center' style='color: rgb(50, 132, 255)'>Contactenos</h1>
-                        <br>
-                        <br>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-                          <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255); font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="Nombres" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-                          <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control">
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-                          <span class="glyphicon glyphicon-envelope" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Correo electronico" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-                          <span class="glyphicon glyphicon-earphone" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control positive-integer" maxlength="11">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-          
-                          <span class="glyphicon glyphicon-map-marker" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="ciudad" name="phone" type="text" placeholder="Ciudad" class="form-control">
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        <div class="form-group">
-                            <div class="col-md-12 text-center">
-                                <button id="btn-enviar" type="button" class="btn btn-primary btn-lg">Enviar</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+        <!-- fin fornulario -->
     </div>
+    
 </body>
 <script>
-    var formattedDate = new Date();
-    var d = formattedDate.getDate();
-    var m = formattedDate.getMonth();
-    m += 1; // JavaScript months are 0-11
-    var y = formattedDate.getFullYear();
-
-    var fecha = y + '-' + m + '-' + d;
-    console.log(fecha)
-    $("#btn-enviar").click(function(event) {
-        var url = "http://35.184.175.53:8080/Calculadora/api/Calculadora/registrarCliente";
-        var cliente = {
-            'nombre': $("#fname").val(),
-            'apellido': $("#lname").val(),
-            'correo': $("#email").val(),
-            'telefono': $("#phone").val(),
-            'lugar': $("#ciudad").val()
-        }
-        $.ajax({
-            url: url,
-            type: 'POST',
-            dataType: 'json',
-            data: JSON.stringify(cliente),
-            contentType: 'application/json; charset=utf-8',
-            success: function(data) {
-                var id_cliente = data;
-                if (data) {
-                    /* var url2 = "http://35.184.175.53:8080/Calculadora/api/Calculadora/registrarFacturaCotizar ";
-
-                     var factura = {
-                         "fecha": fecha,
-                         "idcliente": id_cliente,
-                         "idLineadetrabajo": 1
-                     }
-                     $.ajax({
-                         url: url2,
-                         type: 'POST',
-                         dataType: 'json',
-                         data: JSON.stringify(factura),
-                         contentType: 'application/json; charset=utf-8',
-                         success: function(data) {
-                             if (data) {
-                                 var url3 = "http://35.184.175.53:8080/Calculadora/api/Calculadora/registrarDetalle";
-                                 $.ajax({
-                                     url: url3,
-                                     type: 'POST',
-                                     dataType: 'json',
-                                     data: JSON.stringify(lista_moldes),
-                                     contentType: 'application/json; charset=utf-8',
-                                     success: function(data) {
-                                         if (data) {
-
-                                         }
-                                     }
-                                 });
-                             }
-                         }
-                     });*/
-                }
-            }
-        });
-    });
-
-    $(".image-checkbox").each(function() {
+    $(".image-checkbox").each(function () {
         if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
             $(this).addClass('image-checkbox-checked');
         } else {
@@ -706,14 +1413,14 @@
     });
 
     // sync the state to the input
-    $(".image-checkbox").on("click", function(e) {
+    $(".image-checkbox").on("click", function (e) {
         $(this).toggleClass('image-checkbox-checked');
         var $checkbox = $(this).find('input[type="checkbox"]');
         $checkbox.prop("checked", !$checkbox.prop("checked"))
         var elemento = this;
         var contador = 0;
         // Recorremos todos los checkbox para contar los que estan seleccionados
-        $("input[type=checkbox]").each(function() {
+        $("input[type=checkbox]").each(function () {
             if ($(this).is(":checked"))
                 contador++;
         });
@@ -734,13 +1441,11 @@
         var moldesSeleccionados = new Array();
         var html = '';
         var html2 = '';
-        $('input[type=checkbox]:checked').each(function() {
+        $('input[type=checkbox]:checked').each(function () {
             moldesSeleccionados.push($(this).val());
         });
-
-        var lista_nombre = new Array();
         for (i = 0; i < moldesSeleccionados.length; i++) {
-            // console.log(moldesSeleccionados[i])
+            console.log(moldesSeleccionados[i])
             html += '<div class="moss row" style="margin-bottom:30px;">' +
                 '<div class="col-sm-2">Moldes para estampar</div>' +
                 '<div class="col-sm-3" style="margin-bottom:20px;">' +
@@ -750,7 +1455,7 @@
                 '<img class="flecha" src="iconos/flecha.png"></img>' +
                 '</div>' +
                 '<div class="col-sm-2">' +
-                '<input id="moldes_cotizar" class="form-control" type="number" min="4" max="10" placeholder="Cantidad de moldes a cotizar">' +
+                '<input class="form-control" type="number" min="4" max="10" placeholder="Cantidad de moldes a cotizar">' +
                 '<a href="#" data-toggle="tooltip" data-placement="bottom" title="Se recomienda que minimo utilice 4 moldes para estampar" style="float: right">' +
                 '<span class="glyphicon glyphicon-info-sign"></span>' +
                 '</a>' +
@@ -773,45 +1478,12 @@
             } else {
                 $(".Respuesta").css('display', 'none');
             }
-
-            var nombre_molde = moldesSeleccionados[i];
-            lista_nombre.push(nombre_molde);
         }
-        var lista_moldes = new Array();
-        var moldes = {
-            'concepto': '',
-            'valorlitro': '',
-            'valorkilos': '',
-            'valorunidad': '',
-            'facturaCotizarId': '',
-            'opcionLineaIdopcionLinea': 1
-        }
-
-        $("input#moldes_cotizar").on('change', function() {
-
-            console.log("Pase por aquí", lista_nombre);
-            var cantidad_cotizar = $(this).val();
-
-            moldes.valorunidad = cantidad_cotizar;
-            lista_moldes.push(moldes);
-            if (lista_nombre.length == lista_moldes.length) {
-                for (var i = 0; i < lista_nombre.length; i++) {
-                    lista_moldes[i].concepto = lista_nombre[i];
-                }
-            }
-            console.log(lista_moldes);
-            moldes = {
-                'concepto': '',
-                'valorlitro': '',
-                'valorkilos': '',
-                'valorunidad': '',
-                'facturaCotizarId': '',
-                'opcionLineaIdopcionLinea': 1
-            }
-            return lista_moldes;
-        });
     });
-    $(document).ready(function() {});
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
 </script>
 
 </html>

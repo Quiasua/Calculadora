@@ -98,19 +98,28 @@
             <div class="col-sm-6">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
-                        <div class="col-sm-3">
-                        <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8" >
-                        </div>
+                      <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
+                      <div class="col-sm-3">
+                        <input class="form-control decimal-2-places" type="text" id="metros"  >
+                      </div>
+                      <div class="col-sm-3">
+                        <button type="button" class="btn btn-info"  id="demo">Calcular</button>
+                      </div>  
                     </div>
-                </form>
+                  </form>
             </div>
             <div class="col-sm-3"></div>
         </div>
         <!--fin Espacio para ingresar los metros-->
         <br>
         <br>
-        
+        <!--alerta inicial-->
+    <div id="alerta" style="display:none;">
+            <div class="alert alert-danger">
+                <strong>El campo esta vacío</strong>
+            </div>
+        </div>
+        <div id="ventana" style="display:none;">
         <div class="row" style="margin-bottom:100px;">
             <div class="col-sm-2">
                 <h4 style="margin-top:-1.5%;">
@@ -308,71 +317,92 @@
         </div>
     </div>
         <!--formulario-->
-        <div class="row" style="margin-bottom:70px;">
-            <div class="col-md-12">
-
-                <form class="form-horizontal" method="post">
-                    <fieldset>
-                        <h1 align='center' style='color: rgb(50, 132, 255)'>Contactenos</h1>
-                        <br>
-                        <br>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-                                <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255); font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="Nombres" class="form-control">
+    <p align="center">
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal">finalizar</button>
+        </p>
+    
+    <!-- inicio formulario -->
+    <div class="modal fade" id="modal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="formulario">
+                            <div class="row" style="margin-bottom:50px;">
+                                <div class="col-md-12">
+                                    <form class="form-horizontal" method="post">
+                                        <fieldset>
+                                            <h1 align='center' style='color: rgb(50, 132, 255)'>Contactenos</h1>
+                                            <br>
+                                            <br>
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+                                                    <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255); font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="fname" name="name" type="text" placeholder="Nombres" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+                                                    <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control">
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+                                                    <span class="glyphicon glyphicon-envelope" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="email" name="email" type="text" placeholder="Correo electronico" class="form-control">
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+                                                    <span class="glyphicon glyphicon-earphone" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control positive-integer" maxlength="11">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center">
+    
+                                                    <span class="glyphicon glyphicon-map-marker" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
+                                                </span>
+                                                <div class="col-md-8">
+                                                    <input id="phone" name="phone" type="text" placeholder="Ciudad" class="form-control">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <br>
+                                            <div class="form-group">
+                                                <div class="col-md-12 text-center">
+                                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-                                <span class="glyphicon glyphicon-user" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="lname" name="name" type="text" placeholder="Apellidos" class="form-control">
-                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                         </div>
-
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-                                <span class="glyphicon glyphicon-envelope" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Correo electronico" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-                                <span class="glyphicon glyphicon-earphone" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Teléfono" class="form-control positive-integer" maxlength="11">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center">
-
-                                <span class="glyphicon glyphicon-map-marker" style='color:rgb(50, 132, 255);  font-size: 25px'></span>
-                            </span>
-                            <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Ciudad" class="form-control">
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        <div class="form-group">
-                            <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
+                    </div>
+    
+                </div>
             </div>
+    
         </div>
+    
+        <!-- fin fornulario -->
     </div>
-    <!-- fin container -->
-
+    
+    
 
 </body>
 </html>

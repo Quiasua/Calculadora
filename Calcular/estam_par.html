@@ -17,7 +17,7 @@
   <script src="js/operaciones.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
   <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="jqueryNumeric/jquery.numeric.js"></script>
+  <script src="jqueryNumeric/jquery.numeric.js"></script>
   <title>Estampados pared</title>
 </head>
 
@@ -68,13 +68,13 @@
             </div>
           </a>
         </li>
-        <li >
-           <a href="../index.html" class="icon6">
-            <img src="iconos/casa.png" class="img-circle"> 
-            <div class='textooculto6'> Regresar    
-            </div> 
-            </a>                   
-         </li> 
+        <li>
+          <a href="../index.html" class="icon6">
+            <img src="iconos/casa.png" class="img-circle">
+            <div class='textooculto6'> Regresar
+            </div>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -92,173 +92,227 @@
       </h2>
     </div>
 
-    <div class="row">
-      <!--Espacio para ingresar los metros-->
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6">
-        <form class="form-horizontal">
-          <div class="form-group">
-            <label class="col-sm-7 control-label">Ingrese los metros cuadrados de su proyecto:</label>
-            <div class="col-sm-3">
-              <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8" >
-            </div>
-          </div>
-        </form>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
+        <div class="col-sm-3">
+          <input class="form-control decimal-2-places" type="text" id="metros">
+        </div>
+        <div class="col-sm-3">
+          <button type="button" class="btn btn-info" id="demo">Calcular</button>
+        </div>
       </div>
-      <div class="col-sm-3"></div>
-    </div>
+    </form>
     <!--fin Espacio para ingresar los metros-->
     <br>
     <br>
 
+    <div id="ventana" style="display:none;"><!-- inicio ventana modal -->
+          <div class="moldes">
+            <!--Apartado de moldes-->
+            <div class="row">
+              <div class="col-sm-3">
+                <h4>Moldes para estampar: </h4>
+              </div>
+              <div class="col-sm-9">
+                Descargue aqui la modulación de su molde
+                <br>
+                <br>
+                <button type="button" class="btn molde1" data-toggle="modal" data-target="#myModal">Moldes Pared</button>
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
 
-    <div class="moldes">
-      <!--Apartado de moldes-->
-      <div class="row">
-        <div class="col-sm-3">
-          <h4>Moldes para estampar: </h4>
-        </div>
-        <div class="col-sm-9">
-          Descargue aqui la modulación de su molde
-          <br>
-          <br>
-          <button type="button" class="btn molde1" data-toggle="modal" data-target="#myModal">Moldes Pared</button>
-          <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">
-                    <b>Moldes Pared</b>
-                  </h4>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-01.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-01 PARED ESCOCIA 54,1CM X 38,1CM"><br><p class="">MOLDE MP-01 PARED ESCOCIA 54,1CM X 38,1CM</p></label></div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-02.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-02 PARED ESCOCIA 54,1CM X 38,1CM"><br><p class="">MOLDE MP-02 PARED ESCOCIA 54,1CM X 38,1CM</p></label></div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-03.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-03 PARED ESCOCIA 74CM X 29,8CM"><br><p class="">MOLDE MP-03 PARED ESCOCIA 74CM X 29,8CM</p></label></div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-04.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-04 PARED PIRINEO 36,3CM X 34,8CM"><br><p class="">MOLDE MP-04 PARED PIRINEO 36,3CM X 34,8CM</p></label></div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-05.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-05 PARED BAMBÚ 66,1CM X 40CM"><br><p class="">MOLDE MP-05 PARED BAMBÚ 66,1CM X 40CM</p></label></div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-06.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-06 TABLON ORDINARIO 40CM X 40CM"><br><p class="">MOLDE MP-06 TABLON ORDINARIO 40CM X 40CM</p></label></div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-06_M.png" class="img-responsive"><input type="checkbox" value=""><br><p class=""></p></label></div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center"><label class="image-checkbox"><img src="imagenes/MOLDES/MOLDES_MP/MP-07.png" class="img-responsive"><input type="checkbox" value="MOLDE MP-07 VOLCÁN TUNGURAHUA 64,3CM X 39,9CM"><br><p class="">MOLDE MP-07 VOLCÁN TUNGURAHUA 64,3CM X 39,9CM</p></label></div>
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">
+                          <b>Moldes Pared</b>
+                        </h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <label class="image-checkbox">
+                              <img src="imagenes/MOLDES/MOLDES_MP/MP-01.png" class="img-responsive">
+                              <input type="checkbox" value="MOLDE MP-01 PARED ESCOCIA 54,1CM X 38,1CM">
+                              <br>
+                              <p class="">MOLDE MP-01 PARED ESCOCIA 54,1CM X 38,1CM</p>
+                            </label>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <label class="image-checkbox">
+                              <img src="imagenes/MOLDES/MOLDES_MP/MP-02.png" class="img-responsive">
+                              <input type="checkbox" value="MOLDE MP-02 PARED ESCOCIA 54,1CM X 38,1CM">
+                              <br>
+                              <p class="">MOLDE MP-02 PARED ESCOCIA 54,1CM X 38,1CM</p>
+                            </label>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <label class="image-checkbox">
+                              <img src="imagenes/MOLDES/MOLDES_MP/MP-03.png" class="img-responsive">
+                              <input type="checkbox" value="MOLDE MP-03 PARED ESCOCIA 74CM X 29,8CM">
+                              <br>
+                              <p class="">MOLDE MP-03 PARED ESCOCIA 74CM X 29,8CM</p>
+                            </label>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <label class="image-checkbox">
+                              <img src="imagenes/MOLDES/MOLDES_MP/MP-04.png" class="img-responsive">
+                              <input type="checkbox" value="MOLDE MP-04 PARED PIRINEO 36,3CM X 34,8CM">
+                              <br>
+                              <p class="">MOLDE MP-04 PARED PIRINEO 36,3CM X 34,8CM</p>
+                            </label>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <label class="image-checkbox">
+                              <img src="imagenes/MOLDES/MOLDES_MP/MP-05.png" class="img-responsive">
+                              <input type="checkbox" value="MOLDE MP-05 PARED BAMBÚ 66,1CM X 40CM">
+                              <br>
+                              <p class="">MOLDE MP-05 PARED BAMBÚ 66,1CM X 40CM</p>
+                            </label>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <label class="image-checkbox">
+                              <img src="imagenes/MOLDES/MOLDES_MP/MP-06.png" class="img-responsive">
+                              <input type="checkbox" value="MOLDE MP-06 TABLON ORDINARIO 40CM X 40CM">
+                              <br>
+                              <p class="">MOLDE MP-06 TABLON ORDINARIO 40CM X 40CM</p>
+                            </label>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <label class="image-checkbox">
+                              <img src="imagenes/MOLDES/MOLDES_MP/MP-06_M.png" class="img-responsive">
+                              <input type="checkbox" value="">
+                              <br>
+                              <p class=""></p>
+                            </label>
+                          </div>
+                          <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <label class="image-checkbox">
+                              <img src="imagenes/MOLDES/MOLDES_MP/MP-07.png" class="img-responsive">
+                              <input type="checkbox" value="MOLDE MP-07 VOLCÁN TUNGURAHUA 64,3CM X 39,9CM">
+                              <br>
+                              <p class="">MOLDE MP-07 VOLCÁN TUNGURAHUA 64,3CM X 39,9CM</p>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                      </div>
                     </div>
+                  </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                </div>
+                <!--fin moldes tradicionales-->
               </div>
             </div>
           </div>
-          <!--fin moldes tradicionales-->
-        </div>
-      </div>
-    </div>
 
-    <!--Final apartado moldes-->
-    <div class="Respuesta" style="margin-bottom:100px;">
-    </div>
-    
-    <div class="row" style="margin-bottom:100px;">
-      <div class="col-sm-2" style="margin-top:-1%;">
-        <h4>
-          <b>Concrete Revestimiento</b>
-        </h4>
-      </div>
+          <!--Final apartado moldes-->
+          <div class="Respuesta" style="margin-bottom:100px;">
+          </div>
 
-      <div class="col-sm-3">
-        <select id="colores" class="selectpicker" data-size="15" data-width="90%">
-        </select>
-      </div>
-      <div class="col-sm-1">
-        <img class="flecha" src="iconos/flecha.png"></img>
-      </div>
-      <div class="col-sm-2" style="margin-top:-1.5%;">
-        Dosificación de
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-body" id="resultado"></div>
-        </div>
-      </div>
-      <div class="col-sm-1">
-        <img class="flecha" src="iconos/flecha.png"></img>
-      </div>
-      <div class="col-sm-1" style="margin-top:-1.5%;">
-        Usted requiere
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-body" id="resultado2"></div>
-        </div>
-      </div>
-      <div class="col-sm-1" style="margin-top:-1.5%;">
-        <img class="concrete" src="imagenes/revestimiento.png" width="120" height="100"></img>
-      </div>
-    </div>
-    <div class="row" style="margin-bottom:100px;">
-      <div class="col-sm-2">
-        <h4>
-          <b>Desmol Concrete-Liquido</b>
-        </h4>
-      </div>
-      <div class="col-sm-1">
-        <img class="flecha" src="iconos/flecha.png"></img>
-      </div>
-      <div class="col-sm-2" style="margin-top:-1.5%;">
-        Dosificación de
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-body" id="resultadoretardante"></div>
-        </div>
-      </div>
-      <div class="col-sm-1">
-        <img class="flecha" src="iconos/flecha.png"></img>
-      </div>
-      <div class="col-sm-2" style="margin-top:-1.5%;">
-        Usted requiere
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-body" id="resultadoRetardantetotal"></div>
-        </div>
-      </div>
-      <div class="col-sm-1" style="margin-top:-1.5%;">
-        <img class="concrete" src="imagenes/desmol.png" width="150" height="80"></img>
-      </div>
-    </div>
+          <div class="row" style="margin-bottom:100px;">
+            <div class="col-sm-2" style="margin-top:-1%;">
+              <h4>
+                <b>Concrete Revestimiento</b>
+              </h4>
+            </div>
 
-    <div class="row" style="margin-bottom:100px;">
-      <div class="col-sm-2">
-        <h4>
-          <b>Hidro Concrete (Hidrófugo)</b>
-        </h4>
-      </div>
-      <div class="col-sm-1">
-        <img class="flecha" src="iconos/flecha.png"></img>
-      </div>
-      <div class="col-sm-2" style="margin-top:-1.5%;">
-        Dosificación de
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-body" id="resultadoretardante"></div>
-        </div>
-      </div>
-      <div class="col-sm-1">
-        <img class="flecha" src="iconos/flecha.png"></img>
-      </div>
-      <div class="col-sm-2" style="margin-top:-1.5%;">
-        Usted requiere
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-body" id="resultadoRetardantetotal"></div>
-        </div>
-      </div>
-      <div class="col-sm-1">
-        <img class="concrete" src="imagenes/hidro.png" width="150" height="80"></img>
-      </div>
+            <div class="col-sm-3">
+              <select id="colores" class="selectpicker" data-size="15" data-width="90%">
+              </select>
+            </div>
+            <div class="col-sm-1">
+              <img class="flecha" src="iconos/flecha.png"></img>
+            </div>
+            <div class="col-sm-2" style="margin-top:-1.5%;">
+              Dosificación de
+              <br>
+              <div class="panel panel-default">
+                <div class="panel-body" id="resultado"></div>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <img class="flecha" src="iconos/flecha.png"></img>
+            </div>
+            <div class="col-sm-1" style="margin-top:-1.5%;">
+              Usted requiere
+              <br>
+              <div class="panel panel-default">
+                <div class="panel-body" id="resultado2"></div>
+              </div>
+            </div>
+            <div class="col-sm-1" style="margin-top:-1.5%;">
+              <img class="concrete" src="imagenes/revestimiento.png" width="120" height="100"></img>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:100px;">
+            <div class="col-sm-2">
+              <h4>
+                <b>Desmol Concrete-Liquido</b>
+              </h4>
+            </div>
+            <div class="col-sm-1">
+              <img class="flecha" src="iconos/flecha.png"></img>
+            </div>
+            <div class="col-sm-2" style="margin-top:-1.5%;">
+              Dosificación de
+              <br>
+              <div class="panel panel-default">
+                <div class="panel-body" id="resultadoretardante"></div>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <img class="flecha" src="iconos/flecha.png"></img>
+            </div>
+            <div class="col-sm-2" style="margin-top:-1.5%;">
+              Usted requiere
+              <br>
+              <div class="panel panel-default">
+                <div class="panel-body" id="resultadoRetardantetotal"></div>
+              </div>
+            </div>
+            <div class="col-sm-1" style="margin-top:-1.5%;">
+              <img class="concrete" src="imagenes/desmol.png" width="150" height="80"></img>
+            </div>
+          </div>
 
-    </div>
-    <!-- fin container -->
+          <div class="row" style="margin-bottom:100px;">
+            <div class="col-sm-2">
+              <h4>
+                <b>Hidro Concrete (Hidrófugo)</b>
+              </h4>
+            </div>
+            <div class="col-sm-1">
+              <img class="flecha" src="iconos/flecha.png"></img>
+            </div>
+            <div class="col-sm-2" style="margin-top:-1.5%;">
+              Dosificación de
+              <br>
+              <div class="panel panel-default">
+                <div class="panel-body" id="resultadoretardante"></div>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <img class="flecha" src="iconos/flecha.png"></img>
+            </div>
+            <div class="col-sm-2" style="margin-top:-1.5%;">
+              Usted requiere
+              <br>
+              <div class="panel panel-default">
+                <div class="panel-body" id="resultadoRetardantetotal"></div>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <img class="concrete" src="imagenes/hidro.png" width="150" height="80"></img>
+            </div>
+
+
+    </div>  <!-- fin ventana modal -->
+  </div>
+  <!-- fin container -->
   </div>
 
 </body>
