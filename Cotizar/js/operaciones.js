@@ -11,42 +11,31 @@ $(document).ready(function(){ //Funcion al momento de recargar la página
         }
         $('.dropdown-menu.inner ').append(html);
         $('#colores').append(html2);
+        $('#coloresDesmol').append(html2); //Juan //Imprimir listado de colores en Desmoldantes 
     });
     $('select#colores').on('change',function(){//Funcion para seleccionar la dosificacion del option que 											viene por valor
         var valor = $(this).val(); //Variable para guardar dosificacion 
-        $("#resultado,#resultado2").empty(); //jquery para limpiar los datos de los paneles
-        
+        $("#resultado,#resultado2,#dosificacion").empty(); //jquery para limpiar los datos de los paneles
         var valor2 = $('input#metros').val(); //variable del dato de ingreso de metros cuadrados
-        
+        console.log(valor,valor2);
         var r1=parseFloat(valor2); //variable r1 para operacion que guardo metros cuadrados
         var r2=parseFloat(valor);	//variable r2 para operacion que guardo dosificacion
         r1=r1*r2; //operacion de multiplicacion
         var respuesta =parseFloat(r1) 
         respuesta=r1/25;
             if (respuesta % 1 == 0) {
-                $('#resultado').append(r1);	
-                $('#resultado2').append(respuesta);
+                $('#resultado').append(r1," Kg");	
+                $('#resultado2').append(respuesta," bulto de 25KG");
+                $('#dosificacion').append(valor," Kg");
             }else{
                 respuesta=Math.round(respuesta);// para aproximar el dato
-                $('#resultado').append(r1,"  kilogramos");	
-                $('#resultado2').append(respuesta," c/u");
+                $('#resultado').append(r1," Kg");	
+                $('#resultado2').append(respuesta," bulto de 25KG");
+                $('#dosificacion').append(valor," Kg");
             } 
     });
 
-    // Metodo GET JSON para traer lista de colores
-    $.getJSON('http://35.184.175.53:8080/Calculadora/api/Calculadora/consultarColoresDesmol',function(data) {
-        var variable1 = ''; //Varaible para imprimir
-        var variable2 = ''; //Variable para imprimir
-        var len = data.length; //Varible para contador
-        for (var i = 0; i < len; i++) { //for para traer la lista de colores
-            variable1 += '<li data-original-index=' + [i] + '><a  id="valor" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombreColor + '  ' + data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
-            variable2 += '<option id="valor" value="'+data[i].dosifiacionColor+'" data-content="' + '"<span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombreColor + '  ' + data[i].especificacion + '</option>';
-        }
-        $('.dropdown-menu.inner').append(variable1);
-        $('#coloresdosificacion').append(variable2);
-    });
-    
-    $('select#coloresdosificacion').on('change',function(){//Funcion para seleccionar la dosificacion del option que 											viene por valor
+    $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la dosificacion del option que 											viene por valor
         var demoldante = $(this).val(); //Variable para guardar dosificacion 
         $("#resultadodesmol,#resultadoDesmolResultado,#resultadoDesmolResultadototal").empty(); //jquery para limpiar los datos de los paneles
         var metro = $('input#metros').val(); //variable del dato de ingreso de metros cuadrados
@@ -54,7 +43,7 @@ $(document).ready(function(){ //Funcion al momento de recargar la página
         var datodemoldante=parseFloat(demoldante);	//variable r2 para operacion que guardo dosificacion
         datometro=datometro*datodemoldante; //operacion de multiplicacion
         var resultadodesmoldante =parseFloat(datometro); 
-        $('#resultadodesmol').append(resultadodesmoldante," Kilogramos");	
+        $('#resultadodesmol').append(resultadodesmoldante," Kg");	
             var ciclo=0;
             var ciclo2=0;
             var ciclo3=0;
@@ -65,13 +54,12 @@ $(document).ready(function(){ //Funcion al momento de recargar la página
                 console.log(ciclo);
                 if (resultadodesmoldante>=1 && resultadodesmoldante<=14) {
                         ciclo3++;
-                        $('#resultadoDesmolResultadototal').append(ciclo3);
-                        console.log(ciclo3);
+                        $('#resultadoDesmolResultadototal').append(ciclo3," bulto de 10KG");
                     }   if(resultadodesmoldante>=15 && resultadodesmoldante<=19){
                             ciclo2++;
                             ciclo=ciclo+ciclo2;
                         }
-            $('#resultadoDesmolResultado').append(ciclo);
+            $('#resultadoDesmolResultado').append(ciclo," cuñete de 20KG");
         });
     $('input#metros').on('change',function(){//Funcion para seleccionar la dosificacion del option que                                          viene por valor
         var metros= $(this).val();  //variable del dato de ingreso de metros cuadrados
