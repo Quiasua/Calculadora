@@ -34,7 +34,6 @@ $('select#colores').on('change',function(){//Funcion para seleccionar la dosific
             $('#dosificacion').append(valor," Kg");
         } 
 });
-
 $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la dosificacion del option que 											viene por valor
     var demoldante = $(this).val(); //Variable para guardar dosificacion 
     $("#resultadodesmol,#resultadoDesmolResultado,#resultadoDesmolResultadototal").empty(); //jquery para limpiar los datos de los paneles
@@ -88,90 +87,70 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
     $('input#centimetros').on('change',function(){
         var datosencentimetros=$(this).val();
         var datosenmetros= $('input#metros').val();
-            $('input#valor1').on('change',function(){//Funcion para seleccionar la dosificacion del option que                                  viene por valor
+            
+        $('input#valor1').on('change',function(){//Funcion para seleccionar la dosificacion del option que                                  viene por valor
                 $('#resultadoFibracontre').empty(); //jquery para limpiar los datos de los paneles
                 var valorprimario=$(this).val();
+                var datosMetrosvalor1= datosenmetros;
                 if (datosencentimetros>=1 && datosencentimetros<=9) {
-                    datosenmetros=datosenmetros*datosencentimetros;
-                    datosenmetros=datosenmetros/10;
-                    datosenmetros=datosenmetros*valorprimario;
-                    datosenmetros=Math.round(datosenmetros);// para aproximar el dato
-                    $('#resultadoFibracontre').append(datosenmetros," Kilogramos");   
+                    datosMetrosvalor1=((datosMetrosvalor1*datosencentimetros)/10)*valorprimario;
+                    datosMetrosvalor1=Math.round(datosMetrosvalor1);// para aproximar el dato
+                    $('#resultadoFibracontre').append(datosMetrosvalor1," Kilogramos");   
                 }if(datosencentimetros>=10 && datosencentimetros<=99){
-                    datosenmetros=datosenmetros*datosencentimetros;
-                    datosenmetros=datosenmetros/100;
-                    datosenmetros=datosenmetros*valorprimario;
-                    datosenmetros=Math.round(datosenmetros);// para aproximar el dato
-                    $('#resultadoFibracontre').append(datosenmetros," Kilogramos");
+                    datosMetrosvalor1=((datosMetrosvalor1*datosencentimetros)/100)*valorprimario;
+                    datosMetrosvalor1=Math.round(datosMetrosvalor1);// para aproximar el dato
+                    $('#resultadoFibracontre').append(datosMetrosvalor1," Kilogramos");
                     }if(datosencentimetros>=100 && datosencentimetros<=999){
-                        datosenmetros=datosenmetros*datosencentimetros;
-                        datosenmetros=datosenmetros/1000;
-                        datosenmetros=datosenmetros*valorprimario;
-                        datosenmetros=Math.round(datosenmetros);// para aproximar el dato
+                        datosMetrosvalor1=((datosMetrosvalor1*datosencentimetros)/1000)*valorprimario;
+                        datosMetrosvalor1=Math.round(datosMetrosvalor1);// para aproximar el dato
                         $('#resultadoFibracontre').append(datosenmetros," Kilogramos");
                         }if(datosencentimetros>=1000 && datosencentimetros<=9999){
-                            datosenmetros=datosenmetros*datosencentimetros;
-                            datosenmetros=datosenmetros/10000;
-                            datosenmetros=datosenmetros*valorprimario;
-                            datosenmetros=Math.round(datosenmetros);// para aproximar el dato
+                            datosMetrosvalor1=((datosMetrosvalor1*datosencentimetros)/10000)*valorprimario;
+                            datosMetrosvalor1=Math.round(datosMetrosvalor1);// para aproximar el dato
                             $('#resultadoFibracontre').append(datosenmetros," Kilogramos");
                         }
             }); 
                 $('input#valor2').on('change',function(){//Funcion para seleccionar la dosificacion del option que                                          viene por valor
                 $('#resultadoFibracontre').empty(); //jquery para limpiar los datos de los paneles
                 var valorsecundario=$(this).val();
+                var datosMetrosvalor2=datosenmetros;
                 if (datosencentimetros>=1 && datosencentimetros<=9) {
-                datosenmetros=datosenmetros*datosencentimetros;
-                datosenmetros=datosenmetros/10;
-                datosenmetros=datosenmetros*valorsecundario;
-                datosenmetros=Math.round(datosenmetros);// para aproximar el dato
-                $('#resultadoFibracontre').append(datosenmetros," Kilogramos");   
+                    datosMetrosvalor2=((datosMetrosvalor2*datosencentimetros)/10)*valorsecundario;
+                    datosMetrosvalor2=Math.round(datosMetrosvalor2);// para aproximar el dato
+                    $('#resultadoFibracontre').append(datosMetrosvalor2," Kilogramos");   
                 }if(datosencentimetros>=10 && datosencentimetros<=99){
-                    datosenmetros=datosenmetros*datosencentimetros;
-                    datosenmetros=datosenmetros/100;
-                    datosenmetros=datosenmetros*valorsecundario;
-                    datosenmetros=Math.round(datosenmetros);// para aproximar el dato
-                    $('#resultadoFibracontre').append(datosenmetros," Kilogramos");
+                    datosMetrosvalor2=((datosMetrosvalor2*datosencentimetros)/100)*valorsecundario;
+                    datosMetrosvalor2=Math.round(datosMetrosvalor2);// para aproximar el dato
+                    $('#resultadoFibracontre').append(datosMetrosvalor2," Kilogramos");
                     }if(datosencentimetros>=100 && datosencentimetros<=999){
-                        datosenmetros=datosenmetros*datosencentimetros;
-                        datosenmetros=datosenmetros/1000;
-                        datosenmetros=datosenmetros*valorsecundario;
-                        datosenmetros=Math.round(datosenmetros);// para aproximar el dato
+                        datosMetrosvalor2=((datosMetrosvalor2*datosencentimetros)/1000)*valorsecundario;
+                        datosMetrosvalor2=Math.round(datosMetrosvalor2);// para aproximar el dato
                         $('#resultadoFibracontre').append(datosenmetros," Kilogramos");
-                        }if(datosencentimetros>=100 && datosencentimetros<=999){
-                            datosenmetros=datosenmetros*datosencentimetros;
-                            datosenmetros=datosenmetros/1000;
-                            datosenmetros=datosenmetros*valorsecundario;
-                            datosenmetros=Math.round(datosenmetros);// para aproximar el dato
+                        }if(datosencentimetros>=1000 && datosencentimetros<=9999){
+                            datosMetrosvalor2=((datosMetrosvalor2*datosencentimetros)/10000)*valorsecundario;
+                            datosMetrosvalor2=Math.round(datosMetrosvalor2);// para aproximar el dato
                             $('#resultadoFibracontre').append(datosenmetros," Kilogramos");
                         }   
                 });
                 $('input#valor3').on('change',function(){//Funcion para seleccionar la dosificacion del option que                                          viene por valor
                 $('#resultadoFibracontre').empty(); //jquery para limpiar los datos de los paneles
                 var valortercero=$(this).val();
+                var datosMetrosvalor3=datosenmetros;
                 if (datosencentimetros>=1 && datosencentimetros<=9) {
-                    datosenmetros=datosenmetros*datosencentimetros;
-                    datosenmetros=datosenmetros/10;
-                    datosenmetros=datosenmetros*valortercero;
-                    datosenmetros=Math.round(datosenmetros);// para aproximar el dato
-                    $('#resultadoFibracontre').append(datosenmetros," Kilogramos");   
-                        }if(datosencentimetros>=10 && datosencentimetros<=99){
-                            datosenmetros=datosenmetros*datosencentimetros;
-                            datosenmetros=datosenmetros/100;
-                            datosenmetros=datosenmetros*valortercero;
-                            datosenmetros=Math.round(datosenmetros);// para aproximar el dato
-                            $('#resultadoFibracontre').append(datosenmetros," Kilogramos");
+                    datosMetrosvalor3=((datosMetrosvalor3*datosencentimetros)/10)*valortercero;
+                    datosMetrosvalor3=Math.round(datosMetrosvalor3);// para aproximar el dato
+                    $('#resultadoFibracontre').append(datosMetrosvalor3," Kilogramos");   
+                }if(datosencentimetros>=10 && datosencentimetros<=99){
+                    datosMetrosvalor3=((datosMetrosvalor3*datosencentimetros)/100)*valortercero;
+                    datosMetrosvalor3=Math.round(datosMetrosvalor3);// para aproximar el dato
+                    $('#resultadoFibracontre').append(datosMetrosvalor3," Kilogramos");
                     }if(datosencentimetros>=100 && datosencentimetros<=999){
-                        datosenmetros=datosenmetros*datosencentimetros;
-                        datosenmetros=datosenmetros/1000;
-                        datosenmetros=datosenmetros*valortercero;
-                        datosenmetros=Math.round(datosenmetros);// para aproximar el dato
+                        datosMetrosvalor3=((datosMetrosvalor3*datosencentimetros)/1000)*valortercero;
+                        datosMetrosvalor3=Math.round(datosMetrosvalor3);// para aproximar el dato
                         $('#resultadoFibracontre').append(datosenmetros," Kilogramos");
-                        }if(datosencentimetros>=100 && datosencentimetros<=999){
-                            datosenmetros=datosenmetros*datosencentimetros;
-                            datosenmetros=datosenmetros/1000;
-                            datosenmetros=datosenmetros*valortercero;
-                            datosenmetros=Math.round(datosenmetros);// para aproximar el dato
+                        }if(datosencentimetros>=1000 && datosencentimetros<=9999){
+                            datosMetrosvalor3=((datosMetrosvalor3*datosencentimetros)/10000)*valortercero;
+                            datosMetrosvalor3=Math.round(datosMetrosvalor3);// para aproximar el dato
                             $('#resultadoFibracontre').append(datosenmetros," Kilogramos");
                         }
                 }); 
