@@ -176,7 +176,7 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                 var ciclo=0;
                 var ciclo2=0;
                 var ciclo3=0;
-                while(valormetro>=20){
+                while(valormetrocuadrado>=20){
                     valormetrocuadrado=valormetrocuadrado-20;
                     ciclo++;
                 }if (valormetrocuadrado>=1 && valormetrocuadrado<=14) {
