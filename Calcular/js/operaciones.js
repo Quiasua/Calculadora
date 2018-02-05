@@ -34,10 +34,11 @@ $('select#colores').on('change',function(){//Funcion para seleccionar la dosific
             $('#dosificacion').append(valor," Kg");
         } 
 });
-$('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la dosificacion del option que 											viene por valor
-    var demoldante = $(this).val(); //Variable para guardar dosificacion 
-    $("#resultadodesmol,#resultadoDesmolResultado,#resultadoDesmolResultadototal").empty(); //jquery para limpiar los datos de los paneles
+$('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la dosificacion del option que 
     var metro = $('input#metros').val(); //variable del dato de ingreso de metros cuadrados
+    var demoldante = 0.25;
+    $("#resultadodesmol,#resultadoDesmolResultado,#resultadoDesmolResultadototal").empty(); //jquery para limpiar los datos de los paneles
+    
     var datometro=parseFloat(metro); //variable r1 para operacion que guardo metros cuadrados
     var datodemoldante=parseFloat(demoldante);	//variable r2 para operacion que guardo dosificacion
     datometro=datometro*datodemoldante; //operacion de multiplicacion
@@ -46,19 +47,26 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
         var ciclo=0;
         var ciclo2=0;
         var ciclo3=0;
+        if(resultadodesmoldante<=19){
+            ciclo3++;
+            $('#resultadoDesmolResultado').append(ciclo," cuñete de 20KG");
+            $('#resultadoDesmolResultadototal').append(ciclo3," bulto de 10KG");
+        }
+        else{
             while(resultadodesmoldante>=20){
                 resultadodesmoldante=resultadodesmoldante-20;
                 ciclo++;
             }
-            console.log(ciclo);
-            if (resultadodesmoldante>=1 && resultadodesmoldante<=14) {
+                if (resultadodesmoldante>=1 && resultadodesmoldante<=14.9) {
                     ciclo3++;
                     $('#resultadoDesmolResultadototal').append(ciclo3," bulto de 10KG");
-                }   if(resultadodesmoldante>=15 && resultadodesmoldante<=19){
-                        ciclo2++;
-                        ciclo=ciclo+ciclo2;
-                    }
-        $('#resultadoDesmolResultado').append(ciclo," cuñete de 20KG");
+                }if(resultadodesmoldante>=15 && resultadodesmoldante<=19.9){
+                    ciclo2++;
+                    ciclo=ciclo+ciclo2;
+                    $('#resultadoDesmolResultadototal').append(ciclo3," bulto de 10KG");
+                }
+            $('#resultadoDesmolResultado').append(ciclo," cuñete de 20KG");
+        }
     });
     $('input#metros').on('change',function(){//Funcion para seleccionar la dosificacion del option que                                          viene por valor
         var metros= $(this).val();  //variable del dato de ingreso de metros cuadrados
