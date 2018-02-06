@@ -167,70 +167,74 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
     var valormetrocuadrado=$(this).val();
         
         $('button#valorSellamate').on('click',function(){
-           
+            var metrocuadrado =valormetrocuadrado;
             var valorsella=$(this).val();
-            valormetrocuadrado=valormetrocuadrado*valorsella;
-            valormetrocuadrado=Math.round(valormetrocuadrado);
-            valormetrocuadrado=valormetrocuadrado.toFixed(2);
-            $('#resultadoSella').append(valormetrocuadrado," Kg"); 
+            metrocuadrado=metrocuadrado*valorsella;
+            metrocuadrado=Math.round(metrocuadrado);
+            metrocuadrado=metrocuadrado.toFixed(2);
+            $('#resultadoSella').append(metrocuadrado," Kg"); 
                 var ciclo=0;
                 var ciclo2=0;
                 var ciclo3=0;
-                while(valormetrocuadrado>=20){
-                    valormetrocuadrado=valormetrocuadrado-20;
+                while(metrocuadrado>=20){
+                    metrocuadrado=metrocuadrado-20;
                     ciclo++;
-                }if (valormetrocuadrado>=1 && valormetrocuadrado<=14) {
+                }if (metrocuadrado>=1 && metrocuadrado<=14) {
+                        ciclo3++;
+                        $('#resultadoSelladiez').append(ciclo3," Garrafa de 10KG");
+                    }   if(metrocuadrado>=15 && metrocuadrado<=19){
+                            ciclo2++;
+                            ciclo=ciclo+ciclo2;
+                        }
+            $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");
+            valormetrocuadrado=0;            
+        });
+           $('button#valorSellalustre').on('click',function(){
+            var sellametro =valormetrocuadrado;   
+            var valorsella=$(this).val();
+            sellametro=sellametro*valorsella;
+            sellametro=Math.round(sellametro);
+            sellametro=sellametro.toFixed(2);
+            $('#resultadoSella').append(sellametro," Kg"); 
+                var ciclo=0;
+                var ciclo2=0;
+                var ciclo3=0;
+                while(sellametro>=20){
+                    sellametro=sellametro-20;
+                    ciclo++;
+                }if (sellametro>=1 && sellametro<=14) {
                         ciclo3++;
                         $('#resultadoSellatotal').append(ciclo3," Garrafa de 10KG");
-                    }   if(valormetrocuadrado>=15 && valormetrocuadrado<=19){
+                    }   if(sellametro>=15 && sellametro<=19){
                             ciclo2++;
                             ciclo=ciclo+ciclo2;
                         }
             $('#resultadoSellacontre').append(ciclo," Garrafa de 20KG");
-        });
-           
-           $('button#valorSellamate').on('click',function(){
-            var valorsella=$(this).val();
-            valormetrocuadrado=valormetrocuadrado*valorsella;
-            valormetrocuadrado=Math.round(valormetro);
-            valormetrocuadrado=valormetrocuadrado.toFixed(2);
-            $('#resultadoSella').append(valormetrocuadrado," Kg"); 
-                var ciclo=0;
-                var ciclo2=0;
-                var ciclo3=0;
-                while(valormetrocuadrado>=20){
-                    valormetrocuadrado=valormetrocuadrado-20;
-                    ciclo++;
-                }if (valormetrocuadrado>=1 && valormetrocuadrado<=14) {
-                        ciclo3++;
-                        $('#resultadoSellatotal').append(ciclo3," Garrafa de 10KG");
-                    }   if(valormetrocuadrado>=15 && valormetrocuadrado<=19){
-                            ciclo2++;
-                            ciclo=ciclo+ciclo2;
-                        }
-            $('#resultadoSellacontre').append(ciclo," Garrafa de 20KG");
-        });
+            sellametro=0;
+            });
                 $('button#valorSellamate').on('click',function(){
-            var valorsella=$(this).val();
-            valormetrocuadrado=valormetrocuadrado*valorsella;
-            valormetrocuadrado=Math.round(valormetrocuadrado);
-            valormetrocuadrado=valormetrocuadrado.toFixed(2);
-            $('#resultadoSella').append(valormetrocuadrado," Kg"); 
-                var ciclo=0;
-                var ciclo2=0;
-                var ciclo3=0;
-                while(valormetrocuadrado>=20){
-                    valormetrocuadrado=valormetrocuadrado-20;
-                    ciclo++;
-                }if (valormetrocuadrado>=1 && valormetrocuadrado<=14) {
-                        ciclo3++;
-                        $('#resultadoSellatotal').append(ciclo3," Garrafa de 10KG");
-                    }   if(valormetrocuadrado>=15 && valormetrocuadrado<=19){
-                            ciclo2++;
-                            ciclo=ciclo+ciclo2;
-                        }
-            $('#resultadoSellacontre').append(ciclo," Garrafa de 20KG");
-        });
+                var metrosellamate= valormetrocuadrado;   
+                var valorsella=$(this).val();
+                metrosellamate=metrosellamate*valorsella;
+                metrosellamate=Math.round(metrosellamate);
+                metrosellamate=metrosellamate.toFixed(2);
+                $('#resultadoSella').append(metrosellamate," Kg"); 
+                    var ciclo=0;
+                    var ciclo2=0;
+                    var ciclo3=0;
+                    while(metrosellamate>=20){
+                        metrosellamate=metrosellamate-20;
+                        ciclo++;
+                    }if (metrosellamate>=1 && metrosellamate<=14) {
+                            ciclo3++;
+                            $('#resultadoSellatotal').append(ciclo3," Garrafa de 10KG");
+                        }   if(metrosellamate>=15 && metrosellamate<=19){
+                                ciclo2++;
+                                ciclo=ciclo+ciclo2;
+                            }
+                $('#resultadoSellacontre').append(ciclo," Garrafa de 20KG");
+                metrosellamate=0;
+                });
     });
 validarCualquierNumero();
 });	
