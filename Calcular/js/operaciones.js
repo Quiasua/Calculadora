@@ -47,12 +47,6 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
         var ciclo=0;
         var ciclo2=0;
         var ciclo3=0;
-        if(resultadodesmoldante<=19){
-            ciclo3++;
-            $('#resultadoDesmolResultado').append(ciclo," cuñete de 20KG");
-            $('#resultadoDesmolResultadototal').append(ciclo3," bulto de 10KG");
-        }
-        else{
             while(resultadodesmoldante>=20){
                 resultadodesmoldante=resultadodesmoldante-20;
                 ciclo++;
@@ -66,7 +60,7 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                     $('#resultadoDesmolResultadototal').append(ciclo3," bulto de 10KG");
                 }
             $('#resultadoDesmolResultado').append(ciclo," cuñete de 20KG");
-        }
+        
     });
     $('input#metros').on('change',function(){//Funcion para seleccionar la dosificacion del option que                                          viene por valor
         var metros= $(this).val();  //variable del dato de ingreso de metros cuadrados
@@ -80,17 +74,25 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                 var ciclo=0;
                 var ciclo2=0;
                 var ciclo3=0;
-                while(resultado>=20){
-                    resultado=resultado-20;
-                    ciclo++;
-                }if (resultado>=1 && resultado<=14) {
-                        ciclo3++;
-                        $('#resultadoRetardantetotal').append(ciclo3," Garrafa de 10KG");
-                    }   if(resultado>=15 && resultado<=19){
+                if(resultado<=19){
+                    ciclo3++;
+                    $('#resultadoRetardantetotal').append(ciclo3," Garrafa de 10KG");
+                    $('#resultadoRetardante').append(ciclo," Garrafa de 20KG");  
+                }
+                else{
+                    while(resultado>=20){
+                        resultado=resultado-20;
+                        ciclo++;
+                    }   if (resultado>=1 && resultado<=14.9) {
+                            ciclo3++;
+                            $('#resultadoRetardantetotal').append(ciclo3," Garrafa de 10KG");
+                        }if(resultado>=15 && resultado<=19.9){
                             ciclo2++;
                             ciclo=ciclo+ciclo2;
+                            $('#resultadoRetardantetotal').append(ciclo3," Garrafa de 10KG");
                         }
-            $('#resultadoRetardante').append(ciclo," Garrafa de 20KG");      
+                     $('#resultadoRetardante').append(ciclo," Garrafa de 20KG");      
+                }                
     });
     $('input#centimetros').on('change',function(){
         var datosencentimetros=$(this).val();
@@ -165,31 +167,32 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
     });//fin del input
     $('input#metros').on('change',function(){
     var valormetrocuadrado=$(this).val();
-        
         $('button#valorSellamate').on('click',function(){
-            var metrocuadrado =valormetrocuadrado;
+           $("#resultadoSella,#resultadoSellaveinte,#resultadoSelladiez").empty(); //jquery para limpiar los datos de los paneles   
+            var metrosella =valormetrocuadrado;
             var valorsella=$(this).val();
-            metrocuadrado=metrocuadrado*valorsella;
-            metrocuadrado=Math.round(metrocuadrado);
-            metrocuadrado=metrocuadrado.toFixed(2);
-            $('#resultadoSella').append(metrocuadrado," Kg"); 
+            metrosella=metrosella*valorsella;
+            metrosella=Math.round(metrosella);
+            metrosella=metrosella.toFixed(2);
+            $('#resultadoSella').append(metrosella," Kg"); 
                 var ciclo=0;
                 var ciclo2=0;
                 var ciclo3=0;
-                while(metrocuadrado>=20){
-                    metrocuadrado=metrocuadrado-20;
+                while(metrosella>=20){
+                    metrosella=metrosella-20;
                     ciclo++;
-                }if (metrocuadrado>=1 && metrocuadrado<=14) {
-                        ciclo3++;
-                        $('#resultadoSelladiez').append(ciclo3," Garrafa de 10KG");
-                    }   if(metrocuadrado>=15 && metrocuadrado<=19){
-                            ciclo2++;
-                            ciclo=ciclo+ciclo2;
-                        }
-            $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");
-            valormetrocuadrado=0;            
-        });
+                }
+                if (metrosella>=1 && metrosella<=14) {
+                    ciclo3++;
+                    $('#resultadoSelladiez').append(ciclo3," Garrafa de 10KG");
+                }if(metrosella>=15 && metrosella<=19){
+                    ciclo2++;
+                    ciclo=ciclo+ciclo2;
+                    }
+                $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");        
+    });
            $('button#valorSellalustre').on('click',function(){
+            $("#resultadoSella,#resultadoSellaveinte,#resultadoSelladiez").empty(); //jquery para limpiar los datos de los paneles     
             var sellametro =valormetrocuadrado;   
             var valorsella=$(this).val();
             sellametro=sellametro*valorsella;
@@ -203,17 +206,17 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                     sellametro=sellametro-20;
                     ciclo++;
                 }if (sellametro>=1 && sellametro<=14) {
-                        ciclo3++;
-                        $('#resultadoSellatotal').append(ciclo3," Garrafa de 10KG");
-                    }   if(sellametro>=15 && sellametro<=19){
-                            ciclo2++;
-                            ciclo=ciclo+ciclo2;
-                        }
-            $('#resultadoSellacontre').append(ciclo," Garrafa de 20KG");
-            sellametro=0;
+                    ciclo3++;
+                    $('#resultadoSelladiez').append(ciclo3," Garrafa de 10KG");
+                    }if(sellametro>=15 && sellametro<=19){
+                        ciclo2++;
+                        ciclo=ciclo+ciclo2;
+                    }
+            $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");  
             });
-                $('button#valorSellamate').on('click',function(){
-                var metrosellamate= valormetrocuadrado;   
+                $('button#valorSellasemilustre').on('click',function(){
+                $("#resultadoSella,#resultadoSellaveinte,#resultadoSelladiez").empty(); //jquery para limpiar los datos de los paneles    
+                var metrosellamate= valormetrocuadrado;
                 var valorsella=$(this).val();
                 metrosellamate=metrosellamate*valorsella;
                 metrosellamate=Math.round(metrosellamate);
@@ -227,13 +230,12 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                         ciclo++;
                     }if (metrosellamate>=1 && metrosellamate<=14) {
                             ciclo3++;
-                            $('#resultadoSellatotal').append(ciclo3," Garrafa de 10KG");
+                            $('#resultadoSelladiez').append(ciclo3," Garrafa de 10KG");
                         }   if(metrosellamate>=15 && metrosellamate<=19){
                                 ciclo2++;
                                 ciclo=ciclo+ciclo2;
                             }
-                $('#resultadoSellacontre').append(ciclo," Garrafa de 20KG");
-                metrosellamate=0;
+                $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");
                 });
     });
 validarCualquierNumero();
