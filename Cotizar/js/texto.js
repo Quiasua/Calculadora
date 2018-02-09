@@ -8,6 +8,12 @@ $(document).ready(function () {
         else{
             $("#ventana").fadeIn(200);
             $("#alerta").fadeOut();
+            $(document).ready(function(){
+                $("#demo").click(function(evento){
+                    location.reload();
+                });
+            });   
+            
         }
     });
 });

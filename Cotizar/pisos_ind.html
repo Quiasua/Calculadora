@@ -91,22 +91,22 @@
       </h2>
     </div>
 
-    <div class="row" style="margin-bottom:100px;">
+    <div class="row" >
       <!--Espacio para ingresar los metros-->
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6">
-          <form class="form-horizontal">
-              <div class="form-group">
-                <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
-                <div class="col-sm-3">
-                  <input class="form-control decimal-2-places" type="text" id="metros"  >
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
+                    <div class="col-sm-2">
+                        <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8">
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-info" id="demo">Calcular</button>
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                  <button type="button" class="btn btn-info"  id="demo">Calcular</button>
-                </div>  
-              </div>
             </form>
-      </div>
+        </div>
       <div class="col-sm-3"></div>
     </div>
     <!--fin Espacio para ingresar los metros-->
@@ -118,7 +118,7 @@
  </div>
     <div id="ventana" style="display:none;">
     <!-- Juan Color Industrial -->
-    <div class="row" style="margin-bottom:100px;">
+    <div class="row" style="margin-bottom:100px;margin-top:65px;">
       <div class="col-sm-2">
       <!-- concrete color -->
           <h4><b>Color Industrial</b></h4>
@@ -237,7 +237,7 @@
                 </div>
             </div>
             <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
+                <img class="flecha center-block" src="iconos/flecha.png"></img>
             </div>
             <div class="col-sm-2" style="margin-top:-2%;">
                 Usted requiere
@@ -245,36 +245,35 @@
                 <div class="well well-sm" style="font-size:11px" id="resultadoFibracontre"></div>
             </div>
         </div>
-    <div class="row" style="margin-bottom:100px;">
-      <div class="col-sm-3">
-        <h4>
-          <b>Retar Concrete(Retardante)</b>
-        </h4>
-      </div>
+    <!-- Juan Retardante-->
+    <div class="row" style="margin-bottom:120px;">
+        <div class="col-sm-3">
+            <!-- retar concrete -->
+            <h5>
+                <b>Retar Concrete(Retardante)</b>
+            </h5>
+        </div>
 
-      <div class="col-sm-1">
-        <img class="flecha" class="flecha" src="iconos/flecha.png"></img>
-      </div>
-      <div class="col-sm-2" style="margin-top:-1.5%;">
-        Dosificación de
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-body" id="resultadoretardante"></div>
+        <div class="col-sm-1">
+            <img class="flecha center-block" src="iconos/flecha.png"></img>
         </div>
-      </div>
-      <div class="col-sm-1">
-        <img class="flecha" src="iconos/flecha.png"></img>
-      </div>
-      <div class="col-sm-2" style="margin-top:-1.5%;">
-        Usted requiere
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-body" id="resultadoRetardantetotal"></div>
+        <div class="col-sm-2" style="margin-top:-1.5%;">
+            Dosificación de
+            <br>
+            <div class="well well-sm" style="font-size:11px" id="resultadoretardante"></div>
         </div>
-      </div>
-      <div class="col-sm-1" style="margin-top:-3%;">
-        <img class="concrete" src="imagenes/hidro.png" width="120" height="100"></img>
-      </div>
+        <div class="col-sm-1">
+            <img class="flecha center-block" src="iconos/flecha.png"></img>
+        </div>
+        <div class="col-sm-2" style="margin-top:-1.5%;">
+            Usted requiere
+            <br>
+            <div class="well well-sm" style="font-size:11px" id="resultadoRetardante"></div>
+            <div class="well well-sm" style="font-size:11px" id="resultadoRetardantetotal"></div>
+        </div>
+        <div class="col-sm-1" style="margin-top:-3%;">
+            <img class="concrete" src="imagenes/RETARDANTE.png" width="180" height="150"></img>
+        </div>
     </div>
     
     <div class="row" >
