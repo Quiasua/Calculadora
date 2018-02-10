@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $("#demo").click(function (evento) {
         var campo =$('#metros').val();
@@ -8,14 +7,18 @@ $(document).ready(function () {
         else{
             $("#ventana").fadeIn(200);
             $("#alerta").fadeOut();
-            $(document).ready(function(){
-                $("#demo").click(function(evento){
-                    location.reload();
-                });
-            });   
-            
+            $("#demo").css("display","none");
+            $("#metros").attr('disabled','disabled');  
+            actualizar();
         }
     });
+    function actualizar(){ 
+        $("#actualizar").css("display","block");   
+        $("#actualizar").click(function(evento){
+        $("#actualizar").fadeOut();
+        location.reload();
+  });
+}
 });
 
 // script que oculta datos pagina

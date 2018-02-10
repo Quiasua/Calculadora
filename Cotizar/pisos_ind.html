@@ -90,9 +90,8 @@
         <br>
       </h2>
     </div>
-
-    <div class="row" >
-      <!--Espacio para ingresar los metros-->
+    <div class="row">
+        <!--Espacio para ingresar los metros-->
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
             <form class="form-horizontal">
@@ -101,21 +100,24 @@
                     <div class="col-sm-2">
                         <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8">
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <button type="button" class="btn btn-info" id="demo">Calcular</button>
+                        <button type="button" class="btn btn-info" id="actualizar" style="display:none;">Actualizar</button>
                     </div>
                 </div>
             </form>
         </div>
-      <div class="col-sm-3"></div>
     </div>
     <!--fin Espacio para ingresar los metros-->
+    <div class="row">
     <!--alerta inicial-->
-    <div id="alerta" style="display:none;">
-        <div class="alert alert-danger">
-            <strong>El campo esta vacío</strong>
+    <div class="col-xs-3"></div>
+        <div id="alerta" style="display:none;" class="col-xs-6">
+            <div class="alert alert-danger" style="margin-top:25px;">
+                <strong>El campo esta vacío</strong>
+            </div>
         </div>
- </div>
+    </div>
     <div id="ventana" style="display:none;">
     <!-- Juan Color Industrial -->
     <div class="row" style="margin-bottom:100px;margin-top:65px;">

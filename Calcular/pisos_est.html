@@ -18,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="jqueryNumeric/jquery.numeric.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Pisos estampados</title>
 </head>
 
@@ -92,7 +93,6 @@
                 <br>
             </h2>
         </div>
-
         <div class="row">
             <!--Espacio para ingresar los metros-->
             <div class="col-sm-3"></div>
@@ -103,22 +103,25 @@
                         <div class="col-sm-2">
                             <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8">
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-2">
                             <button type="button" class="btn btn-info" id="demo">Calcular</button>
+                            <button type="button" class="btn btn-info" id="actualizar" style="display:none;">Actualizar</button>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="col-sm-3"></div>
         </div>
         <!--fin Espacio para ingresar los metros-->
+        <div class="row">
         <!--alerta inicial-->
-        <div id="alerta" style="display:none;">
-            <div class="alert alert-danger">
-                <strong>El campo esta vacío</strong>
+        <div class="col-xs-3"></div>
+            <div id="alerta" style="display:none;" class="col-xs-6">
+                <div class="alert alert-danger" style="margin-top:25px;">
+                    <strong>El campo esta vacío</strong>
+                </div>
             </div>
         </div>
-
+        
         <div id="ventana" style="display:none;">
             <!-- inicio ventana modal -->
 
