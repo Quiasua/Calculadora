@@ -44,6 +44,7 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
     datometro=datometro*datodemoldante; //operacion de multiplicacion
     var resultadodesmoldante =parseFloat(datometro); 
     $('#resultadodesmol').append(resultadodesmoldante," Kg");	
+    $("#desmolconcreteliquido").append(resultadodesmoldante," Kg");
         var ciclo=0;
         var ciclo2=0;
         var ciclo3=0;
@@ -62,7 +63,8 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
             $('#resultadoDesmolResultado').append(ciclo," cuñete de 20KG");
         
     });
-    $('input#metros').on('change',function(){//Funcion para seleccionar la dosificacion del option que                                          viene por valor
+    $('input#metros').on('change',function(){//Funcion para seleccionar la dosificacion del option que              viene por valor
+        
         var metros= $(this).val();  //variable del dato de ingreso de metros cuadrados
         var datonuevemetros=9;
         var calcular=parseFloat(metros);
