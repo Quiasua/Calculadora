@@ -91,58 +91,64 @@
             </h2>
         </div>
 
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
-                <div class="col-sm-3">
-                    <input class="form-control decimal-2-places" type="text" id="metros">
-                </div>
-                <div class="col-sm-3">
-                    <button type="button" class="btn btn-info" id="demo">Calcular</button>
+        <div class="row">
+                <!--Espacio para ingresar los metros-->
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
+                            <div class="col-sm-2">
+                                <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8">
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-info" id="demo">Calcular</button>
+                                <button type="button" class="btn btn-info" id="actualizar" style="display:none;">Actualizar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </form>
-        <!--fin Espacio para ingresar los metros-->
-        <br>
-        <br>
+            <!--fin Espacio para ingresar los metros-->
+            <div class="row">
+            <!--alerta inicial-->
+            <div class="col-xs-3"></div>
+                <div id="alerta" style="display:none;" class="col-xs-6">
+                    <div class="alert alert-danger" style="margin-top:25px;">
+                        <strong>El campo esta vacío</strong>
+                    </div>
+                </div>
+            </div>
 
         <div id="ventana" style="display:none;"> <!-- inicio ventana modal -->
 
-                <div class="row" style="margin-bottom:100px;">
+                <div class="row" style="margin-bottom:100px;margin-top:70px;">
                     <div class="col-sm-2">
-                        <h4>
-                            <b>Sella concrete de color</b>
-                        </h4>
+                        <h4><b>Sella concrete de color</b></h4>
                     </div>
                     <div class="col-sm-3">
-                        <select id="coloresdosificacion" class="selectpicker" data-size="15" data-width="90%">
+                        <select id="coloresDesmol" class="selectpicker " data-size="15" data-width="100%">
                         </select>
                     </div>
                     <div class="col-sm-1">
-                        <img class="flecha" src="iconos/flecha.png"></img>
+                        <img class="flecha center-block" src="iconos/flecha.png"/>
                     </div>
                     <div class="col-sm-2" style="margin-top:-1.5%;">
                         Dosificación de
                         <br>
-                        <div class="panel panel-default">
-                            <div class="panel-body" id="resultadodesmol"></div>
-                        </div>
+                        <div class="well well-sm" style="font-size:11px" id="resultadodesmol"></div>
                     </div>
                     <div class="col-sm-1">
-                        <img class="flecha" src="iconos/flecha.png"></img>
+                        <img class="flecha center-block" src="iconos/flecha.png"/>
                     </div>
                     <div class="col-sm-2" style="margin-top:-1.5%;">
-                        Usted requiere
-                        <br>
-                        <div class="panel panel-default">
-                            <div class="panel-body" id="resultadoDesmolResultado"></div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-body" id="resultadoDesmolResultadototal"></div>
-                        </div>
+                            Usted requiere
+                            <br>
+                            <div class="well well-sm" style="font-size:11px" id="resultadoDesmolResultado"></div>
+                            <div class="well well-sm" style="font-size:11px" id="resultadoDesmolResultadototal"></div>
                     </div>
                     <div class="col-sm-1" style="margin-top:-1.5%;">
-                        <img src="imagenes/barril_mant.png" width="50" height="80"></img>
+                        <img src="imagenes/barril_mant.png" width="85" height="110"/>
                     </div>
 
                 </div>

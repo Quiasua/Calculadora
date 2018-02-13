@@ -89,74 +89,79 @@
             </h2>
         </div>
 
-        <div class="row" style="margin-bottom:150px;">
-            <!--Espacio para ingresar los metros-->
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                      <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
-                      <div class="col-sm-3">
-                        <input class="form-control decimal-2-places" type="text" id="metros"  >
-                      </div>
-                      <div class="col-sm-3">
-                        <button type="button" class="btn btn-info"  id="demo">Calcular</button>
-                      </div>  
-                    </div>
-                  </form>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-        <!--fin Espacio para ingresar los metros-->
-        <!--alerta inicial-->
-    <div id="alerta" style="display:none;">
-            <div class="alert alert-danger">
-                <strong>El campo esta vacío</strong>
-            </div>
-     </div>
-        <div id="ventana" style="display:none;">
-        <div class="row" style="margin-bottom:100px;">
-            <div class="col-sm-2">
-                <h4 style="margin-top:-1.5%;">
-                    <b>Concrete Color Integral</b>
-                </h4>
-            </div>
-
-            <div class="col-sm-2" style="margin-top:-3.3%;">
-                PSI(Resistencia del cemento)
-                <br>
-                <input class="form-control" type="text">
-                <br> Debe ser a partir de 2500 PSI
-            </div>
-            <div class="col-sm-3">
-                <select id="colores" class="selectpicker">
-                </select>
-            </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
-            </div>
-            <div class="col-sm-1"style="margin-top:-1.5%;">
-                Porcentaje
-                <br>
-                <div class="panel panel-default">
-                    <div class="panel-body"></div>
+        <div class="row">
+                <!--Espacio para ingresar los metros-->
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
+                            <div class="col-sm-2">
+                                <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8">
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-info" id="demo">Calcular</button>
+                                <button type="button" class="btn btn-info" id="actualizar" style="display:none;">Actualizar</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="col-sm-1">
-                <img class="flecha" src="iconos/flecha.png"></img>
+            <!--fin Espacio para ingresar los metros-->
+            <div class="row">
+            <!--alerta inicial-->
+            <div class="col-xs-3"></div>
+                <div id="alerta" style="display:none;" class="col-xs-6">
+                    <div class="alert alert-danger" style="margin-top:25px;">
+                        <strong>El campo esta vacío</strong>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-1" style="margin-top:-1.5%;">
-                Usted requiere
-                <br>
+        <div id="ventana" style="display:none;">
+              <!-- Colores integrales Juan-->
+              <div class="row" style="margin-bottom:100px;margin-top:70px;">
+                    <div class="col-sm-2" >
+                        <h4 style="margin-top:-1.5%;">
+                            <b>Concrete Color Integral</b>
+                        </h4>
+                    </div>
+                    <div class="col-sm-1" >
+                        <p>PSI(Resistencia del cemento)</p>
+                        <input class="form-control decimal-2-places" type="text" maxlength="3">
+                        <p>Debe ser a partir de 2500 PSI</p>
+                    </div>
+                    <div class="col-sm-1" >
+                        <img class="flecha center-block" src="iconos/flecha.png"/>
+                    </div>
+                    <div class="col-sm-3" >
+                        <select id="colores" class="selectpicker" data-size="15" data-width="100%">
+                        </select>
+                    </div>
+                    <div class="col-sm-1" >
+                       <img class="flecha center-block" src="iconos/flecha.png" />
+                    </div>
+                    <div class="col-sm-1" >
+                        Porcentaje
+                        <br>
+                        <div class="well well-sm" style="font-size:11px"></div>
+                    </div>
+                    <div class="col-sm-1">
+                        <img class="flecha center-block" src="iconos/flecha.png"/>
+                    </div>
+                    <div class="col-sm-1" >
+                        Usted requiere
+                        <br>
+                        <div class="well well-sm" style="font-size:11px"></div>
+                    </div>
+                    <div class="col-sm-1" >
+                      <img src="imagenes/insumos.png" width="120" height="140" class="center-block"/>
+                    </div>
             </div>
-            <div class="col-sm-1" style="margin-top:-1.5%;">
-                <img src="imagenes/insumos.png" width="100" height="120"></img>
-            </div>
-
-        </div>
-        <h4 style="margin-bottom:100px;">
-            <b>Aditivos</b>
-        </h4>
+                <div class="row">
+                        <h4 style="margin-bottom:100px;">
+                            <b>Aditivos</b>
+                        </h4>
+                </div>
         <div class="row" style="margin-bottom:100px;">
             <div class="col-sm-2">
                 <h4>

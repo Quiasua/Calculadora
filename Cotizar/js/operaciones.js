@@ -34,7 +34,6 @@ $(document).ready(function(){ //Funcion al momento de recargar la página
                 $('#dosificacion').append(valor," Kg");
             } 
     });
-
     $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la dosificacion del option que 
         var metro = $('input#metros').val(); //variable del dato de ingreso de metros cuadrados
         var demoldante = 0.25;
@@ -61,7 +60,31 @@ $(document).ready(function(){ //Funcion al momento de recargar la página
                         $('#resultadoDesmolResultadototal').append(ciclo3," bulto de 10KG");
                     }
                 $('#resultadoDesmolResultado').append(ciclo," cuñete de 20KG");
-            
+        });
+        $('input#metros').on('change',function(){//Desmoldante liquido
+            var metrosliquido =$(this).val();
+            var dosificacionliquido= 0.25;
+            var demoldanteliquido;
+            demoldanteliquido=metrosliquido*dosificacionliquido;
+            demoldanteliquido=parseFloat(demoldanteliquido);
+            $("#desmolconcreteliquido").append(demoldanteliquido," Litros");
+            $("#hidroconcrete").append(demoldanteliquido," Litros");
+            var ciclo=0;
+            var ciclo2=0;
+            var ciclo3=0;
+                while(demoldanteliquido>=20){
+                    demoldanteliquido=demoldanteliquido-20;
+                    ciclo++;
+                }if(demoldanteliquido>=1 && demoldanteliquido<=14.9){
+                    ciclo3++;    
+                }if(demoldanteliquido>=15 && demoldanteliquido<=19.9){
+                    ciclo2++;
+                    ciclo=ciclo+ciclo2;    
+                }
+                $("#demolliquidodiez").append(ciclo3," Garrafa de 10LT");
+                $("#demolliquidoveinte").append(ciclo," Garrafa de 20LT");
+                $("#hidroconcretediez").append(ciclo3," Garrafa de 10LT");
+                $("#hidroconcreteveinte").append(ciclo," Garrafa de 20LT");
         });
         $('input#metros').on('change',function(){//Funcion para seleccionar la dosificacion del option que                                          viene por valor
             var metros= $(this).val();  //variable del dato de ingreso de metros cuadrados
