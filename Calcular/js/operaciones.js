@@ -262,6 +262,7 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                 });
     });
 validarCualquierNumero();
+
 });	
 function validarCualquierNumero(){
         $(".numeric").numeric();

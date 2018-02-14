@@ -65,4 +65,10 @@
   .textooculto6{
     float: right;    
   }
-    
+  
+  @media (min-width:991px){
+    .bordetitulo{
+      display: none;
+    }
+}
+ 
