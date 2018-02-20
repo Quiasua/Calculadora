@@ -66,9 +66,9 @@
     float: right;    
   }
   
-  @media (min-width:991px){
-    .bordetitulo{
-      display: none;
+  @media only screen and (max-width: 767px) {
+    #inpuntmargen{
+      display: block;
     }
-}
+  }
  

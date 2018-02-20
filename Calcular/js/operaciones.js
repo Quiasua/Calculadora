@@ -261,8 +261,18 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                 $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");
                 });
     });
-validarCualquierNumero();
+    validarCualquierNumero();
+    $(window).resize(function css(){     
+        if($(window).width() == 991){
+           $("#bordetitulo").removeClass("col-sm-3").addClass("col-sm-2")
+           $("#inputtitulo").removeClass("col-sm-6").addClass("col-sm-8") 
+        }
+        if($(window).width() == 767){
+           $("#bordetitulo").removeClass("col-sm-3")
+           //$("#inputtitulo").removeClass().addClass()
+        }
 
+    });
 });	
 function validarCualquierNumero(){
         $(".numeric").numeric();
@@ -272,3 +282,4 @@ function validarCualquierNumero(){
         $(".decimal-2-places").numeric({ decimalPlaces: 2 });
         $(".decimal-3-places").numeric({ decimalPlaces: 3 });
 }
+
