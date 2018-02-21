@@ -264,12 +264,13 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
     validarCualquierNumero();
     $(window).resize(function css(){     
         if($(window).width() == 991){
-           $("#bordetitulo").removeClass("col-sm-3").addClass("col-sm-2")
-           $("#inputtitulo").removeClass("col-sm-6").addClass("col-sm-8") 
+           $("#bordetitulo").removeClass("col-sm-3").addClass("col-sm-2");
+           $("#inputtitulo").removeClass("col-sm-6").addClass("col-sm-8"); 
         }
         if($(window).width() == 767){
-           $("#bordetitulo").removeClass("col-sm-3")
-           //$("#inputtitulo").removeClass().addClass()
+           $("#bordetitulo").removeClass("col-sm-2");
+           $("#inputtitulo").removeClass("col-sm-8"); 
+           
         }
 
     });

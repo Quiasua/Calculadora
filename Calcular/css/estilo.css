@@ -68,7 +68,22 @@
   
   @media only screen and (max-width: 767px) {
     #inpuntmargen{
-      display: block;
+      display: none;
+    }
+    #bordetitulo{
+      display: none;
+    }
+    #inputtitulo{
+      display: none;
+    }
+    #titulo{
+      display: none;
+    }
+    #input{
+      display: none;
+    }
+    #botones{
+      display: none;
     }
   }
  

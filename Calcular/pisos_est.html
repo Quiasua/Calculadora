@@ -96,16 +96,16 @@
         </div>
         <div class="row">
             <!--Espacio para ingresar los metros-->
-            <div class="col-sm-3" id="bordetitulo" style="border:1px solid black" ></div>
-            <div class="col-sm-6" id="inputtitulo" style="border:1px solid black">
+            <div class="col-sm-3" id="bordetitulo" style="border:1px solid black;display: block;" ></div>
+            <div class="col-sm-6" id="inputtitulo" style="border:1px solid black;display: block;">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        <label class="col-sm-6 control-label">Ingrese los metros cuadrados de su proyecto:</label>
-                        <div class="col-sm-1" style="display:none;" id="inpuntmargen"></div>
-                        <div class="col-sm-3">
+                        
+                        <label class="col-sm-6 control-label" id="titulo" style="display: block;">Ingrese los metros cuadrados de su proyecto:</label>
+                        <div class="col-sm-3" id="input" style="display: block;">
                             <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8">
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2" id="botones" style="display: block;">
                             <button type="button" class="btn btn-info" id="demo">Calcular</button>
                             <button type="button" class="btn btn-info" id="actualizar" style="display:none;">Actualizar</button>
                         </div>
