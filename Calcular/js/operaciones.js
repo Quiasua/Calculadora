@@ -7,7 +7,7 @@ $(document).ready(function(){ //Funcion al momento de recargar la página
     var len = data.length; //Varible para contador
     for (var i = -0; i < len; i++) { //for para traer la lista de colores
         html += '<li data-original-index=' + [i] + '><a  id="valor" tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp' + data[i].nombre + '  ' + data[i].especificacion + '<span class="glyphicon glyphicon-ok check-mark"></span></a>';
-        html2 += '<option id="valor" value="'+data[i].dosificacion+'" data-content="' + '"<span class="label ' + data[i].especificacion + '">&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;' + data[i].nombre + '  ' + data[i].especificacion + '</option>';
+        html2 += '<option id="valor" value="'+data[i].dosificacion+'" data-content="' + '"<span class="label ' + data[i].especificacion + '"></span>' + data[i].nombre + '  ' + data[i].especificacion + '</option>';
     }
     $('.dropdown-menu.inner ').append(html);
     $('#colores').append(html2);

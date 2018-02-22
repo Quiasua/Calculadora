@@ -65,6 +65,15 @@
   .textooculto6{
     float: right;    
   }
+  @media only screen and (max-width:1999px) and(min-width:999px)  {
+    #colordosifindustrialestampado{
+      padding: 0;
+      margin-right: 2px;
+    }
+    #colordosifitotalndustrialestampado{
+      padding: 0;
+    }
+  }
   
   @media only screen and (max-width: 767px) {
     #inpuntmargen{
