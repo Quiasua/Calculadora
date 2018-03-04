@@ -261,6 +261,19 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                 $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");
                 });
     });
+    $('select#opcionlista').on('change',function(){
+        var valorintegral=$('inpunt#PSI').val();
+        console.log(valorintegral,"valor integral");
+        var metrocuadrado= $('input#metros').val();
+
+        metrocuadrado= metrocuadrado*0.10;
+        console.log(metrocuadrado,"fuera del if");
+        if(valorintegral => 2500){
+            metrocuadrado=((300*metrocuadrado)/100);
+            $('#concre-color-integral').append(metrocuadrado);
+        }
+    });
+
     validarCualquierNumero();
     $(window).resize(function css(){     
         if($(window).width() == 991){

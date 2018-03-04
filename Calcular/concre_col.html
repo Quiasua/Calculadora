@@ -130,7 +130,7 @@
             </div>
             <div class="col-sm-1" >
                 <p>PSI(Resistencia del cemento)</p>
-                <input class="form-control decimal-2-places" type="text" maxlength="3">
+                <input class="form-control decimal-2-places" type="text" maxlength="6" id="PSI">
                 <p>Debe ser a partir de 2500 PSI</p>
             </div>
             <div class="col-sm-1" >
@@ -145,8 +145,16 @@
             </div>
             <div class="col-sm-1" >
                 Porcentaje
-                <br>
-                <div class="well well-sm" style="font-size:11px"></div>
+                <select class="form-control" data-width="100%" id="opcionlista">
+                        <option>Seleccione</option>
+                        <option >1%</option>
+                        <option >2%</option>
+                        <option >3%</option>
+                        <option >4%</option>
+                        <option >5%</option>
+                        <option >6%</option>
+                        <option >7%</option>
+                </select>
             </div>
             <div class="col-sm-1">
                 <img class="flecha center-block" src="iconos/flecha.png"/>
@@ -154,7 +162,7 @@
             <div class="col-sm-1" >
                 Usted requiere
                 <br>
-                <div class="well well-sm" style="font-size:11px"></div>
+                <div class="well well-sm" style="font-size:11px" id="concre-color-integral"></div>
             </div>
             <div class="col-sm-1" >
               <img src="imagenes/insumos.png" width="120" height="140" class="center-block"/>
