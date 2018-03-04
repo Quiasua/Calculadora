@@ -17,7 +17,6 @@ $('select#colores').on('change',function(){//Funcion para seleccionar la dosific
     var valor = $(this).val(); //Variable para guardar dosificacion 
     $("#resultado,#resultado2,#dosificacion").empty(); //jquery para limpiar los datos de los paneles
     var valor2 = $('input#metros').val(); //variable del dato de ingreso de metros cuadrados
-    console.log(valor,valor2);
     var r1=parseFloat(valor2); //variable r1 para operacion que guardo metros cuadrados
     var r2=parseFloat(valor);	//variable r2 para operacion que guardo dosificacion
     r1=r1*r2; //operacion de multiplicacion
@@ -213,7 +212,7 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                     ciclo=ciclo+ciclo2;
                     }
                 $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");        
-    });
+            });
            $('button#valorSellalustre').on('click',function(){
             $("#resultadoSella,#resultadoSellaveinte,#resultadoSelladiez").empty(); //jquery para limpiar los datos de los paneles     
             var sellametro =valormetrocuadrado;   
@@ -261,19 +260,27 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
                 $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");
                 });
     });
-    $('select#opcionlista').on('change',function(){
-        var valorintegral=$('inpunt#PSI').val();
-        console.log(valorintegral,"valor integral");
+    $('input#numerointegral').on('change',function(){
+        var valorintegral=$(this).val();
         var metrocuadrado= $('input#metros').val();
-
         metrocuadrado= metrocuadrado*0.10;
-        console.log(metrocuadrado,"fuera del if");
-        if(valorintegral => 2500){
-            metrocuadrado=((300*metrocuadrado)/100);
-            $('#concre-color-integral').append(metrocuadrado);
-        }
+            $('#opcionlista').on('change',function(){
+                $('#concre-color-integral').empty();
+                var totalmetrocuadrado= metrocuadrado;
+                var totalCantidadintegral= valorintegral;
+        
+                if(totalCantidadintegral >= 2500 && totalCantidadintegral <=2999){
+                    totalmetrocuadrado=((300*totalmetrocuadrado)/100);
+                    $('#concre-color-integral').append(totalmetrocuadrado," bultos de 10KG");
+                }if(totalCantidadintegral >= 3000 && totalCantidadintegral<=3499){
+                    totalmetrocuadrado=((350*totalmetrocuadrado)/100);
+                    $('#concre-color-integral').append(totalmetrocuadrado," bultos de 10KG");
+                }if(totalCantidadintegral >= 3500){
+                    totalmetrocuadrado=((420*totalmetrocuadrado)/100);
+                    $('#concre-color-integral').append(totalmetrocuadrado," bultos de 10KG");
+                }
+            });
     });
-
     validarCualquierNumero();
     $(window).resize(function css(){     
         if($(window).width() == 991){

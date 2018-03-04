@@ -262,6 +262,28 @@ $(document).ready(function(){ //Funcion al momento de recargar la página
                     $('#resultadoSellaveinte').append(ciclo," Garrafa de 20KG");
                     });
     });
+    $('input#numerointegral').on('change',function(){
+        var valorintegral=$(this).val();
+        var metrocuadrado= $('input#metros').val();
+        metrocuadrado= metrocuadrado*0.10;
+            $('#opcionlista').on('change',function(){
+                $('#concre-color-integral').empty();
+                var totalmetrocuadrado= metrocuadrado;
+                var totalCantidadintegral= valorintegral;
+        
+                if(totalCantidadintegral >= 2500 && totalCantidadintegral <=2999){
+                    totalmetrocuadrado=((300*totalmetrocuadrado)/100);
+                    $('#concre-color-integral').append(totalmetrocuadrado," bultos de 10KG");
+                }if(totalCantidadintegral >= 3000 && totalCantidadintegral<=3499){
+                    totalmetrocuadrado=((350*totalmetrocuadrado)/100);
+                    $('#concre-color-integral').append(totalmetrocuadrado," bultos de 10KG");
+                }if(totalCantidadintegral >= 3500){
+                    totalmetrocuadrado=((420*totalmetrocuadrado)/100);
+                    $('#concre-color-integral').append(totalmetrocuadrado," bultos de 10KG");
+                }
+            });
+    });
+
 validarCualquierNumero();
 });	
 function validarCualquierNumero(){
