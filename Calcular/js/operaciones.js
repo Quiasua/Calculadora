@@ -290,9 +290,11 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
         if($(window).width() == 767){
            $("#bordetitulo").removeClass("col-sm-2");
            $("#inputtitulo").removeClass("col-sm-8"); 
-           
         }
-
+        if($(window).width() == 480){
+            $(".bordeinput").css("display","block");
+           $("#titulobordeinicial").removeClass("col-xm-6").addClass("col-xm-7");
+        }
     });
 });	
 function validarCualquierNumero(){

@@ -100,12 +100,13 @@
             <div class="col-sm-6" id="inputtitulo" style="border:1px solid black;display: block;">
                 <form class="form-horizontal">
                     <div class="form-group">
-                        
-                        <label class="col-sm-6 control-label" id="titulo" style="display: block;">Ingrese los metros cuadrados de su proyecto:</label>
-                        <div class="col-sm-3" id="input" style="display: block;">
+                        <div class="col-xs-3 bordeinput" style="display:none;border:1px solid red;"></div>
+                        <label class="col-sm-6 col-xs-6 control-label" id="titulobordeinicial" style="display: block;">Ingrese los metros cuadrados de su proyecto:</label>
+                        <div class="col-xs-4 bordeinput" style="display:none;border:1px solid red;"></div>
+                        <div class="col-sm-3 col-xs-3" id="inputmetros" style="display: block;padding-top: 10px;">
                             <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8">
                         </div>
-                        <div class="col-sm-2" id="botones" style="display: block;">
+                        <div class="col-sm-2 col-xs-2" id="botones" style="padding-top: 10px;">
                             <button type="button" class="btn btn-info" id="demo">Calcular</button>
                             <button type="button" class="btn btn-info" id="actualizar" style="display:none;">Actualizar</button>
                         </div>
@@ -130,10 +131,10 @@
             <div class="moldes">
                 <!--Apartado de moldes-->
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 col-xm-3">
                         <h4>Moldes para estampar: </h4>
                     </div>
-                    <div class="col-sm-9">
+                    <div class="col-sm-9 col-xm-9">
                         Descargue aqui la modulación de su molde
                         <br>
                         <br>
@@ -1007,36 +1008,36 @@
             </div>
             <!-- Juan Color Industrial -->
             <div class="row" style="margin-bottom:100px;">
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-xm-2">
                 <!-- concrete color -->
                     <h4><b>Color Industrial</b></h4>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 col-xm-3">
                     <select id="colores" class="selectpicker" data-size="15" data-width="100%">
                     </select>
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-1 col-xm-1">
                     <img class="flecha center-block" src="iconos/flecha.png"></img>
                 </div>
-                <div class="col-sm-1" style="margin-top:-3%;" id="colordosifindustrialestampado">
+                <div class="col-sm-1 col-xm-1" style="margin-top:-3%;" id="colordosifindustrialestampado">
                     Dosificación de Color
                     <br>
                     <div class="well well-sm" style="font-size:11.5px" id="dosificacion"></div>
                 </div>
-                <div class="col-sm-1" style="margin-top:-3%;" id="colordosifitotalndustrialestampado" >
+                <div class="col-sm-1 col-xm-1" style="margin-top:-3%;" id="colordosifitotalndustrialestampado" >
                     Dosificación Total
                     <br>
                     <div class="well well-sm" style="font-size:11.5px" id="resultado"></div>
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-1 col-xm-1">
                     <img class="flecha center-block" src="iconos/flecha.png"></img>
                 </div>
-                <div class="col-sm-2" style="margin-top:-1.4%;">
+                <div class="col-sm-2 col-xm-2" style="margin-top:-1.4%;">
                     Usted requiere
                     <br>
                     <div class="well well-sm" style="font-size:11px" id="resultado2"></div>
                 </div>
-                <div class="col-sm-1" style="margin-top:-3%;">
+                <div class="col-sm-1 col-xm-1" style="margin-top:-3%;">
                     <img class="concrete" src="imagenes/concrete_industrial.png" width="85" height="130"></img>
                 </div>
             </div>
