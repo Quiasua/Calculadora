@@ -101,7 +101,7 @@
                 <form class="form-horizontal">
                     <div class="form-group">
                         <div class="col-xs-3 bordeinput" style="display:none;border:1px solid red;"></div>
-                        <label class="col-sm-6 col-xs-6 control-label" id="titulobordeinicial" style="display: block;">Ingrese los metros cuadrados de su proyecto:</label>
+                        <label class="col-sm-6 col-xs-6 control-label textoconcssjustificar" id="titulobordeinicial" style="display: block;">Ingrese los metros cuadrados de su proyecto:</label>
                         <div class="col-xs-4 bordeinput" style="display:none;border:1px solid red;"></div>
                         <div class="col-sm-3 col-xs-3" id="inputmetros" style="display: block;padding-top: 10px;">
                             <input class="form-control decimal-2-places" type="text" id="metros" maxlength="8">
@@ -1008,11 +1008,11 @@
             </div>
             <!-- Juan Color Industrial -->
             <div class="row" style="margin-bottom:100px;">
-                <div class="col-sm-2 col-xm-2">
+                <div class="col-sm-2 col-xm-2 tituloconcrecol">
                 <!-- concrete color -->
-                    <h4><b>Color Industrial</b></h4>
+                    <h4 class="textoconcssjustificar" ><b>Color Industrial</b></h4>
                 </div>
-                <div class="col-sm-3 col-xm-3">
+                <div class="col-sm-3 col-xm-3" style="margin-top:3.7px;">
                     <select id="colores" class="selectpicker" data-size="15" data-width="100%">
                     </select>
                 </div>
@@ -1020,24 +1020,21 @@
                     <img class="flecha center-block" src="iconos/flecha.png"></img>
                 </div>
                 <div class="col-sm-1 col-xm-1" style="margin-top:-3%;" id="colordosifindustrialestampado">
-                    Dosificación de Color
-                    <br>
+                    <p class="textoconcssjustificar" style="margin:0px;" >Dosificación de Color</p>
                     <div class="well well-sm" style="font-size:11.5px" id="dosificacion"></div>
                 </div>
                 <div class="col-sm-1 col-xm-1" style="margin-top:-3%;" id="colordosifitotalndustrialestampado" >
-                    Dosificación Total
-                    <br>
+                    <p class="textoconcssjustificar" style="margin:0px;">Dosificación Total</p>
                     <div class="well well-sm" style="font-size:11.5px" id="resultado"></div>
                 </div>
                 <div class="col-sm-1 col-xm-1">
                     <img class="flecha center-block" src="iconos/flecha.png"></img>
                 </div>
-                <div class="col-sm-2 col-xm-2" style="margin-top:-1.4%;">
-                    Usted requiere
-                    <br>
+                <div class="col-sm-2 col-xm-2" style="margin-top:-1.2%;width:15%" >
+                    <p class="textoconcssjustificar" style="margin:0px;">Usted requiere</p>
                     <div class="well well-sm" style="font-size:11px" id="resultado2"></div>
                 </div>
-                <div class="col-sm-1 col-xm-1" style="margin-top:-3%;">
+                <div class="col-sm-1 col-xm-1" style="margin-top:-3%;border: 1px solid red;">
                     <img class="concrete" src="imagenes/concrete_industrial.png" width="85" height="130"></img>
                 </div>
             </div>

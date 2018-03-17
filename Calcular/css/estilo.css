@@ -5,6 +5,9 @@
     -moz-boz-sizing:border-box;
     box-sizing: border-box;
   }
+  .textoconcssjustificar{
+    text-align: justify;
+  }
   .social{
     position: fixed;
     left: 0;
@@ -65,7 +68,7 @@
   .textooculto6{
     float: right;    
   }
-  @media only screen and (max-width:1999px) and(min-width:999px)  {
+  @media only screen and (max-width:1200px) and (max-width:1199px) {
     #colordosifindustrialestampado{
       padding: 0;
       margin-right: 2px;
@@ -73,6 +76,18 @@
     #colordosifitotalndustrialestampado{
       padding: 0;
     }
+    .tituloconcrecol{
+      margin-top: -1%;
+    }
   }
+
+
+
+
+
+
+
+
+
   
  
