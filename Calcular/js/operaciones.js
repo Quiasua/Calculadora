@@ -285,7 +285,7 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
     $(window).resize(function css(){     
         if($(window).width() == 991){
            $("#bordetitulo").removeClass("col-sm-3").addClass("col-sm-2");
-           $("#inputtitulo").removeClass("col-sm-6").addClass("col-sm-8"); 
+           $("#inputtitulo").removeClass("col-sm-6").addClass("col-sm-8");
         }
         if($(window).width() == 767){
            $("#bordetitulo").removeClass("col-sm-2");
@@ -294,6 +294,12 @@ $('select#coloresDesmol').on('change',function(){//Funcion para seleccionar la d
         if($(window).width() == 480){
             $(".bordeinput").css("display","block");
            $("#titulobordeinicial").removeClass("col-xm-6").addClass("col-xm-7");
+        }
+    });
+    //deshabilitar el enter en los formularios
+    $("form").keypress(function(e) {
+        if (e.which == 13) {
+            return false;
         }
     });
 });	

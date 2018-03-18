@@ -69,20 +69,16 @@
     float: right;    
   }
   @media only screen and (max-width:1200px) and (max-width:1199px) {
-    #colordosifindustrialestampado{
-      padding: 0;
-      margin-right: 2px;
-    }
-    #colordosifitotalndustrialestampado{
-      padding: 0;
-    }
-    .tituloconcrecol{
-      margin-top: -1%;
-    }
+    #colordosifindustrialestampado{padding: 0;margin-right: 2px;}
+    #colordosifitotalndustrialestampado{ padding: 0;}
+    .tituloconcrecol{ margin-top: -1%;}
   }
-
-
-
+  @media only screen and (max-width:991px) and(min-width:800px){
+  #selectcolorindustrial{padding: 0;}
+  #tituloconcrecol{padding: 0 0;}
+  #totaldosificacionporkilos{padding: 0 0;}
+  #col-imagen-insumo{padding: 0 0;}
+}
 
 
 
