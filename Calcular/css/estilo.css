@@ -86,15 +86,14 @@
   #selectcolorindustrial{padding: 0;}#tituloconcrecol{padding: 0 0;}#totaldosificacionporkilos{padding: 0 0;}#col-imagen-insumo{padding: 0 0;} #colordosifindustrialestampado{margin-top: -4%;}.well-texto-size{font-size:9px;}
   #p-texto-dosificaciontotal-primero{margin-left: 15px;}
   }
-  @media only screen and (min-width:250px) and (max-width:767px){   
+  @media only screen and (min-width:767px){   
   #tituloconcrecol{padding:0 15px;}
-  .col-img-flecha{display: none;}.div-col-img-flecha{margin:20px 0}
+  .div-col-img-flecha{margin:20px 0}
   #colordosifindustrialestampado{padding: 0 15px}
   #selectcolorindustrial{padding: 0 15px}
   #colordosifitotalndustrialestampado{padding: 0 15px;}
   #p-texto-dosificaciontotal-primero{margin-left: 0px;}
   #colordosifitotalndustrialestampado{margin-top: 20px;}
-  
   } 
   
 
